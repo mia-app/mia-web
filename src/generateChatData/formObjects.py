@@ -22,7 +22,7 @@ class question:
         if answers is not None:
             self.children = []
             for a in answers:
-                if type == "Checkboxes":
+                if qType == "Checkboxes":
                     r = answer(a, "checkbox")
                 else :
                     r = answer(a, "radio")

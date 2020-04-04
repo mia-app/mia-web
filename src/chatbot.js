@@ -4,7 +4,7 @@ import { ConversationalForm } from 'conversational-form';
 export default class MyForm extends React.Component {
   constructor(props) {
     super(props);
-    var data = require("./chatData/chatData.json");
+    var data = require("./chatData/genChatData.json");
     this.formFields = data;
     
     this.submitCallback = this.submitCallback.bind(this);
