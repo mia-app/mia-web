@@ -3,7 +3,7 @@
       "tag": "fieldset",
       "type": "Radiobuttons",
       "cf-questions": "Did you speak to a healthcare professional yet?",
-      "cf-input-placeholder": "Did you speak to a healthcare professional yet?",
+      "cf-input-placeholder": "Yes or No",
       "children":[
         {
           "tag": "input",
@@ -24,24 +24,36 @@
   {
     "tag": "fieldset",
     "type": "Radiobuttons",
-    "cf-questions": "Are you infected with Covic-19?",
-    "cf-input-placeholder": "Are you infected with Covic-19?",
-    "cf-conditional-question-1": "yes",
+    "cf-questions": "Are you infected with Covid-19?",
+    "cf-input-placeholder": "Select an answer",
     "children":[
       {
         "tag": "input",
         "type": "radio",
         "name": "question-2",
-        "cf-label": "Yes",
-        "value": "yes"
+        "cf-conditional-question-1": "yes",
+        "cf-label": "Yes, I did a laboratory test.",
+        "value": "answer1"
       },
       {
         "tag": "input",
         "type": "radio",
         "name": "question-2",
-        "cf-label": "No",
-        "value": "no"
+        "cf-conditional-question-1": "yes",
+        "cf-label": "Yes, I was diagnosed on the telephone by a professional.",
+        "value": "answer2"
+      },
+      {
+        "tag": "input",
+        "type": "radio",
+        "name": "question-2",
+        "cf-conditional-question-1": "yes",
+        "cf-label": "Not sure.",
+        "value": "answer3"
       }
     ]
   }
+
+
+
 ]

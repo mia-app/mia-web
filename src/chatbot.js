@@ -24,8 +24,17 @@ export default class MyForm extends React.Component {
   
   submitCallback() {
     var formDataSerialized = this.cf.getFormData(true);
+
+    if (formDataSerialized["question-2"].includes("answer1") || formDataSerialized["question-2"].includes("answer2"))
+    {
+      this.cf.addRobotChatResponse("Please inform all concat persons asap.")
+    }
+    else
+    {
+      this.cf.addRobotChatResponse("You are done.")
+    }
+
     console.log("Formdata, obj:", formDataSerialized);
-    this.cf.addRobotChatResponse("You are done. Check the dev console for form data output.")
   }
   
   render() {
