@@ -15,7 +15,7 @@ class answer:
 
 class question:
 
-    def __init__(self, question, placeholder, qType, answers = None):
+    def __init__(self, name, question, placeholder, qType, answers = None):
         self.cf_questions = question
         self.cf_input_placeholder = placeholder
         self.type = qType
@@ -24,9 +24,9 @@ class question:
             self.children = []
             for a in answers:
                 if qType == "Checkboxes":
-                    r = answer(a, "checkbox", type(self).__name__)
+                    r = answer(a, "checkbox", name)
                 else :
-                    r = answer(a, "radio", type(self).__name__)
+                    r = answer(a, "radio", name)
                 # r.addName(type(self).__name__)
                 self.children.append(r)
 
