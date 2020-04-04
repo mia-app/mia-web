@@ -1,0 +1,51 @@
+.cf-input-button.cf-input-button {
+  background: var(--primary);
+}
+
+.robot {
+  padding-left: 0;
+}
+.robot thumb {
+  display: none;
+}
+.robot p {
+  background: none;
+  font-weight: bold;
+  padding: 0;
+}
+
+.user {
+  padding-right: 0 !important;
+}
+
+.user thumb {
+  display: none;
+}
+
+.user p {
+  background: var(--primary) !important;
+  font-weight: bold;
+}
+
+.cf-button,
+.cf-checkbox-button {
+  border-color: var(--primary) !important;
+}
+.cf-button:hover,
+.cf-checkbox-button:hover {
+  background: var(--primary) !important;
+}
+
+cf-checkbox {
+  display: none;
+}
+
+cf-button.cf-button.cf-checkbox-button[checked="checked"],
+cf-button.cf-button.cf-checkbox-button[selected="selected"] {
+  background: var(--primary) !important;
+}
+
+.cf-button.cf-checkbox-button cf-checkbox,
+.cf-button.cf-checkbox-button cf-checkbox {
+  display: none !important;
+}

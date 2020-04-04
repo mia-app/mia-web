@@ -1,5 +1,6 @@
 import React from "react";
 import { ConversationalForm } from "conversational-form";
+import "../css/Chatbot.css";
 
 export default class ChatWithMia extends React.Component {
   constructor(props) {
