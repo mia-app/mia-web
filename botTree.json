@@ -1,0 +1,12 @@
+{
+    'tag': 'input',
+    'type': 'text',
+    'name': 'firstname',
+    'cf-questions': 'What is your firstname?'
+  },
+  {
+    'tag': 'input',
+    'type': 'text',
+    'name': 'lastname',
+    'cf-questions': 'What is your lastname?'
+  }
