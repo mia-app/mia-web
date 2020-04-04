@@ -1,10 +1,11 @@
 class answer:
 
-    def __init__(self, value, qType):
+    def __init__(self, value, qType, name):
         self.cf_label = value
         self.value = value
         self.type = qType
         self.tag = "input"
+        self.name = name
 
     def condition(self, question, answer):
         setattr(self, "cf_conditional_" + question, answer)
@@ -23,10 +24,10 @@ class question:
             self.children = []
             for a in answers:
                 if qType == "Checkboxes":
-                    r = answer(a, "checkbox")
+                    r = answer(a, "checkbox", type(self).__name__)
                 else :
-                    r = answer(a, "radio")
-                r.addName(type(self).__name__)
+                    r = answer(a, "radio", type(self).__name__)
+                # r.addName(type(self).__name__)
                 self.children.append(r)
 
     def addChild(self, c):
