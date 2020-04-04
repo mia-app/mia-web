@@ -4,20 +4,8 @@ import { ConversationalForm } from 'conversational-form';
 export default class MyForm extends React.Component {
   constructor(props) {
     super(props);
-    this.formFields = [
-      {
-        'tag': 'input',
-        'type': 'text',
-        'name': 'firstname',
-        'cf-questions': 'What is your firstname?'
-      },
-      {
-        'tag': 'input',
-        'type': 'text',
-        'name': 'lastname',
-        'cf-questions': 'What is your lastname?'
-      }
-    ];
+    var data = require("./chatData/chatData.json");
+    this.formFields = data;
     
     this.submitCallback = this.submitCallback.bind(this);
   }
@@ -36,8 +24,17 @@ export default class MyForm extends React.Component {
   
   submitCallback() {
     var formDataSerialized = this.cf.getFormData(true);
+
+    if (formDataSerialized["question-2"].includes("answer1") || formDataSerialized["question-2"].includes("answer2"))
+    {
+      this.cf.addRobotChatResponse("Ok. Please warn others.")
+    }
+    else
+    {
+      this.cf.addRobotChatResponse("You have Covid-19 symptoms. Please reach out to your Doctor or call +41 58 463 00 00.")
+    }
+
     console.log("Formdata, obj:", formDataSerialized);
-    this.cf.addRobotChatResponse("You are done. Check the dev console for form data output.")
   }
   
   render() {
