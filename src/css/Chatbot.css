@@ -46,6 +46,7 @@ cf-button.cf-button.cf-checkbox-button[selected="selected"] {
 }
 
 .cf-button.cf-checkbox-button cf-checkbox,
-.cf-button.cf-checkbox-button cf-checkbox {
+.cf-button.cf-checkbox-button cf-checkbox,
+cf-radio {
   display: none !important;
 }
