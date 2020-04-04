@@ -1,15 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Open Sans", sans-serif;
+  color: var(--black);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
 }
 
 a {
@@ -19,6 +25,10 @@ a {
 
 :root {
   --primary: #4200ff;
+  --black: #333;
+  --grey1: #555555;
+  --grey2: #666666;
+  --grey3: #777777;
 }
 
 .button {
@@ -29,4 +39,11 @@ a {
   color: var(--primary);
   font-weight: bold;
   text-align: center;
+  transition: all ease-in-out 0.2s;
+  background: white;
+}
+
+.button:hover {
+  color: white;
+  background-color: var(--primary);
 }
