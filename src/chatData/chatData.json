@@ -1,0 +1,47 @@
+[
+    {
+      "tag": "fieldset",
+      "type": "Radiobuttons",
+      "cf-questions": "Did you speak to a healthcare professional yet?",
+      "cf-input-placeholder": "Did you speak to a healthcare professional yet?",
+      "children":[
+        {
+          "tag": "input",
+          "type": "radio",
+          "name": "question-1",
+          "cf-label": "Yes",
+          "value": "yes"
+        },
+        {
+          "tag": "input",
+          "type": "radio",
+          "name": "question-1",
+          "cf-label": "No",
+          "value": "no"
+        }
+      ]
+  },
+  {
+    "tag": "fieldset",
+    "type": "Radiobuttons",
+    "cf-questions": "Are you infected with Covic-19?",
+    "cf-input-placeholder": "Are you infected with Covic-19?",
+    "cf-conditional-question-1": "yes",
+    "children":[
+      {
+        "tag": "input",
+        "type": "radio",
+        "name": "question-2",
+        "cf-label": "Yes",
+        "value": "yes"
+      },
+      {
+        "tag": "input",
+        "type": "radio",
+        "name": "question-2",
+        "cf-label": "No",
+        "value": "no"
+      }
+    ]
+  }
+]

@@ -4,20 +4,8 @@ import { ConversationalForm } from 'conversational-form';
 export default class MyForm extends React.Component {
   constructor(props) {
     super(props);
-    this.formFields = [
-      {
-        'tag': 'input',
-        'type': 'text',
-        'name': 'firstname',
-        'cf-questions': 'What is your firstname?'
-      },
-      {
-        'tag': 'input',
-        'type': 'text',
-        'name': 'lastname',
-        'cf-questions': 'What is your lastname?'
-      }
-    ];
+    var data = require("./chatData/chatData.json");
+    this.formFields = data;
     
     this.submitCallback = this.submitCallback.bind(this);
   }
