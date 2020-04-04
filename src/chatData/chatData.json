@@ -52,8 +52,70 @@
         "value": "answer3"
       }
     ]
+  },
+
+  {
+    "tag": "fieldset",
+    "type": "Checkboxes",
+    "cf-questions": "Which of the these symptoms did or do you have?",
+    "cf-input-placeholder": "Please select",
+    "children":[
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "question-3",
+        "cf-conditional-question-1": "no",
+        "cf-label": "Fever",
+        "value": "fever"
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "question-3",
+        "cf-conditional-question-1": "no",
+        "cf-label": "Dry cough",
+        "value": "dry-cough"
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "question-3",
+        "cf-conditional-question-1": "no",
+        "cf-label": "Tiredness",
+        "value": "tiredness"
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "question-3",
+        "cf-conditional-question-1": "no",
+        "cf-label": "Nasal congestion",
+        "value": "nasal-congestion"
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "question-3",
+        "cf-conditional-question-1": "no",
+        "cf-label": "Sore throat",
+        "value": "sore-throat"
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "question-3",
+        "cf-conditional-question-1": "no",
+        "cf-label": "Other",
+        "value": "other"
+      }
+    ]
+  },
+
+  {
+    "tag": "input",
+    "type": "date",
+    "cf-questions": "When did you first have your symptoms?",
+    "cf-input-placeholder": "e.g. 01.04.2020"
   }
-
-
 
 ]

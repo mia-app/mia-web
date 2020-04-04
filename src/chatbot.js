@@ -27,11 +27,11 @@ export default class MyForm extends React.Component {
 
     if (formDataSerialized["question-2"].includes("answer1") || formDataSerialized["question-2"].includes("answer2"))
     {
-      this.cf.addRobotChatResponse("Please inform all concat persons asap.")
+      this.cf.addRobotChatResponse("Ok. Please warn others.")
     }
     else
     {
-      this.cf.addRobotChatResponse("You are done.")
+      this.cf.addRobotChatResponse("You have Covid-19 symptoms. Please reach out to your Doctor or call +41 58 463 00 00.")
     }
 
     console.log("Formdata, obj:", formDataSerialized);
