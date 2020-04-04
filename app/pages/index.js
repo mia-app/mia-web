@@ -1,4 +1,5 @@
 import { useState } from "react";
+import MyForm from '../components/chatbot'
 
 const Home = () => {
   const [string, setString] = useState("");
@@ -18,6 +19,10 @@ const Home = () => {
       <button onClick={getString}>click to get string</button>
 
       <h2>The string is: {string}</h2>
+
+{typeof window !== undefined &&
+      <MyForm />
+}
     </div>
   );
 };
