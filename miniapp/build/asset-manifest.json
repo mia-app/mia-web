@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/sick-bot.github.io/static/css/main.5f361e03.chunk.css",
+    "main.js": "/sick-bot.github.io/static/js/main.535ef2a5.chunk.js",
+    "main.js.map": "/sick-bot.github.io/static/js/main.535ef2a5.chunk.js.map",
+    "runtime-main.js": "/sick-bot.github.io/static/js/runtime-main.62c66cbb.js",
+    "runtime-main.js.map": "/sick-bot.github.io/static/js/runtime-main.62c66cbb.js.map",
+    "static/js/2.0fe8fb2f.chunk.js": "/sick-bot.github.io/static/js/2.0fe8fb2f.chunk.js",
+    "static/js/2.0fe8fb2f.chunk.js.map": "/sick-bot.github.io/static/js/2.0fe8fb2f.chunk.js.map",
+    "index.html": "/sick-bot.github.io/index.html",
+    "precache-manifest.a0f990e3679c054d983822165ef46bd9.js": "/sick-bot.github.io/precache-manifest.a0f990e3679c054d983822165ef46bd9.js",
+    "service-worker.js": "/sick-bot.github.io/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/sick-bot.github.io/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.0fe8fb2f.chunk.js.LICENSE.txt": "/sick-bot.github.io/static/js/2.0fe8fb2f.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/sick-bot.github.io/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.62c66cbb.js",
+    "static/js/2.0fe8fb2f.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.535ef2a5.chunk.js"
+  ]
+}

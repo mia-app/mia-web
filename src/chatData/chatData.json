@@ -1,0 +1,42 @@
+[
+    {
+        "fieldset":
+            [
+                {
+                    "tag": "input",
+                    "type": "text",
+                    "name": "firstname",
+                    "cf-questions": "Did you speak to a healthcare professional yet?"
+                },
+                {
+                    "tag": "label",
+                    "for": "intro-yes"
+                }
+            ],nah
+
+
+    }
+    }
+
+        ]
+        "tag": "input",
+        "type": "text",
+        "name": "firstname",
+        "cf-questions": "Did you speak to a healthcare professional yet?"
+    },
+    {
+        "tag": "input",
+        "type": "text",
+        "name": "lastname",
+        "cf-questions": "What is your lastname?"
+    }
+]
+
+
+<fieldset cf-questions="Ready to try a conditional flow?">
+	<input type="radio" name="cfc-intro" id="intro-yes" value="yes">
+	<label for="intro-yes">Yes
+
+	<input type="radio" name="cfc-intro" id="intro-no" value="no">
+	<label for="intro-no">No thanks
+</fieldset>
