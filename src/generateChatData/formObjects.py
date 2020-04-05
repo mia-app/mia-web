@@ -47,3 +47,12 @@ class question:
 
     def condition(self, question, cond):
         setattr(self, "cf_conditional_" + question, cond)
+
+
+class robotMessage:
+  def __init__(self, message):
+    self.cf_questions = message
+    self.tag = "cf-robot-message"
+  
+  def conditionOn(self, question, cond):
+    setattr(self, "cf_conditional_" + question, cond)

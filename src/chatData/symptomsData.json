@@ -1,7 +1,11 @@
 [
   {
+      "cf-questions": "You have the power to control the spread of the virus.",
+      "tag": "cf-robot-message"
+  },
+  {
       "cf-input-placeholder": "Ok! start the assessment",
-      "cf-questions": "You have the power to control the spread of the virus. Do you believe to have the Corona virus (COVID-19)? You probably have exposed it to other people in your surrounding. Mia helps you to identify these contacts and reach out to them with the right words.",
+      "cf-questions": "Do you believe to have the Corona virus (COVID-19)? You probably have exposed it to other people in your surrounding. Mia helps you to identify these contacts and reach out to them with the right words.",
       "children": [
           {
               "cf-label": "Ok! start the assessment",
@@ -41,15 +45,26 @@
   {
       "cf-input-placeholder": "When did you first have your symptoms?",
       "cf-questions": "Ok, you probably were in contact with other people. We must inform them. On which date did your symptoms start occurring?",
+      "children": [
+          {
+              "cf-conditional-infected": "yes",
+              "cf-label": "Select date",
+              "name": "whenSymptoms",
+              "tag": "input",
+              "type": "radio",
+              "value": "Select date"
+          }
+      ],
       "name": "whenSymptoms",
-      "tag": "input",
-      "type": "date"
+      "tag": "fieldset",
+      "type": "Radiobuttons"
   },
   {
       "cf-input-placeholder": "Select an answer",
       "cf-questions": "Did the symptoms pass?",
       "children": [
           {
+              "cf-conditional-infected": "yes",
               "cf-label": "yes",
               "name": "symptomsPassed",
               "tag": "input",
@@ -57,6 +72,7 @@
               "value": "yes"
           },
           {
+              "cf-conditional-infected": "yes",
               "cf-label": "no",
               "name": "symptomsPassed",
               "tag": "input",
@@ -69,18 +85,36 @@
       "type": "Radiobuttons"
   },
   {
-      "cf-conditional-symptomsPassed": "yes",
-      "cf-input-placeholder": "Select a date",
+      "cf-input-placeholder": "Select answer",
       "cf-questions": "Since when did the symptoms stop?",
+      "children": [
+          {
+              "cf-conditional-infected": "yes",
+              "cf-label": "Select date",
+              "name": "whenSymptomsGone",
+              "tag": "input",
+              "type": "radio",
+              "value": "Select date"
+          },
+          {
+              "cf-conditional-infected": "yes",
+              "cf-label": "I`m still sick",
+              "name": "whenSymptomsGone",
+              "tag": "input",
+              "type": "radio",
+              "value": "I`m still sick"
+          }
+      ],
       "name": "whenSymptomsGone",
-      "tag": "input",
-      "type": "date"
+      "tag": "fieldset",
+      "type": "Radiobuttons"
   },
   {
       "cf-input-placeholder": "Next",
       "cf-questions": "The period in which you might have passed the virus to others is: <symptoms-start-data - 14 days> to <max(symptoms-start-data + 10, symptoms-end-date -2)>",
       "children": [
           {
+              "cf-conditional-infected": "yes",
               "cf-label": "Next",
               "name": "symptomsPeriod",
               "tag": "input",
