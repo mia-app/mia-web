@@ -63,10 +63,10 @@ export const Home = () => {
           delay: 1,
         }}
       >
-        <Link to="/chat-with-mia" className="button">
+        <Link to="/symptoms" className="button">
           I Have Symptoms
         </Link>
-        <Link to="/chat-with-mia" className="button">
+        <Link to="/prevention" className="button">
           Record Interactions
         </Link>
       </motion.div>

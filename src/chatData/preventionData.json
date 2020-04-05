@@ -1,32 +1,32 @@
 [
-    {
-      "tag": "fieldset",
-      "type": "Radiobuttons",
-      "cf-questions": "Did you speak to a healthcare professional yet?",
-      "cf-input-placeholder": "Yes or No",
-      "children":[
-        {
-          "tag": "input",
-          "type": "radio",
-          "name": "question-1",
-          "cf-label": "Yes",
-          "value": "yes"
-        },
-        {
-          "tag": "input",
-          "type": "radio",
-          "name": "question-1",
-          "cf-label": "No",
-          "value": "no"
-        }
-      ]
+  {
+    "tag": "fieldset",
+    "type": "Radiobuttons",
+    "cf-questions": "Did you speak to a healthcare professional yet?",
+    "cf-input-placeholder": "Yes or No",
+    "children": [
+      {
+        "tag": "input",
+        "type": "radio",
+        "name": "question-1",
+        "cf-label": "Yes",
+        "value": "yes"
+      },
+      {
+        "tag": "input",
+        "type": "radio",
+        "name": "question-1",
+        "cf-label": "No",
+        "value": "no"
+      }
+    ]
   },
   {
     "tag": "fieldset",
     "type": "Radiobuttons",
     "cf-questions": "Are you infected with Covid-19?",
     "cf-input-placeholder": "Select an answer",
-    "children":[
+    "children": [
       {
         "tag": "input",
         "type": "radio",
@@ -59,7 +59,7 @@
     "type": "Checkboxes",
     "cf-questions": "Which of the these symptoms did or do you have?",
     "cf-input-placeholder": "Please select",
-    "children":[
+    "children": [
       {
         "tag": "input",
         "type": "checkbox",
@@ -117,5 +117,4 @@
     "cf-questions": "When did you first have your symptoms?",
     "cf-input-placeholder": "e.g. 01.04.2020"
   }
-
 ]

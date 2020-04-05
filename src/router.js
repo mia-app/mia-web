@@ -2,14 +2,19 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { Home } from "./pages/Home";
-import ChatWithMia from "./pages/ChatWithMia";
+import Symptoms from "./pages/Symptoms";
+import Prevention from "./pages/Prevention";
 
 export const AppRouter = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/chat-with-mia">
-          <ChatWithMia />
+        <Route path="/symptoms">
+          <Symptoms />
+        </Route>
+
+        <Route path="/prevention">
+          <Prevention />
         </Route>
 
         <Route path="/">
