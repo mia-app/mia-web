@@ -25,19 +25,8 @@ export default class Symptoms extends React.Component {
 
   submitCallback() {
     var formDataSerialized = this.cf.getFormData(true);
-
-    if (
-      formDataSerialized["question-2"].includes("answer1") ||
-      formDataSerialized["question-2"].includes("answer2")
-    ) {
-      this.cf.addRobotChatResponse("Ok. Please warn others.");
-    } else {
-      this.cf.addRobotChatResponse(
-        "You have Covid-19 symptoms. Please reach out to your Doctor or call +41 58 463 00 00."
-      );
-    }
-
     console.log("Formdata, obj:", formDataSerialized);
+    this.cf.addRobotChatResponse("wash your hands and stay home")
   }
 
   render() {
