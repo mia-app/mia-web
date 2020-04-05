@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ReactComponent as Mia } from "./assets/mia.svg";
+import { ReactComponent as Mia } from "./assets/mia2.svg";
 
 export const Layout = ({ children }) => {
   return (
