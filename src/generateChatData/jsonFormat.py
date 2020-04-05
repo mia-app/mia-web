@@ -4,7 +4,7 @@ def jsonFriendly(d):
     return(jsonChars(d))
 
 def jsonChars(j):
-    return(j.replace("'", "\"").replace("_", "-"))
+    return(j.replace("'", "\"").replace("_", "-").replace("`", "'"))
 
 # https://stackoverflow.com/questions/1036409/recursively-convert-python-object-graph-to-dictionary
 def todict(obj, classkey=None):
