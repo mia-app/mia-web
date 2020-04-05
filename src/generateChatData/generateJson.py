@@ -26,6 +26,7 @@ infected.conditionOn("speakYet", "yes")
 
 
 symptoms = question(
+    name = "symptoms",
     qType = "Checkboxes",
     question = "Which of the these symptoms did or do you have?",
     placeholder = "Please select",
@@ -42,10 +43,19 @@ symptoms = question(
 symptoms.conditionOn("speakYet", "no")
 
 whenSymptoms = question(
+    name = "whenSymptoms",
     qType = "date",
     question = "When did you first have your symptoms?",
-    placeholder = "e.g. 01.04.2020"
+    placeholder = "e.g. 01.04.2020",
+    fieldset = False
 )
+
+whenSymptoms.conditionOn("symptoms", "Fever")
+
+Q = [symptoms, whenSymptoms]
+
+parsed = json.loads(str(jsonFriendly(Q)))
+print(json.dumps(parsed, indent=4, sort_keys=True))
 
 ### period of infectivity
 
@@ -56,6 +66,9 @@ whenSymptoms = question(
 ### not certain I remember everyone
 
 Q = [speakYet, infected, symptoms, whenSymptoms]
+
+print(jsonFriendly(Q))
+
 
 parsed = json.loads(str(jsonFriendly(Q)))
 print(json.dumps(parsed, indent=4, sort_keys=True))

@@ -15,11 +15,15 @@ class answer:
 
 class question:
 
-    def __init__(self, name, question, placeholder, qType, answers = None):
+    def __init__(self, name, question, placeholder, qType, answers = None, fieldset = True):
+        self.name = name
         self.cf_questions = question
         self.cf_input_placeholder = placeholder
         self.type = qType
-        self.tag = "fieldset"
+        if fieldset:
+            self.tag = "fieldset"
+        else :
+            self.tag = "input"
         if answers is not None:
             self.children = []
             for a in answers:
@@ -34,6 +38,12 @@ class question:
         self.children.append(c)
         c.addName(type(self).__name__)
 
-    def conditionOn(self, question, answer):
-        for c in self.children:
-            c.condition(question, answer)
+    def conditionOn(self, question, cond):
+        if self.tag == "fieldset":
+            for c in self.children:
+                c.condition(question, cond)
+        else :
+            self.condition(question, cond)
+
+    def condition(self, question, cond):
+        setattr(self, "cf_conditional_" + question, cond)
