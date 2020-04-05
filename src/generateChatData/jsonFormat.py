@@ -1,37 +1,3 @@
-class radio:
-
-    def __init__(self, name, label, value):
-        self.name = name
-        self.cf_label = label
-        self.value = value
-        self.type = "radio"
-        self.tag = "input"
-        
-
-class radioButtons:
-
-    def __init__(self, question, placeholder):
-        self.cf_questions = question
-        self.cf_input_placeholder = placeholder
-        self.type = "Radiobuttons"
-        self.tag = "fieldset"
-        self.children = []
-
-    def addChild(self, c):
-        self.children.append(c)
-
-    def addCondition(self, c):
-        self.condition = c
-
-
-
-r1 = radio("n1", "l1", "v1")
-r2 = radio("n2", "l2", "v2")
-b = radioButtons("why?", "why?")
-b.addChild(r1)
-b.addChild(r2)
-jsonFriendly(b)
-
 def jsonFriendly(d):
     d = todict(d)
     d = str(d)
@@ -60,3 +26,10 @@ def todict(obj, classkey=None):
         return data
     else:
         return obj
+
+
+
+# import json
+# print(json.dumps(todict(speakYet), indent=4, sort_keys=True))
+
+
