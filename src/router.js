@@ -9,13 +9,9 @@ export const AppRouter = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/symptoms">
-          <Symptoms />
-        </Route>
+        <Route path="/symptoms" component={Symptoms}></Route>
 
-        <Route path="/prevention">
-          <Prevention />
-        </Route>
+        <Route path="/prevention" component={Prevention}></Route>
 
         <Route path="/">
           <Home />

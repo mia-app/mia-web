@@ -13,6 +13,17 @@
   }
 }
 
+#conversational-form p {
+  font-family: "PT Serif", serif;
+  color: var(--grey1);
+  font-weight: normal;
+  font-size: 16px;
+}
+
+cf-chat-response:first-of-type > text > p {
+  font-weight: bold !important;
+}
+
 .cf-input-button.cf-input-button {
   background: var(--primary);
 }
@@ -39,6 +50,7 @@
 
 .user p {
   background: var(--primary) !important;
+  color: white !important;
   font-weight: bold;
 }
 
