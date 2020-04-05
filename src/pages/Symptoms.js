@@ -16,12 +16,22 @@ export default class Symptoms extends React.Component {
     this.cf = ConversationalForm.startTheConversation({
       options: {
         submitCallback: this.submitCallback,
-        preventAutoFocus: true,
+        preventAutoFocus: false,
+        flowStepCallback: this.flowStepCallback,
         // loadExternalStyleSheet: false
       },
+
       tags: this.formFields,
     });
+
     this.elem.appendChild(this.cf.el);
+
+    console.log(this.cf);
+  }
+
+  flowStepCallback(dto, success, error) {
+    console.log(dto);
+    success();
   }
 
   submitCallback() {
@@ -31,6 +41,7 @@ export default class Symptoms extends React.Component {
   }
 
   render() {
+    console.log(this.cf);
     return (
       <div>
         <Modal

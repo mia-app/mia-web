@@ -75,3 +75,14 @@ cf-radio {
   position: relative;
   z-index: 1000;
 }
+
+cf-list {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  padding: 0 16px;
+}
+
+cf-list-button {
+  display: none !important;
+}
