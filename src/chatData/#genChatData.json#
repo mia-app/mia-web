@@ -1,0 +1,110 @@
+[
+    {
+        "cf-input-placeholder": "Yes or No",
+        "cf-questions": "Did you speak to a healthcare professional yet?",
+        "children": [
+            {
+                "cf-label": "yes",
+                "name": "speakYet",
+                "tag": "input",
+                "type": "radio",
+                "value": "yes"
+            },
+            {
+                "cf-label": "no",
+                "name": "speakYet",
+                "tag": "input",
+                "type": "radio",
+                "value": "no"
+            }
+        ],
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Select an answer",
+        "cf-questions": "Are you infected with Covid-19?",
+        "children": [
+            {
+                "cf-conditional-speakYet": "yes",
+                "cf-label": "Yes, I did a laboratory test.",
+                "name": "infected",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes, I did a laboratory test."
+            },
+            {
+                "cf-conditional-speakYet": "yes",
+                "cf-label": "Yes, I was diagnosed on the telephone by a professional.Not sure.",
+                "name": "infected",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes, I was diagnosed on the telephone by a professional.Not sure."
+            }
+        ],
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Please select",
+        "cf-questions": "Which of the these symptoms did or do you have?",
+        "children": [
+            {
+                "cf-conditional-speakYet": "no",
+                "cf-label": "Fever",
+                "name": "symptoms",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "Fever"
+            },
+            {
+                "cf-conditional-speakYet": "no",
+                "cf-label": "Dry cough",
+                "name": "symptoms",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "Dry cough"
+            },
+            {
+                "cf-conditional-speakYet": "no",
+                "cf-label": "Tiredness",
+                "name": "symptoms",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "Tiredness"
+            },
+            {
+                "cf-conditional-speakYet": "no",
+                "cf-label": "Nasal congestion",
+                "name": "symptoms",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "Nasal congestion"
+            },
+            {
+                "cf-conditional-speakYet": "no",
+                "cf-label": "Sore throat",
+                "name": "symptoms",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "Sore throat"
+            },
+            {
+                "cf-conditional-speakYet": "no",
+                "cf-label": "Other",
+                "name": "symptoms",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "Other"
+            }
+        ],
+        "tag": "fieldset",
+        "type": "Checkboxes"
+    },
+    {
+        "cf-input-placeholder": "e.g. 01.04.2020",
+        "cf-questions": "When did you first have your symptoms?",
+        "tag": "fieldset",
+        "type": "date"
+    }
+]

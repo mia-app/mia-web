@@ -57,6 +57,9 @@ whenSymptoms = question(
 
 Q = [speakYet, infected, symptoms, whenSymptoms]
 
+print(jsonFriendly(Q))
+
+
 parsed = json.loads(str(jsonFriendly(Q)))
 print(json.dumps(parsed, indent=4, sort_keys=True))
 
