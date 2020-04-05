@@ -8,7 +8,6 @@ export default class Symptoms extends React.Component {
     super(props);
     var data = require("../chatData/symptomsData.json");
     this.formFields = data;
-
     this.submitCallback = this.submitCallback.bind(this);
   }
 
@@ -17,10 +16,8 @@ export default class Symptoms extends React.Component {
       options: {
         submitCallback: this.submitCallback,
         preventAutoFocus: false,
-        flowStepCallback: this.flowStepCallback,
-        // loadExternalStyleSheet: false
+        flowStepCallback: this.flowStepCallback
       },
-
       tags: this.formFields,
     });
 
@@ -30,7 +27,6 @@ export default class Symptoms extends React.Component {
   }
 
   flowStepCallback(dto, success, error) {
-    console.log(dto);
     success();
   }
 
