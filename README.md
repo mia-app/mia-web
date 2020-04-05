@@ -1,4 +1,4 @@
-# Mia - manual contact tracing & journaling
+Mia - manual contact tracing & journaling
 ---
 
 ## What is Mia?
