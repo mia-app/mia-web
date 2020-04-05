@@ -2,10 +2,10 @@ import React from "react";
 import { ConversationalForm } from "conversational-form";
 import "../css/Chatbot.css";
 
-export default class ChatWithMia extends React.Component {
+export default class Symptoms extends React.Component {
   constructor(props) {
     super(props);
-    var data = require("../chatData/chatData.json");
+    var data = require("../chatData/symptomsData.json");
     this.formFields = data;
 
     this.submitCallback = this.submitCallback.bind(this);
