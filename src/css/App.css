@@ -15,6 +15,7 @@
   max-height: 812px;
   padding: 40px;
   background-color: white;
+  z-index: 10;
 }
 
 @media (min-width: 376px) {
@@ -26,17 +27,22 @@
 .layout__content__right {
   width: 375px;
   position: absolute;
-  right: calc(50% - 475px);
-  transform: translateX(50%);
   display: none;
 }
+
 .layout__content__right p {
   font-size: 24px;
   color: var(--grey2);
 }
 
+.layout__content__left {
+  position: absolute;
+  display: none;
+}
+
 @media (min-width: 1350px) {
-  .layout__content__right {
+  .layout__content__right,
+  .layout__content__left {
     display: initial;
   }
 }
