@@ -5,7 +5,7 @@ export const Modal = ({ title, body, link, href, error }) => {
     <div className={error ? "modal error" : "modal"}>
       <h3 className={error ? "error" : ""}>{title}</h3>
       <p className={error ? "error" : ""}>{body}</p>
-      <a href={href} className="link">
+      <a href={href} className="link" target="_blank" rel="noopener noreferrer">
         {link}
       </a>
     </div>

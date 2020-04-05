@@ -3,6 +3,10 @@
   max-height: 812px;
 }
 
+#conversational-form span {
+  color: var(--primary);
+}
+
 @media (min-width: 376px) {
   #conversational-form {
     border-radius: 24px;
@@ -47,6 +51,11 @@
   background: var(--primary) !important;
 }
 
+.cf-button:hover span,
+.cf-checkbox-button:hover span {
+  color: white !important;
+}
+
 cf-checkbox {
   display: none;
 }
@@ -60,4 +69,9 @@ cf-button.cf-button.cf-checkbox-button[selected="selected"] {
 .cf-button.cf-checkbox-button cf-checkbox,
 cf-radio {
   display: none !important;
+}
+
+.mia_small {
+  position: relative;
+  z-index: 1000;
 }
