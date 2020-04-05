@@ -1,120 +1,205 @@
 [
   {
-    "tag": "fieldset",
-    "type": "Radiobuttons",
-    "cf-questions": "Did you speak to a healthcare professional yet?",
-    "cf-input-placeholder": "Yes or No",
-    "children": [
-      {
-        "tag": "input",
-        "type": "radio",
-        "name": "question-1",
-        "cf-label": "Yes",
-        "value": "yes"
-      },
-      {
-        "tag": "input",
-        "type": "radio",
-        "name": "question-1",
-        "cf-label": "No",
-        "value": "no"
-      }
-    ]
+      "cf-input-placeholder": "Ok! start the assessment",
+      "cf-questions": "You have the power to control the spread of the virus. Do you believe to have the Corona virus (COVID-19)? You probably have exposed it to other people in your surrounding. Mia helps you to identify these contacts and reach out to them with the right words.",
+      "children": [
+          {
+              "cf-label": "Ok! start the assessment",
+              "name": "speakYet",
+              "tag": "input",
+              "type": "radio",
+              "value": "Ok! start the assessment"
+          }
+      ],
+      "name": "speakYet",
+      "tag": "fieldset",
+      "type": "Radiobuttons"
   },
   {
-    "tag": "fieldset",
-    "type": "Radiobuttons",
-    "cf-questions": "Are you infected with Covid-19?",
-    "cf-input-placeholder": "Select an answer",
-    "children": [
-      {
-        "tag": "input",
-        "type": "radio",
-        "name": "question-2",
-        "cf-conditional-question-1": "yes",
-        "cf-label": "Yes, I did a laboratory test.",
-        "value": "answer1"
-      },
-      {
-        "tag": "input",
-        "type": "radio",
-        "name": "question-2",
-        "cf-conditional-question-1": "yes",
-        "cf-label": "Yes, I was diagnosed on the telephone by a professional.",
-        "value": "answer2"
-      },
-      {
-        "tag": "input",
-        "type": "radio",
-        "name": "question-2",
-        "cf-conditional-question-1": "yes",
-        "cf-label": "Not sure.",
-        "value": "answer3"
-      }
-    ]
+      "cf-input-placeholder": "Select an answer",
+      "cf-questions": "Were you diagnosed with Corona (COVID-19) by a healthcare professional or have at least two of the following symptoms : dry couching, difficulty breathing, high body temperature?",
+      "children": [
+          {
+              "cf-label": "yes",
+              "name": "infected",
+              "tag": "input",
+              "type": "radio",
+              "value": "yes"
+          },
+          {
+              "cf-label": "no",
+              "name": "infected",
+              "tag": "input",
+              "type": "radio",
+              "value": "no"
+          }
+      ],
+      "name": "infected",
+      "tag": "fieldset",
+      "type": "Radiobuttons"
   },
-
   {
-    "tag": "fieldset",
-    "type": "Checkboxes",
-    "cf-questions": "Which of the these symptoms did or do you have?",
-    "cf-input-placeholder": "Please select",
-    "children": [
-      {
-        "tag": "input",
-        "type": "checkbox",
-        "name": "question-3",
-        "cf-conditional-question-1": "no",
-        "cf-label": "Fever",
-        "value": "fever"
-      },
-      {
-        "tag": "input",
-        "type": "checkbox",
-        "name": "question-3",
-        "cf-conditional-question-1": "no",
-        "cf-label": "Dry cough",
-        "value": "dry-cough"
-      },
-      {
-        "tag": "input",
-        "type": "checkbox",
-        "name": "question-3",
-        "cf-conditional-question-1": "no",
-        "cf-label": "Tiredness",
-        "value": "tiredness"
-      },
-      {
-        "tag": "input",
-        "type": "checkbox",
-        "name": "question-3",
-        "cf-conditional-question-1": "no",
-        "cf-label": "Nasal congestion",
-        "value": "nasal-congestion"
-      },
-      {
-        "tag": "input",
-        "type": "checkbox",
-        "name": "question-3",
-        "cf-conditional-question-1": "no",
-        "cf-label": "Sore throat",
-        "value": "sore-throat"
-      },
-      {
-        "tag": "input",
-        "type": "checkbox",
-        "name": "question-3",
-        "cf-conditional-question-1": "no",
-        "cf-label": "Other",
-        "value": "other"
-      }
-    ]
+      "cf-input-placeholder": "When did you first have your symptoms?",
+      "cf-questions": "Ok, you probably were in contact with other people. We must inform them. On which date did your symptoms start occurring?",
+      "name": "whenSymptoms",
+      "tag": "input",
+      "type": "date"
   },
-
   {
-    "tag": "input",
-    "type": "date",
-    "cf-questions": "When did you first have your symptoms?",
-    "cf-input-placeholder": "e.g. 01.04.2020"
+      "cf-input-placeholder": "Select an answer",
+      "cf-questions": "Did the symptoms pass?",
+      "children": [
+          {
+              "cf-label": "yes",
+              "name": "symptomsPassed",
+              "tag": "input",
+              "type": "radio",
+              "value": "yes"
+          },
+          {
+              "cf-label": "no",
+              "name": "symptomsPassed",
+              "tag": "input",
+              "type": "radio",
+              "value": "no"
+          }
+      ],
+      "name": "symptomsPassed",
+      "tag": "fieldset",
+      "type": "Radiobuttons"
+  },
+  {
+      "cf-conditional-symptomsPassed": "yes",
+      "cf-input-placeholder": "Select a date",
+      "cf-questions": "Since when did the symptoms stop?",
+      "name": "whenSymptomsGone",
+      "tag": "input",
+      "type": "date"
+  },
+  {
+      "cf-input-placeholder": "Next",
+      "cf-questions": "The period in which you might have passed the virus to others is: <symptoms-start-data - 14 days> to <max(symptoms-start-data + 10, symptoms-end-date -2)>",
+      "children": [
+          {
+              "cf-label": "Next",
+              "name": "symptomsPeriod",
+              "tag": "input",
+              "type": "radio",
+              "value": "Next"
+          }
+      ],
+      "name": "symptomsPeriod",
+      "tag": "fieldset",
+      "type": "Radiobuttons"
+  },
+  {
+      "cf-input-placeholder": "Please select",
+      "cf-questions": "Were you in contact with certain groups of people from the following category since <symptoms-start-data - 14 days>? - Schools - Workplaces - Associations - Events",
+      "children": [
+          {
+              "cf-label": "Yes, let\u2019s get in touch",
+              "name": "contactWithGroups",
+              "tag": "input",
+              "type": "radio",
+              "value": "Yes, let\u2019s get in touch"
+          },
+          {
+              "cf-label": "No, let\u2019s go through people I met",
+              "name": "contactWithGroups",
+              "tag": "input",
+              "type": "radio",
+              "value": "No, let\u2019s go through people I met"
+          }
+      ],
+      "name": "contactWithGroups",
+      "tag": "fieldset",
+      "type": "Radiobuttons"
+  },
+  {
+      "cf-input-placeholder": "Input groups you have met",
+      "cf-questions": "Think of groups to which you were in close vicinity for more than 15 minutes or closed spaces you spent more than 1 hour in. Please provide the name and phone number of your preferred contact persons.",
+      "children": [
+          {
+              "cf-conditional-contactWithGroups": "Yes, let\u2019s get in touch",
+              "cf-label": "Save list",
+              "name": "listOfGroups",
+              "tag": "input",
+              "type": "radio",
+              "value": "Save list"
+          }
+      ],
+      "name": "listOfGroups",
+      "tag": "fieldset",
+      "type": "Radiobuttons"
+  },
+  {
+      "cf-input-placeholder": "Please select",
+      "cf-questions": "Were you in contact with certain individuals since <symptoms-start-data - 14 days>?",
+      "children": [
+          {
+              "cf-label": "Yes, let\u2019s get in touch",
+              "name": "contactWithIndividuals",
+              "tag": "input",
+              "type": "radio",
+              "value": "Yes, let\u2019s get in touch"
+          },
+          {
+              "cf-label": "I don\u2019t quite remember",
+              "name": "contactWithIndividuals",
+              "tag": "input",
+              "type": "radio",
+              "value": "I don\u2019t quite remember"
+          },
+          {
+              "cf-label": "No, thats it",
+              "name": "contactWithIndividuals",
+              "tag": "input",
+              "type": "radio",
+              "value": "No, thats it"
+          }
+      ],
+      "name": "contactWithIndividuals",
+      "tag": "fieldset",
+      "type": "Radiobuttons"
+  },
+  {
+      "cf-input-placeholder": "Please select",
+      "cf-questions": "Do you wish to contact them yourself or should we contact them anonymously?",
+      "children": [
+          {
+              "cf-label": "I will contact them myself",
+              "name": "howToContactIndividuals",
+              "tag": "input",
+              "type": "radio",
+              "value": "I will contact them myself"
+          },
+          {
+              "cf-label": "Please contact them on my behalf",
+              "name": "howToContactIndividuals",
+              "tag": "input",
+              "type": "radio",
+              "value": "Please contact them on my behalf"
+          }
+      ],
+      "name": "howToContactIndividuals",
+      "tag": "fieldset",
+      "type": "Radiobuttons"
+  },
+  {
+      "cf-input-placeholder": "Input persons you have met",
+      "cf-questions": "Think of people you were in close vicinity (<1m) with for more than 15 minutes, with whom you stayed in the same room for more than one hour, or had physical contact with. Please their names and phone number.",
+      "children": [
+          {
+              "cf-conditional-howToContactIndividuals": "Please contact them on my behalf",
+              "cf-label": "Save list",
+              "name": "listOfIndividuals",
+              "tag": "input",
+              "type": "radio",
+              "value": "Save list"
+          }
+      ],
+      "name": "listOfIndividuals",
+      "tag": "fieldset",
+      "type": "Radiobuttons"
   }
 ]
