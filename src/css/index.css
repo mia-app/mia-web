@@ -71,6 +71,14 @@ a {
   margin: -26px -26px 0px;
 }
 
+.modal button {
+  position: absolute;
+  top: 12px;
+  right: 8px;
+  background: none;
+  border: none;
+}
+
 .modal h3 {
   padding: 0;
   margin: 0;
