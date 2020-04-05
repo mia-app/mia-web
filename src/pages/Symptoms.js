@@ -1,6 +1,7 @@
 import React from "react";
 import { ConversationalForm } from "conversational-form";
 import "../css/Chatbot.css";
+import { Modal } from "../components/modal";
 
 export default class Symptoms extends React.Component {
   constructor(props) {
@@ -26,13 +27,20 @@ export default class Symptoms extends React.Component {
   submitCallback() {
     var formDataSerialized = this.cf.getFormData(true);
     console.log("Formdata, obj:", formDataSerialized);
-    this.cf.addRobotChatResponse("wash your hands and stay home")
+    this.cf.addRobotChatResponse("wash your hands and stay home");
   }
 
   render() {
     return (
       <div>
-        <div ref={(ref) => (this.elem = ref)} />
+        <Modal
+          title="Coronavirus check-up"
+          body="Answer all the questions in the check-up. Then you will be given a recommendation of what to do."
+          link="Go to check.bag-coronavirus.ch"
+          href="https://check.bag-coronavirus.ch/screening"
+        />
+
+        <div ref={(ref) => (this.elem = ref)}></div>
       </div>
     );
   }
