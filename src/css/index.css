@@ -33,10 +33,12 @@ a {
 
 :root {
   --primary: #4200ff;
+  --error: #eb5757;
   --grey1: #333;
   --grey2: #4f4f4f;
   --grey3: #828282;
   --grey5: #e5e5e5;
+  --grey6: #f2f2f2;
 }
 
 .button {
@@ -57,4 +59,38 @@ a {
 .button:hover {
   color: white;
   background-color: var(--primary);
+}
+
+.modal {
+  background-color: var(--grey6);
+  border: 1px solid var(--grey6);
+  border-radius: 8px;
+}
+
+.modal h3 {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "PT Sans", sans-serif;
+}
+
+.modal p {
+  font-size: 14px;
+  font-family: "PT Sans", sans-serif;
+}
+
+.modal a {
+  font-size: 14px;
+  font-family: "PT Sans", sans-serif;
+}
+
+.modal.error {
+  border-color: var(--error);
+}
+
+.link {
+  color: var(--primary);
+}
+
+.error {
+  color: var(--error);
 }
