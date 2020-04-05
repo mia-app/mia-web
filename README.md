@@ -25,7 +25,7 @@ Steps to run it locally:
 
 1. ```git clone https://github.com/mia-app/mia-web.git && cd mia-web```
 2. ```npm install``` *Will install all dependencies*
-3. ```npm start``` *Will built the app and start a local development server*
+3. ```npm start``` *Will build the app and start a local development server*
 
 
 ## What’s next for Mia
