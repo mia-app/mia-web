@@ -50,6 +50,7 @@ cf-chat-response:first-of-type > text > p {
 
 .user p {
   background: var(--primary) !important;
+  color: white !important;
   font-weight: bold;
 }
 

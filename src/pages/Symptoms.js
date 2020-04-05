@@ -38,10 +38,15 @@ export default class Symptoms extends React.Component {
     var formDataSerialized = this.cf.getFormData(true);
     console.log("Formdata, obj:", formDataSerialized);
     this.cf.addRobotChatResponse("wash your hands and stay home");
-  }
 
+    window.setTimeout(
+      () => this.cf.addRobotChatResponse("Redirecting Home"),
+      3000
+    );
+    window.setTimeout(() => this.props.history.push("/"), 5000);
+  }
   render() {
-    console.log(this.cf);
+    console.log(this.props);
     return (
       <div>
         <Modal
