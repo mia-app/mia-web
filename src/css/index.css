@@ -1,11 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&family=PT+Serif:wght@400;700&display=swap");
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Open Sans", sans-serif;
-  color: var(--black);
+  font-family: "PT Serif", serif;
+  color: var(--grey1);
 }
 
 h1,
@@ -14,7 +23,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", sans-serif;
   font-weight: 600;
 }
 
@@ -25,17 +33,22 @@ a {
 
 :root {
   --primary: #4200ff;
-  --black: #333;
-  --grey1: #555555;
-  --grey2: #666666;
-  --grey3: #777777;
+  --error: #eb5757;
+  --grey1: #333;
+  --grey2: #4f4f4f;
+  --grey3: #828282;
+  --grey5: #e5e5e5;
+  --grey6: #f2f2f2;
 }
 
 .button {
-  background: none;
-  border: 2px solid var(--primary);
+  line-height: 1;
+  font-size: 13px;
+  font-family: "PT Sans", sans-serif;
+
+  border: 1px solid var(--primary);
   border-radius: 24px;
-  padding: 8px 12px;
+  padding: 13.5px 16px;
   color: var(--primary);
   font-weight: bold;
   text-align: center;
@@ -46,4 +59,38 @@ a {
 .button:hover {
   color: white;
   background-color: var(--primary);
+}
+
+.modal {
+  background-color: var(--grey6);
+  border: 1px solid var(--grey6);
+  border-radius: 8px;
+}
+
+.modal h3 {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "PT Sans", sans-serif;
+}
+
+.modal p {
+  font-size: 14px;
+  font-family: "PT Sans", sans-serif;
+}
+
+.modal a {
+  font-size: 14px;
+  font-family: "PT Sans", sans-serif;
+}
+
+.modal.error {
+  border-color: var(--error);
+}
+
+.link {
+  color: var(--primary);
+}
+
+.error {
+  color: var(--error);
 }
