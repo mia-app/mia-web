@@ -1,3 +1,14 @@
+#conversational-form {
+  max-width: 375px;
+  max-height: 812px;
+}
+
+@media (min-width: 376px) {
+  #conversational-form {
+    border-radius: 24px;
+  }
+}
+
 .cf-input-button.cf-input-button {
   background: var(--primary);
 }
