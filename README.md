@@ -1,68 +1,38 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Mia - manual contact tracing & journaling
+---
 
-## Available Scripts
+## What is Mia?
 
-In the project directory, you can run:
+Mia is a chatbot that will prepare you in case of a COVID-19 infection: trace the people you were in contact with and notify them with appropriate advice.
 
-### `npm start`
+You can find the Mia protototype here: [https://appmia.ch/#/](https://appmia.ch/#/)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Principles
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- **Trust**: The users decide how much data they would like to provide and what happens with it.
+- **Impact**: Already the first user creates a direct impact on the spread of the virus for his surrounding.
+- **Guidance**: The users are guided through the process by a conversational UI
 
-### `npm test`
+### Feasibility
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A running prototype that can be plugged and played into any process and easily scaled.
 
-### `npm run build`
+## How we built it
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The prototype for Mia is a React web application that's built with Node.js.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Steps to run it locally:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. ```git clone https://github.com/mia-app/mia-web.git && cd mia-web```
+2. ```npm install``` *Will install all dependencies*
+3. ```npm start``` *Will built the app and start a local development server*
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## What’s next for Mia
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Coordinate with Swiss FOPH & FMH distribution with test delivery, hospitals, chatbot integrations and diagnosis.
+- Develop mobile app integrating contacts, geolocation (Pilgrim SDK), SwissID for governance and proximity tracking (NextStep SDK).
+- Validating with user tests, getting feedback from experts
+- Apply for funding (prototypefund.de, wemakeit.com, etc.).
+- Enhance chatbot with AI (NLP Transformers, Image Processing)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
