@@ -110,6 +110,7 @@ a:hover {
 
 .link {
   color: var(--primary);
+  font-weight: bold;
 }
 
 .error {

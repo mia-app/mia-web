@@ -28,7 +28,7 @@ header nav a:first-child {
 
 main {
   padding: 40px 16px;
-  height: calc(100vh - 88px);
+  min-height: calc(100vh - 88px);
 }
 
 .tickText {
