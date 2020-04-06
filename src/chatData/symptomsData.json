@@ -103,7 +103,7 @@
   },
   {
       "cf-input-placeholder": "Please select",
-      "cf-questions": "Were you in contact with certain groups of people from the following category since <symptoms-start-data - 14 days>? - Schools - Workplaces - Associations - Events",
+      "cf-questions": "Were you in contact with certain groups of people from the following category since <symptoms-start-data - 14 days>?\n- Schools\n- Workplaces\n- Associations\n- Events",
       "children": [
           {
               "cf-label": "Yes, let\u2019s get in touch",
