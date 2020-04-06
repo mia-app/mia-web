@@ -28,14 +28,14 @@
               "name": "infected",
               "tag": "input",
               "type": "radio",
-              "value": "yes"
+              "value": "Yes"
           },
           {
               "cf-label": "no",
               "name": "infected",
               "tag": "input",
               "type": "radio",
-              "value": "no"
+              "value": "No"
           }
       ],
       "name": "infected",
