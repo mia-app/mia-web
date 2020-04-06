@@ -1,0 +1,59 @@
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team__content {
+  max-width: 600px;
+}
+.team__content h1 {
+  font-size: 40px;
+}
+
+.team__content p {
+  font-size: 24px;
+}
+
+.team__content span {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.team__photos_section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-width: 820px;
+  width: 100%;
+}
+
+.team_photo {
+  margin: 15px 0;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.team_photo p {
+  font-weight: bold;
+}
+
+.team_photo span {
+  color: var(--grey3);
+}
+
+@media (min-width: 380px) {
+  .team_photo {
+    width: 174px;
+  }
+}
+
+@media (min-width: 500px) {
+  .team_photo {
+    margin: 15px;
+  }
+}
