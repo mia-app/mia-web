@@ -1,16 +1,16 @@
 #conversational-form {
-  max-width: 375px;
-  max-height: 812px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@media (min-width: 450px) {
+  #conversational-form {
+    border-radius: 24px;
+  }
 }
 
 #conversational-form span {
   color: var(--primary);
-}
-
-@media (min-width: 376px) {
-  #conversational-form {
-    border-radius: 24px;
-  }
 }
 
 #conversational-form p {

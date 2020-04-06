@@ -32,7 +32,7 @@ export default class Prevention extends React.Component {
       () => this.cf.addRobotChatResponse("Redirecting Home"),
       3000
     );
-    window.setTimeout(() => this.props.history.push("/"), 5000);
+    window.setTimeout(() => this.props.setChatbot(""));
   }
 
   render() {

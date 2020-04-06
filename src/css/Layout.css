@@ -1,0 +1,58 @@
+.body {
+  max-width: var(--max-content-width);
+  width: 100vw;
+  overflow-x: hidden;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+header {
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid var(--grey5);
+  position: relative;
+  z-index: 100;
+  background-color: white;
+}
+
+header h1 {
+  font-size: 40px;
+}
+
+header nav a:first-child {
+  margin-right: 40px;
+}
+
+main {
+  padding: 40px 16px;
+  height: calc(100vh - 88px);
+}
+
+.tickText {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.tickText svg {
+  margin: 8px 20px 0px 0px;
+  min-width: 24px;
+}
+
+.tickText p {
+  font-size: 20px;
+  color: var(--grey2);
+  margin-left: 16px;
+  margin: 0;
+}
+
+@media (min-width: 1000px) {
+  header {
+    padding: 16px 60px;
+  }
+  main {
+    padding: 40px 60px;
+  }
+}

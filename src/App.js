@@ -1,14 +1,28 @@
 import React from "react";
-import "./css/App.css";
-import { AppRouter } from "./router";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
+
 import { Layout } from "./Layout";
 
-function App() {
-  return (
-    <Layout>
-      <AppRouter />
-    </Layout>
-  );
-}
+import { Home } from "./pages/Home";
 
-export default App;
+import "./css/App.css";
+import { About } from "./pages/About";
+import { Team } from "./pages/Team";
+
+export const App = () => {
+  return (
+    <Router>
+      <Layout>
+        <Switch>
+          <Route path="/about" component={About} />
+        </Switch>
+        <Switch>
+          <Route path="/team" component={Team} />
+        </Switch>
+        <Switch>
+          <Route path="/" exact component={Home} />
+        </Switch>
+      </Layout>
+    </Router>
+  );
+};

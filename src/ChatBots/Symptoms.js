@@ -16,7 +16,7 @@ export default class Symptoms extends React.Component {
       options: {
         submitCallback: this.submitCallback,
         preventAutoFocus: false,
-        flowStepCallback: this.flowStepCallback
+        flowStepCallback: this.flowStepCallback,
       },
       tags: this.formFields,
     });
@@ -39,18 +39,17 @@ export default class Symptoms extends React.Component {
       () => this.cf.addRobotChatResponse("Redirecting Home"),
       3000
     );
-    window.setTimeout(() => this.props.history.push("/"), 5000);
+    window.setTimeout(() => this.props.setChatbot(""));
   }
   render() {
-    console.log(this.props);
     return (
       <div>
-        <Modal
+        {/* <Modal
           title="Coronavirus check-up"
           body="Answer all the questions in the check-up. Then you will be given a recommendation of what to do."
           link="Go to check.bag-coronavirus.ch"
           href="https://check.bag-coronavirus.ch/screening"
-        />
+        /> */}
 
         <div ref={(ref) => (this.elem = ref)}></div>
       </div>
