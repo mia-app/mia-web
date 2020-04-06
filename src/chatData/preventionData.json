@@ -15,7 +15,7 @@
                 "name": "addContacts",
                 "tag": "input",
                 "type": "radio",
-                "value": "Select Date"
+                "value": "Select a date"
             }
         ],
         "name": "addContacts",
