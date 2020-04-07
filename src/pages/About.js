@@ -100,7 +100,7 @@ export const About = () => {
         </p>
         <p>
           If you want to learn more or contribute to the project, please don’t
-          hesitate to <a href="appmia@gmail.com" className="link">get in touch</a>.
+          hesitate to <a href="hi.appmia@gmail.com" className="link">get in touch</a>.
         </p>
         <p>
           <b>Our immediate next steps</b> include turning the prototype into a
