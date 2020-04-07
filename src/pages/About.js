@@ -83,7 +83,7 @@ export const About = () => {
             On the other side, some apps using bluetooth to track encounters are entering the market. This requires a high percentage of the population using the app in the first place, so as to record encounters.
           </p>
           <p>
-            <b>Mia proposes an alternative that protects privacy and allows already the first user to have an impact.<b/>
+            <b>Mia proposes an alternative that protects privacy and allows already the first user to have an impact.</b>
           </p>
       </section>
     
