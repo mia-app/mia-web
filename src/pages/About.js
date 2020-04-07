@@ -44,15 +44,30 @@ export const About = () => {
 
       <section className="about__pictures">
         <div>
-          <img src={VisualizeTimeline} alt="visualize your timeline" />
+          <img
+            src={VisualizeTimeline}
+            alt="visualize your timeline"
+            width={343}
+            height={233}
+          />
           <span>Visualize your trace of contacts in a timeline.</span>
         </div>
         <div>
-          <img src={MessageMia} alt="Mia sends sms's" />
+          <img
+            src={MessageMia}
+            alt="Mia sends sms's"
+            width={343}
+            height={233}
+          />
           <span>Easily send anonymous SMS to your contacts</span>
         </div>
         <div>
-          <img src={GuidedProcess} alt="professional guidance" />
+          <img
+            src={GuidedProcess}
+            alt="professional guidance"
+            width={343}
+            height={233}
+          />
           <span>Guided process to trace your chain of contacts.</span>
         </div>
       </section>
@@ -87,25 +102,22 @@ export const About = () => {
           <Trust />
           <h3>Trust</h3>
           <p>
-            Trust The users decide how much data they would like to provide and
-            what happens with it
+            The users decide how much data they would like to provide and what
+            happens with it
           </p>
         </div>
         <div>
           <Impact />
           <h3>Impact</h3>
           <p>
-            Impact Already the first user creates a direct impact on the spread
-            of the virus for his surrounding
+            Already the first user creates a direct impact on the spread of the
+            virus for his surrounding
           </p>
         </div>
         <div>
           <Guidance />
           <h3>Guidance</h3>
-          <p>
-            Guidance The users are guided through the process by a
-            conversational UI
-          </p>
+          <p>The users are guided through the process by a conversational UI</p>
         </div>
       </section>
     </div>
