@@ -22,6 +22,9 @@ export const About = () => {
           appropriate advice.
         </p>
         <p>
+          In case of a suspected or confirmed infection, with Mia you can systematically list the people you were in contact with and places you visited (manual or voluntary geotracking saved your device). Mia's chatbot interface will then propose to contact the appropriated people either anonymously or by name by SMS. As a plug & play chatbot, Mia is also able to answer trivial questions and provide assistance on other websites (such as hospitals and health institutions).
+        </p>
+        <p>
           Try out our{" "}
           <Link to="/" className="link">
             prototype
