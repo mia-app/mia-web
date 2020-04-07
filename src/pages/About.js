@@ -16,13 +16,6 @@ export const About = () => {
     <div className="about">
       <section className="about__section">
         <h1>What is Mia?</h1>
-        <! ––
-          <p>
-            Mia is a chatbot that guides you in case of a COVID-19 infection:
-            trace the people you were in contact with and notify them with
-            appropriate advice.
-          </p>
-        ––>
         <p>
           In case of a suspected or confirmed COVID-19 infection, with Mia you can systematically list the people you were in contact with and places you visited (manual or voluntary geotracking saved on your device). Mia's chatbot interface will then propose to contact the appropriated people either anonymously or under your name by SMS. As a plug & play chatbot, Mia is also able to answer trivial questions and provide assistance on other websites (such as hospitals and health institutions).
         </p>
