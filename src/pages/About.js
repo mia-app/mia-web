@@ -26,7 +26,7 @@ export const About = () => {
           <Link to="/" className="link">
             prototype
           </Link>{" "}
-          or discover our <a className="link">pitch</a>.
+          or discover our <a href="https://docs.google.com/presentation/d/1JNnIsVjIGH0-PKFd27wDfjX52RC4WWIsVKUUrVOs-PA/edit?usp=sharing" className="link">pitch</a>.
         </p>
       </section>
 
