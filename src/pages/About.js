@@ -71,6 +71,22 @@ export const About = () => {
           <span>Guided process to trace your chain of contacts.</span>
         </div>
       </section>
+      <section className="about__section">
+          <h1>Why Mia</h1>
+          <p>
+            <b>Test-Isolate-Quarantine</b> is the most efficient way to control a pandemic. While traditional contact tracing methods take time and require high resources, Mia speeds up this process and gives more control to the patient.
+          </p>
+          <p>
+            While imposed automatic location tracking may be seen as a valid approach, Switzerland’s liberal ecosystem prevents the state from overstepping on individuals’ privacy. Following each citizen’s footsteps using location data to manage quarantine policies, although efficient, would violate that concept. 
+          </p>
+          <p>
+            On the other side, some apps using bluetooth to track encounters are entering the market. This requires a high percentage of the population using the app in the first place, so as to record encounters.
+          </p>
+          <p>
+            <b>Mia proposes an alternative that protects privacy and allows already the first user to have an impact.<b/>
+          </p>
+      </section>
+    
 
       <section className="about__section">
         <h1>What we have and what we are looking forward to</h1>
