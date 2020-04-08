@@ -66,7 +66,7 @@ export const About = () => {
       </section>
       <section className="about__section">
           <p>
-            Test-Isolate-Quarantine, or variations thereof, appears to be the right method to return to life as usual and reanimate the economy, while keeping the spread of SARS-CoV-2 under control (ref. R naught below 1). 
+            Test-Isolate-Quarantine, or variations thereof, appears to be the right method to return to life as usual and reanimate the economy, while keeping the spread of SARS-CoV-2 under control. 
           </p>
           <p>
             Traditional and investigative contact tracing methods require much manpower and bring forth damaging delays.
