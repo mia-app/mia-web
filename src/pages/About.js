@@ -24,10 +24,12 @@ export const About = () => {
       </section>
 
       <section className="about__section">
-        <h1>Goal</h1>
         <h3>
-          The goal is to lift the lockdown, while keeping the spread of the Corona virus under control.
+        The goal is to lift the lockdown, while keeping the spread of the Corona virus under control. 
         </h3>
+        <p>
+          Society has proven its will to participate in the fight against corona. With Mia’s guidance, holders of the Corona virus can track their trace themselves and act in consequence.
+        </p>
       </section>
 
       <section className="about__pictures">
@@ -60,13 +62,6 @@ export const About = () => {
         </div>
       </section>
 
-
-        <p>
-          Society has proven its will to participate in the fight against
-          corona. With Mia’s guidance, holders of corona virus can track their
-          trace themselves and act in consequence.
-        </p>
-
       
       <section className="about__section">
           <h1>Why?</h1>
@@ -83,34 +78,12 @@ export const About = () => {
             To address that issue, apps applying proximity detection to track encounters are gaining widespread attention. Their high adoption and precision requirements present quite the challenge.
           </p>
           <p>
-            <b>Mia suggests an alternative based on human recollection, that protects privacy, and creates an impact from the first user onwards.</b>
+            <b>We see a need to digitalize the process of manual contact tracing. Mia suggests an alternative based on human recollection, that protects privacy, and creates an impact from the first user onwards.</b>
           </p>
       </section>
-    
 
       <section className="about__section">
-        <h1>What we have and what we are looking forward to</h1>
-        <p>
-          Mia’s prototype can investigate your and contact your surroundings, in
-          case of need. Mia is modular, which means it can be integrated into
-          any further website (e.g. hospital main page) or app. To exploit the
-          full potential of the concept, we are seeking for additional support
-          from healthcare proffessionals and anyone with constructive criticism
-          :)
-        </p>
-        <p>
-          If you want to learn more or contribute to the project, please don’t
-          hesitate to <a href="mailto:hi.appmia@gmail.com" className="link">get in touch</a>.
-        </p>
-        <p>
-          <b>Our immediate next steps</b> include turning the prototype into a
-          functional mobile app integrating contacts, geolocation and enhance
-          the chatbot with Artificial Intelligence
-        </p>
-      </section>
-
-      <section className="about__section">
-        <h1>What we care about</h1>
+        <h1>Mia's Principles</h1>
       </section>
 
       <section className="about__pictures">
@@ -136,6 +109,18 @@ export const About = () => {
           <p>The users are guided through the process by a conversational UI</p>
         </div>
       </section>
+    
+
+      <section className="about__section">
+        <h2>Next</h2>
+        <p>
+          Right now Mia is a <a class="link" href="#/">prototype</a> prototype. Mia is modular, which means it can be integrated into any digital channel (e.g. apps, hospital homepage). To exploit the full potential of the concept, we are seeking for support from healthcare professionals, funds, and any individual that is excited to contribute.
+        </p>
+        <p>
+          Please don’t hesitate to <a href="mailto:hi.appmia@gmail.com" className="link">get in touch</a>.
+        </p>
+      </section>
+      
     </div>
   );
 };
