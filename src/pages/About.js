@@ -116,7 +116,7 @@ export const About = () => {
       </section>
 
       <section className="about__section">
-        <hr>
+        <hr></hr>
         <p>
           Right now Mia is a <a class="link" href="#/">prototype</a>. It is modular, which means it can be integrated into any digital channel (e.g. apps, hospital homepage). To exploit the full potential of the concept, we are seeking for support from healthcare professionals, funds, and any individual that is excited to contribute.
         </p>
