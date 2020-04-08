@@ -77,10 +77,16 @@ export const About = () => {
           <p>
             To address that issue, apps applying proximity detection to track encounters are gaining widespread attention. Their high adoption and precision requirements present quite the challenge.
           </p>
-          <p></p>
+          <h1></h1>
+          <h1></h1>
           <p>
             <b>We see a need to digitalize the process of manual contact tracing. Mia suggests an alternative based on human recollection, that protects privacy, and creates an impact from the first user onwards.</b>
           </p>
+        <p>
+          Society has proven its will to participate in the fight against
+          corona. With Mia’s guidance, holders of corona virus can track their
+          trace themselves and act in consequence.
+        </p>
       </section>
 
       <section className="about__section">
@@ -114,9 +120,16 @@ export const About = () => {
       <section className="about__section">
       <h1> </h1>
       </section>
+      <hr></hr>
+      <section className="about__section">
+      <h1> </h1>
+      </section>
+
+
+
 
       <section className="about__section">
-        <hr></hr>
+        
         <p>
           Right now Mia is a <a class="link" href="#/">prototype</a>. It is modular, which means it can be integrated into any digital channel (e.g. apps, hospital homepage). To exploit the full potential of the concept, we are seeking for support from healthcare professionals, funds, and any individual that is excited to contribute.
         </p>
