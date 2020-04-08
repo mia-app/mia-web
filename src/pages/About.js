@@ -69,18 +69,21 @@ export const About = () => {
 
       
       <section className="about__section">
-          <h1>Why Mia</h1>
+          <h1>Why?</h1>
           <p>
-            <b>Test-Isolate-Quarantine</b> is the most efficient way to control a pandemic. While traditional contact tracing methods take time and require high resources, Mia speeds up this process and gives more control to the patient.
+            <b>Test-Isolate-Quarantine</b>, or variations thereof, appears to be the right method to return to life as usual and reanimate the economy, while keeping the spread of SARS-CoV-2 under control (ref. R naught below 1). 
           </p>
           <p>
-            While imposed automatic location tracking may be seen as a valid approach, Switzerland’s liberal ecosystem prevents the state from overstepping on individuals’ privacy. Following each citizen’s footsteps using location data to manage quarantine policies, although efficient, would violate that concept. 
+            Traditional and investigative contact tracing methods require much manpower and bring forth damaging delays.
           </p>
           <p>
-            On the other side, some apps using bluetooth to track encounters are entering the market. This requires a high percentage of the population using the app in the first place, so as to record encounters.
+            While imposed automatic location tracking may be seen as an effective approach, Switzerland’s liberal ecosystem prevents the state from overstepping on individuals’ privacy. Following each citizen’s footsteps using location data to manage quarantine policies, although effective, would violate that concept. 
           </p>
           <p>
-            <b>Mia proposes an alternative that protects privacy and allows already the first user to have an impact.</b>
+            To address that issue, apps applying proximity detection to track encounters are gaining widespread attention. Their high adoption and precision requirements present quite the challenge.
+          </p>
+          <p>
+            <b>Mia suggests an alternative based on human recollection, that protects privacy, and creates an impact from the first user onwards.</b>
           </p>
       </section>
     
