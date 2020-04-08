@@ -61,12 +61,12 @@ export const About = () => {
           <span>Guided process to trace your chain of contacts.</span>
         </div>
       </section>
-
-      
+      <section className="about__section">      
+      <h1>Why?</h1>
+      </section>
       <section className="about__section">
-          <h1>Why?</h1>
           <p>
-            <b>Test-Isolate-Quarantine</b>, or variations thereof, appears to be the right method to return to life as usual and reanimate the economy, while keeping the spread of SARS-CoV-2 under control (ref. R naught below 1). 
+            Test-Isolate-Quarantine, or variations thereof, appears to be the right method to return to life as usual and reanimate the economy, while keeping the spread of SARS-CoV-2 under control (ref. R naught below 1). 
           </p>
           <p>
             Traditional and investigative contact tracing methods require much manpower and bring forth damaging delays.
@@ -77,6 +77,7 @@ export const About = () => {
           <p>
             To address that issue, apps applying proximity detection to track encounters are gaining widespread attention. Their high adoption and precision requirements present quite the challenge.
           </p>
+          <p></p>
           <p>
             <b>We see a need to digitalize the process of manual contact tracing. Mia suggests an alternative based on human recollection, that protects privacy, and creates an impact from the first user onwards.</b>
           </p>
@@ -110,14 +111,17 @@ export const About = () => {
         </div>
       </section>
     
+      <section className="about__section">
+      <h1> </h1>
+      </section>
 
       <section className="about__section">
-        <h2>Next</h2>
+        <hr>
         <p>
-          Right now Mia is a <a class="link" href="#/">prototype</a> prototype. Mia is modular, which means it can be integrated into any digital channel (e.g. apps, hospital homepage). To exploit the full potential of the concept, we are seeking for support from healthcare professionals, funds, and any individual that is excited to contribute.
+          Right now Mia is a <a class="link" href="#/">prototype</a>. It is modular, which means it can be integrated into any digital channel (e.g. apps, hospital homepage). To exploit the full potential of the concept, we are seeking for support from healthcare professionals, funds, and any individual that is excited to contribute.
         </p>
         <p>
-          Please don’t hesitate to <a href="mailto:hi.appmia@gmail.com" className="link">get in touch</a>.
+          Don’t hesitate to <a href="mailto:hi.appmia@gmail.com" className="link">get in touch</a>.
         </p>
       </section>
       
