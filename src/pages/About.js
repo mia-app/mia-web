@@ -15,29 +15,19 @@ export const About = () => {
   return (
     <div className="about">
       <section className="about__section">
-        <h1>What is Mia?</h1>
         <p>
-          In case of a suspected or confirmed COVID-19 infection, with Mia you can systematically list the people you were in contact with and places you visited (manual or voluntary geotracking saved on your device). Mia's chatbot interface will then propose to contact the appropriated people either anonymously or under your name by SMS. As a plug & play chatbot, Mia is also able to answer trivial questions and provide assistance on other websites (such as hospitals and health institutions).
+          Mia reminds Swiss citizens, that have a COVID-19 infection, to advise quarantine to their surroundings. A chatbot nudges the user to, either keep a preventive journal of, or retroactively list, the people they were in close contact with and places they visited during their period of infectivity. Mia will reach out (anonymously) by SMS to recommend the right isolation measures.
         </p>
         <p>
-          Try out our{" "}
-          <Link to="/" className="link">
-            prototype
-          </Link>{" "}
-          or discover our <a href="https://docs.google.com/presentation/d/1JNnIsVjIGH0-PKFd27wDfjX52RC4WWIsVKUUrVOs-PA/edit?usp=sharing" className="link">pitch</a>.
+          Here's our <a href="https://docs.google.com/presentation/d/1JNnIsVjIGH0-PKFd27wDfjX52RC4WWIsVKUUrVOs-PA/edit?usp=sharing" className="link">pitch</a>.
         </p>
       </section>
 
       <section className="about__section">
         <h1>Goal</h1>
         <h3>
-          Reduces the spread of the virus after the loosening of the lockdown
+          The goal is to lift the lockdown, while keeping the spread of the Corona virus under control.
         </h3>
-        <p>
-          Society has proven its will to participate in the fight against
-          corona. With Mia’s guidance, holders of corona virus can track their
-          trace themselves and act in consequence.
-        </p>
       </section>
 
       <section className="about__pictures">
@@ -69,6 +59,15 @@ export const About = () => {
           <span>Guided process to trace your chain of contacts.</span>
         </div>
       </section>
+
+
+        <p>
+          Society has proven its will to participate in the fight against
+          corona. With Mia’s guidance, holders of corona virus can track their
+          trace themselves and act in consequence.
+        </p>
+
+      
       <section className="about__section">
           <h1>Why Mia</h1>
           <p>
