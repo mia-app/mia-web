@@ -82,11 +82,6 @@ export const About = () => {
           <p>
             <b>We see a need to digitalize the process of manual contact tracing. Mia suggests an alternative based on human recollection, that protects privacy, and creates an impact from the first user onwards.</b>
           </p>
-        <p>
-          Society has proven its will to participate in the fight against
-          corona. With Mia’s guidance, holders of corona virus can track their
-          trace themselves and act in consequence.
-        </p>
       </section>
 
       <section className="about__section">
