@@ -19,7 +19,7 @@ export const About = () => {
           Mia reminds Swiss citizens, that have a COVID-19 infection, to advise quarantine to their surroundings. A chatbot nudges the user to, either keep a preventive journal of, or retroactively list, the people they were in close contact with and places they visited during their period of infectivity. Mia will reach out (anonymously) by SMS to recommend the right isolation measures.
         </p>
         <p>
-          Here's our <a href="https://docs.google.com/presentation/d/1JNnIsVjIGH0-PKFd27wDfjX52RC4WWIsVKUUrVOs-PA/edit?usp=sharing" className="link">pitch</a>.
+          Here's our <a target="_blank" href="https://docs.google.com/presentation/d/1JNnIsVjIGH0-PKFd27wDfjX52RC4WWIsVKUUrVOs-PA/edit?usp=sharing" className="link">pitch</a>.
         </p>
       </section>
 
