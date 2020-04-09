@@ -15,28 +15,20 @@ export const About = () => {
   return (
     <div className="about">
       <section className="about__section">
-        <h1>What is Mia?</h1>
         <p>
-          In case of a suspected or confirmed COVID-19 infection, with Mia you can systematically list the people you were in contact with and places you visited (manual or voluntary geotracking saved on your device). Mia's chatbot interface will then propose to contact the appropriated people either anonymously or under your name by SMS. As a plug & play chatbot, Mia is also able to answer trivial questions and provide assistance on other websites (such as hospitals and health institutions).
+          Mia reminds Swiss citizens, that have a COVID-19 infection, to advise quarantine to their surroundings. A chatbot nudges the user to, either keep a preventive journal of, or retroactively list, the people they were in close contact with and places they visited during their period of infectivity. Mia will reach out (anonymously) by SMS to recommend the right isolation measures.
         </p>
         <p>
-          Try out our{" "}
-          <Link to="/" className="link">
-            prototype
-          </Link>{" "}
-          or discover our <a href="https://docs.google.com/presentation/d/1JNnIsVjIGH0-PKFd27wDfjX52RC4WWIsVKUUrVOs-PA/edit?usp=sharing" className="link">pitch</a>.
+          Here's our <a target="_blank" href="https://docs.google.com/presentation/d/1JNnIsVjIGH0-PKFd27wDfjX52RC4WWIsVKUUrVOs-PA/edit?usp=sharing" className="link">pitch</a>.
         </p>
       </section>
 
       <section className="about__section">
-        <h1>Goal</h1>
         <h3>
-          Reduces the spread of the virus after the loosening of the lockdown
+        The goal is to lift the lockdown, while keeping the spread of the Corona virus under control. 
         </h3>
         <p>
-          Society has proven its will to participate in the fight against
-          corona. With Mia’s guidance, holders of corona virus can track their
-          trace themselves and act in consequence.
+          Society has proven its will to participate in the fight against corona. With Mia’s guidance, holders of the Corona virus can track their trace themselves and act in consequence.
         </p>
       </section>
 
@@ -69,46 +61,31 @@ export const About = () => {
           <span>Guided process to trace your chain of contacts.</span>
         </div>
       </section>
-      <section className="about__section">
-          <h1>Why Mia</h1>
-          <p>
-            <b>Test-Isolate-Quarantine</b> is the most efficient way to control a pandemic. While traditional contact tracing methods take time and require high resources, Mia speeds up this process and gives more control to the patient.
-          </p>
-          <p>
-            While imposed automatic location tracking may be seen as a valid approach, Switzerland’s liberal ecosystem prevents the state from overstepping on individuals’ privacy. Following each citizen’s footsteps using location data to manage quarantine policies, although efficient, would violate that concept. 
-          </p>
-          <p>
-            On the other side, some apps using bluetooth to track encounters are entering the market. This requires a high percentage of the population using the app in the first place, so as to record encounters.
-          </p>
-          <p>
-            <b>Mia proposes an alternative that protects privacy and allows already the first user to have an impact.</b>
-          </p>
+      <section className="about__section">      
+      <h1>Why?</h1>
       </section>
-    
-
       <section className="about__section">
-        <h1>What we have and what we are looking forward to</h1>
-        <p>
-          Mia’s prototype can investigate your and contact your surroundings, in
-          case of need. Mia is modular, which means it can be integrated into
-          any further website (e.g. hospital main page) or app. To exploit the
-          full potential of the concept, we are seeking for additional support
-          from healthcare proffessionals and anyone with constructive criticism
-          :)
-        </p>
-        <p>
-          If you want to learn more or contribute to the project, please don’t
-          hesitate to <a href="mailto:hi.appmia@gmail.com" className="link">get in touch</a>.
-        </p>
-        <p>
-          <b>Our immediate next steps</b> include turning the prototype into a
-          functional mobile app integrating contacts, geolocation and enhance
-          the chatbot with Artificial Intelligence
-        </p>
+          <p>
+            Test-Isolate-Quarantine, or variations thereof, appears to be the right method to return to life as usual and reanimate the economy, while keeping the spread of SARS-CoV-2 under control. 
+          </p>
+          <p>
+            Traditional and investigative contact tracing methods require much manpower and bring forth damaging delays.
+          </p>
+          <p>
+            While imposed automatic location tracking may be seen as an effective approach, Switzerland’s liberal ecosystem prevents the state from overstepping on individuals’ privacy. Following each citizen’s footsteps using location data to manage quarantine policies, although effective, would violate that concept. 
+          </p>
+          <p>
+            To address that issue, apps applying proximity detection to track encounters are gaining widespread attention. Their high adoption and precision requirements present quite the challenge.
+          </p>
+          <h1></h1>
+          <h1></h1>
+          <p>
+            <b>We see a need to digitalize the process of manual contact tracing. Mia suggests an alternative based on human recollection, that protects privacy, and creates an impact from the first user onwards.</b>
+          </p>
       </section>
 
       <section className="about__section">
-        <h1>What we care about</h1>
+        <h1>Mia's Principles</h1>
       </section>
 
       <section className="about__pictures">
@@ -134,6 +111,28 @@ export const About = () => {
           <p>The users are guided through the process by a conversational UI</p>
         </div>
       </section>
+    
+      <section className="about__section">
+      <h1> </h1>
+      </section>
+      <hr></hr>
+      <section className="about__section">
+      <h1> </h1>
+      </section>
+
+
+
+
+      <section className="about__section">
+        
+        <p>
+          Right now Mia is a <a class="link" href="#/">prototype</a>. It is modular, which means it can be integrated into any digital channel (e.g. apps, hospital homepage). To exploit the full potential of the concept, we are seeking for support from healthcare professionals, funds, and any individual that is excited to contribute.
+        </p>
+        <p>
+          Don’t hesitate to <a href="mailto:hi.appmia@gmail.com" className="link">get in touch</a>.
+        </p>
+      </section>
+      
     </div>
   );
 };

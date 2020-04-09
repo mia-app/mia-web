@@ -12,21 +12,6 @@ import Gabriel from "../assets/Gabriel.png";
 export const Team = () => {
   return (
     <div className="team">
-      <div className="team__content">
-        <h1>The Team</h1>
-
-        <p>
-          <span>5</span> countries
-        </p>
-
-        <p>
-          <span>3</span> Swiss language regions
-        </p>
-
-        <p>
-          <span>Lots</span> of talent and innovative power
-        </p>
-      </div>
       <section className="team__photos_section">
         <div className="team_photo">
           <img src={David} alt="David Roegiers" />
