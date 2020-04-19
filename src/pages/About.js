@@ -16,7 +16,7 @@ export const About = () => {
     <div className="about">
       <section className="about__section">
         <p>
-          Mia reminds Swiss citizens, that have a COVID-19 infection, to advise quarantine to their surroundings. A chatbot nudges the user to, either keep a preventive journal of, or retroactively list, the people they were in close contact with and places they visited during their period of infectivity. Mia will reach out (anonymously) by SMS to recommend the right isolation measures.
+          Mia reminds Swiss citizens, that have a COVID-19 infection, to advise quarantine to their surroundings. A chatbot nudges the user to retroactively list the people they were in close contact with and places they visited during their period of infectivity. Mia will reach out (anonymously) by SMS to recommend the right isolation measures.
         </p>
         <p>
           Here's our <a target="_blank" href="https://docs.google.com/presentation/d/1JNnIsVjIGH0-PKFd27wDfjX52RC4WWIsVKUUrVOs-PA/edit?usp=sharing" className="link">pitch</a>.
@@ -69,7 +69,7 @@ export const About = () => {
             Test-Isolate-Quarantine, or variations thereof, appears to be the right method to return to life as usual and reanimate the economy, while keeping the spread of SARS-CoV-2 under control. 
           </p>
           <p>
-            Traditional and investigative contact tracing methods require much manpower and bring forth damaging delays.
+            Traditional and investigative manual contact tracing methods require much manpower and bring forth damaging delays.
           </p>
           <p>
             While imposed automatic location tracking may be seen as an effective approach, Switzerland’s liberal ecosystem prevents the state from overstepping on individuals’ privacy. Following each citizen’s footsteps using location data to manage quarantine policies, although effective, would violate that concept. 
@@ -126,7 +126,7 @@ export const About = () => {
       <section className="about__section">
         
         <p>
-          Right now Mia is a <a class="link" href="#/">prototype</a>. It is modular, which means it can be integrated into any digital channel (e.g. apps, hospital homepage). To exploit the full potential of the concept, we are seeking for support from healthcare professionals, funds, and any individual that is excited to contribute.
+          Right now Mia is a <a class="link" href="#/">prototype</a>. It is modular, which means it can be integrated into any digital channel (e.g. apps, hospital homepage). To exploit the full potential of the concept, we are seeking for support from healthcare professionals, funds, and anyone who is interested to contribute.
         </p>
         <p>
           Don’t hesitate to <a href="mailto:hi.appmia@gmail.com" className="link">get in touch</a>.
