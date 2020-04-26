@@ -6,6 +6,8 @@ import { Layout } from "./Layout";
 import { Home } from "./pages/Home";
 
 import "./css/App.css";
+import "./css/Components.css";
+
 import { About } from "./pages/About";
 import { Team } from "./pages/Team";
 
