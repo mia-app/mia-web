@@ -6,12 +6,8 @@
   background-color: var(--beige);
 }
 
-main {
-  max-width: var(--max-content-width);
-}
-
 header {
-  height: 65px;
+  height: 88px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -20,12 +16,12 @@ header {
   position: relative;
   z-index: 100;
   background-color: var(--white);
+  font-size: 20px;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  padding: 10px;
 }
 
 .logo:hover {
@@ -49,20 +45,25 @@ header {
 }
 
 header h1 {
-  font-size: 30px;
+  font-size: 40px;
   margin: 0px;
 }
 
-header nav a:first-child {
-  margin-right: 40px;
+header nav {
+  margin-top: 12px;
+}
+
+header nav a {
+  margin: 0px 20px;
 }
 
 main {
-  padding: 40px 16px;
-  height: calc(100vh - 65px);
-  min-height: calc(100vh - 65px);
+  padding: 40px 40px;
+  height: calc(100vh - 88px);
+  min-height: calc(100vh - 88px);
   overflow-x: hidden;
   margin: 0 auto;
+  max-width: var(--max-content-width);
 }
 
 .tickText {
@@ -77,9 +78,32 @@ main {
 }
 
 .tickText p {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--grey2);
   margin-left: 16px;
   margin: 0;
+}
+
+
+@media (max-height: 500px), (max-width: 600px) {
+  main {
+    padding: 0px;
+    height: calc(100vh - 64px);
+    min-height: calc(100vh - 64px);
+  }
+
+  header h1 {
+    font-size: 30px;
+  }
+
+  header nav a {
+    margin-left: 40px;
+    margin-right: 0px;
+  }
+  
+  header {
+    height: 64px;
+    font-size: 16px;
+  }
 }
 
