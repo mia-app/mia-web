@@ -17,6 +17,7 @@ export default class Symptoms extends React.Component {
         submitCallback: this.submitCallback,
         preventAutoFocus: false,
         flowStepCallback: this.flowStepCallback,
+        hideUserInputOnNoneTextInput: false
       },
       tags: this.formFields,
     });

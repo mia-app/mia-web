@@ -1,6 +1,6 @@
 [
   {
-      "cf-questions": "You have the power to control the spread of the virus.",
+      "cf-questions": "Hi I'm Mia.\nHelp me flatten the curve.",
       "tag": "cf-robot-message"
   },
   {
@@ -8,7 +8,7 @@
       "cf-questions": "Do you believe to have the Corona virus (COVID-19)? You probably have exposed it to other people in your surrounding. Mia helps you to identify these contacts and reach out to them with the right words.",
       "children": [
           {
-              "cf-label": "Ok! start the assessment",
+              "cf-label": "Try it out",
               "name": "speakYet",
               "tag": "input",
               "type": "radio",

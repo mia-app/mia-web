@@ -30,9 +30,12 @@ header {
 
 .logo:hover {
   text-decoration: none;
-  color: var(--primary);
+  color: var(--grey1);
 }
 
+.logo:hover > div {
+  background-color: var(--error);
+}
 
 .logo > div {
   padding: 4px 4px 3px 5px;
@@ -47,6 +50,7 @@ header {
 
 header h1 {
   font-size: 30px;
+  margin: 0px;
 }
 
 header nav a:first-child {
