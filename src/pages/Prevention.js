@@ -15,7 +15,8 @@ export default class Prevention extends React.Component {
     this.cf = ConversationalForm.startTheConversation({
       options: {
         submitCallback: this.submitCallback,
-        preventAutoFocus: true,
+          preventAutoFocus: true,
+          hideUserInputOnNoneTextInput : true
         // loadExternalStyleSheet: false
       },
       tags: this.formFields,

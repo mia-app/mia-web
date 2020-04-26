@@ -56,14 +56,14 @@
     },
     {
         "cf-input-placeholder": "I am not sure",
-        "cf-questions": "If you haven't contracted COVID-19 there is no need to warn others about a possible infection. If you are not sure about your current situation, we suggest you to get informed on the official checkup of the BAG.",
+        "cf-questions": "If you haven't contracted COVID-19 there is no need to warn others about a possible infection. If you are not sure about your current situation, we suggest you to get informed on the official checkup of the BAG.     https://check.foph-coronavirus.ch/screening",
         "children": [
             {
-                "cf-label": "https://check.foph-coronavirus.ch/screening",
+                "cf-label": "Next",
                 "name": "noInfection",
                 "tag": "input",
                 "type": "radio",
-                "value": "https://check.foph-coronavirus.ch/screening"
+                "value": "Next"
             }
         ],
         "name": "noInfection",
@@ -239,69 +239,69 @@
                 "cf-label": "Visiting family",
                 "name": "activities",
                 "tag": "input",
-                "type": "radio",
+                "type": "checkbox",
                 "value": "Visiting family"
             },
             {
                 "cf-label": "Visiting friends",
                 "name": "activities",
                 "tag": "input",
-                "type": "radio",
+                "type": "checkbox",
                 "value": "Visiting friends"
             },
             {
                 "cf-label": "Sports",
                 "name": "activities",
                 "tag": "input",
-                "type": "radio",
+                "type": "checkbox",
                 "value": "Sports"
             },
             {
                 "cf-label": "outdoor",
                 "name": "activities",
                 "tag": "input",
-                "type": "radio",
+                "type": "checkbox",
                 "value": "outdoor"
             },
             {
                 "cf-label": "Going out",
                 "name": "activities",
                 "tag": "input",
-                "type": "radio",
+                "type": "checkbox",
                 "value": "Going out"
             },
             {
                 "cf-label": "Shopping",
                 "name": "activities",
                 "tag": "input",
-                "type": "radio",
+                "type": "checkbox",
                 "value": "Shopping"
             },
             {
                 "cf-label": "Working",
                 "name": "activities",
                 "tag": "input",
-                "type": "radio",
+                "type": "checkbox",
                 "value": "Working"
             },
             {
                 "cf-label": "School",
                 "name": "activities",
                 "tag": "input",
-                "type": "radio",
+                "type": "checkbox",
                 "value": "School"
             },
             {
                 "cf-label": "Others",
                 "name": "activities",
                 "tag": "input",
-                "type": "radio",
+                "type": "checkbox",
                 "value": "Others"
             }
         ],
         "name": "activities",
         "tag": "fieldset",
-        "type": "Radiobuttons"
+        "type": "Checkboxes"
     },
     {
         "cf-conditional-anyoneElse": "Yes",
