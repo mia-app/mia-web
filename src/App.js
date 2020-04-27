@@ -9,7 +9,6 @@ import "./css/App.css";
 import "./css/Components.css";
 
 import { About } from "./pages/About";
-import { Team } from "./pages/Team";
 
 export const App = () => {
   return (
@@ -18,9 +17,7 @@ export const App = () => {
         <Switch>
           <Route path="/about" component={About} />
         </Switch>
-        <Switch>
-          <Route path="/team" component={Team} />
-        </Switch>
+
         <Switch>
           <Route path="/" exact component={Home} />
         </Switch>

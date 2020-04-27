@@ -6,12 +6,12 @@
   justify-content: center;
 }
 
-.woman {
+.home__woman {
   width: auto;
   height: 100%;
 }
 
-.centerpiece {
+.home__centerpiece {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,7 +30,7 @@
   max-height: 700px;
 }
 
-.ticktexts {
+.home__ticktexts {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,7 +40,7 @@
 }
 
 @media (max-height: 500px), (max-width: 600px) {
-  .ticktexts {
+  .home__ticktexts {
     display: none;
   }
   .home__chatbot {
@@ -54,8 +54,7 @@
 }
 
 @media (max-width: 790px) {
-  .woman {
+  .home__woman {
     display: none;
   }
 }
-

@@ -3,7 +3,16 @@
   overflow-x: hidden;
   margin: 0 auto;
   min-height: 100vh;
-  background-color: var(--beige);
+  transition: all 0.2s ease;
+}
+
+.beigeBackground {
+  background: var(--accent15);
+}
+
+.headerOuter {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--grey3);
 }
 
 header {
@@ -12,11 +21,10 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 16px;
-  border-bottom: 1px solid var(--grey3);
   position: relative;
   z-index: 100;
-  background-color: var(--white);
-  font-size: 20px;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
 }
 
 .logo {
@@ -25,12 +33,12 @@ header {
 }
 
 .logo:hover {
-  text-decoration: none;
   color: var(--grey1);
+  text-decoration: none;
 }
 
 .logo:hover > div {
-  background-color: var(--error);
+  background-color: var(--primary50);
 }
 
 .logo > div {
@@ -42,6 +50,7 @@ header {
   margin-left: 5px;
   margin-bottom: 17px;
   border-radius: 3px;
+  text-transform: uppercase;
 }
 
 header nav a:first-child {
@@ -56,28 +65,8 @@ main {
   margin: 0 auto;
   max-width: var(--max-content-width);
 }
-
 @media (min-width: 1000px) {
   header {
     padding: 16px 60px;
-  }
-  main {
-    padding: 0px;
-    height: calc(100vh - 64px);
-    min-height: calc(100vh - 64px);
-  }
-
-  header h1 {
-    font-size: 30px;
-  }
-
-  header nav a {
-    margin-left: 40px;
-    margin-right: 0px;
-  }
-
-  header {
-    height: 64px;
-    font-size: 16px;
   }
 }

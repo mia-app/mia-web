@@ -21,12 +21,12 @@ import CitizenCentric from "../assets/about/CitizenCentric.svg";
 import Guidance from "../assets/about/Guidance.svg";
 import PlugPlay from "../assets/about/PlugPlay.svg";
 
-import David from "../assets/David.png";
-import Ale from "../assets/Ale.png";
-import Oli from "../assets/Oli.png";
-import Henry from "../assets/Henry.png";
-import Martin from "../assets/Martin.png";
-import Gabriel from "../assets/Gabriel.png";
+import David from "../assets/teamPhotos/David.png";
+import Ale from "../assets/teamPhotos/Ale.png";
+import Oli from "../assets/teamPhotos/Oli.png";
+import Henry from "../assets/teamPhotos/Henry.png";
+import Martin from "../assets/teamPhotos/Martin.png";
+import Gabriel from "../assets/teamPhotos/Gabriel.png";
 import { TeamMember } from "../components/TeamMember";
 
 export const About = () => {

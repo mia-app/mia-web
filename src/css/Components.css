@@ -1,17 +1,15 @@
 .tickText {
   display: flex;
+  align-items: center;
   margin-bottom: 16px;
 }
 
 .tickText svg {
-  margin: 8px 20px 0px 0px;
+  margin-right: var(--spacings2);
   min-width: 24px;
 }
 
 .tickText p {
-  font-size: 20px;
-  color: var(--grey2);
-  margin-left: 16px;
   margin: 0;
 }
 
