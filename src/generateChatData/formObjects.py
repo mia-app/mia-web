@@ -50,6 +50,7 @@ class question:
 
 
 class robotMessage:
+    
   def __init__(self, message):
     self.cf_questions = message
     self.tag = "cf-robot-message"

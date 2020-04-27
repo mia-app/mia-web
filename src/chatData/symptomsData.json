@@ -1,228 +1,598 @@
 [
-  {
-      "cf-questions": "Hi I'm Mia.\nHelp me flatten the curve.",
-      "tag": "cf-robot-message"
-  },
-  {
-      "cf-input-placeholder": "Ok! start the assessment",
-      "cf-questions": "My goal is to help people remembering their contacts when they get infected with COVID-19 to be able to warn them and therefore stop the spread of the virus.\n\nI'm currently a prototype, but with your help I might be able to help millions of people very soon!",
-      "children": [
-          {
-              "cf-label": "Try it out",
+    {
+        "cf-questions": "Hi I'm Mia.\nHelp me flatten the curve.",
+        "tag": "cf-robot-message"
+    },
+    {
+        "cf-input-placeholder": "Ok! start the assessment",
+        "cf-questions": "My goal is to help people remembering their contacts when they get infected with COVID-19 to be able to warn them and therefore stop the spread of the virus.\n\nI'm currently a prototype, but with your help I might be able to help millions of people very soon!",
+        "children": [
+            {
+                "cf-label": "Try it out",
+                "name": "speakYet",
+                "tag": "input",
+                "type": "radio",
+                "value": "Ok! start the assessment"
+            },
+            {
+              "cf-label": "About the project",
               "name": "speakYet",
               "tag": "input",
               "type": "radio",
-              "value": "Ok! start the assessment"
+              "value": "About the project"
           },
           {
-            "cf-label": "About the project",
-            "name": "speakYet",
-            "tag": "input",
-            "type": "radio",
-            "value": "About the project"
-        },
-        {
-            "cf-label": "Give me feedback",
-            "name": "speakYet",
-            "tag": "input",
-            "type": "radio",
-            "value": "Give me feedback"
-        }
-      ],
-      "name": "speakYet",
-      "tag": "fieldset",
-      "type": "Radiobuttons"
-  },
-  {
-      "cf-input-placeholder": "Select an answer",
-      "cf-questions": "Were you diagnosed with Corona (COVID-19) by a healthcare professional or have at least two of the following symptoms : dry couching, difficulty breathing, high body temperature?",
-      "children": [
-          {
-              "cf-label": "yes",
-              "name": "infected",
+              "cf-label": "Give me feedback",
+              "name": "speakYet",
               "tag": "input",
               "type": "radio",
-              "value": "Yes"
-          },
-          {
-              "cf-label": "no",
-              "name": "infected",
-              "tag": "input",
-              "type": "radio",
-              "value": "No"
+              "value": "Give me feedback"
           }
-      ],
-      "name": "infected",
-      "tag": "fieldset",
-      "type": "Radiobuttons"
-  },
-  {
-      "cf-conditional-infected": "yes",
-      "cf-input-placeholder": "e.g. 01.01.2001",
-      "cf-questions": "Ok, you probably were in contact with other people. We must inform them. On which date did your symptoms start occurring?",
-      "name": "whenSymptoms",
-      "tag": "input",
-      "type": "date",
-      "id": "when-symptoms-id"
-  },
-  {
-      "cf-input-placeholder": "Select an answer",
-      "cf-questions": "Did the symptoms pass?",
-      "children": [
-          {
-              "cf-conditional-infected": "yes",
-              "cf-label": "yes",
-              "name": "symptomsPassed",
-              "tag": "input",
-              "type": "radio",
-              "value": "yes"
-          },
-          {
-              "cf-conditional-infected": "yes",
-              "cf-label": "no",
-              "name": "symptomsPassed",
-              "tag": "input",
-              "type": "radio",
-              "value": "no"
-          }
-      ],
-      "name": "symptomsPassed",
-      "tag": "fieldset",
-      "type": "Radiobuttons"
-  },
-  {
-      "cf-conditional-infected": "yes",
-      "cf-input-placeholder": "e.g. 01.01.2001",
-      "cf-questions": "Since when did the symptoms stop?",
-      "name": "whenSymptomsGone",
-      "tag": "input",
-      "type": "Radiobuttons"
-  },
-  {
-      "cf-input-placeholder": "Next",
-      "cf-questions": "The period in which you might have passed the virus to others is: {whenSymptoms} to {whenSymptomsGone}",
-      "children": [
-          {
-              "cf-conditional-infected": "yes",
-              "cf-label": "Next",
-              "name": "symptomsPeriod",
-              "tag": "input",
-              "type": "radio",
-              "value": "Next"
-          }
-      ],
-      "name": "symptomsPeriod",
-      "tag": "fieldset",
-      "type": "Radiobuttons"
-  },
-  {
-      "cf-input-placeholder": "Please select",
-      "cf-questions": "Were you in contact with certain groups of people from the following category since <symptoms-start-data - 14 days>?\n- Schools\n- Workplaces\n- Associations\n- Events",
-      "children": [
-          {
-              "cf-label": "Yes, let\u2019s get in touch",
-              "name": "contactWithGroups",
-              "tag": "input",
-              "type": "radio",
-              "value": "Yes, let\u2019s get in touch"
-          },
-          {
-              "cf-label": "No, let\u2019s go through people I met",
-              "name": "contactWithGroups",
-              "tag": "input",
-              "type": "radio",
-              "value": "No, let\u2019s go through people I met"
-          }
-      ],
-      "name": "contactWithGroups",
-      "tag": "fieldset",
-      "type": "Radiobuttons"
-  },
-  {
-      "cf-input-placeholder": "Input groups you have met",
-      "cf-questions": "Think of groups to which you were in close vicinity for more than 15 minutes or closed spaces you spent more than 1 hour in. Please provide the name and phone number of your preferred contact persons.",
-      "children": [
-          {
-              "cf-conditional-contactWithGroups": "Yes, let\u2019s get in touch",
-              "cf-label": "Save list",
-              "name": "listOfGroups",
-              "tag": "input",
-              "type": "radio",
-              "value": "Save list"
-          }
-      ],
-      "name": "listOfGroups",
-      "tag": "fieldset",
-      "type": "Radiobuttons"
-  },
-  {
-      "cf-input-placeholder": "Please select",
-      "cf-questions": "Were you in contact with certain individuals since <symptoms-start-data - 14 days>?",
-      "children": [
-          {
-              "cf-label": "Yes, let\u2019s get in touch",
-              "name": "contactWithIndividuals",
-              "tag": "input",
-              "type": "radio",
-              "value": "Yes, let\u2019s get in touch"
-          },
-          {
-              "cf-label": "I don\u2019t quite remember",
-              "name": "contactWithIndividuals",
-              "tag": "input",
-              "type": "radio",
-              "value": "I don\u2019t quite remember"
-          },
-          {
-              "cf-label": "No, thats it",
-              "name": "contactWithIndividuals",
-              "tag": "input",
-              "type": "radio",
-              "value": "No, thats it"
-          }
-      ],
-      "name": "contactWithIndividuals",
-      "tag": "fieldset",
-      "type": "Radiobuttons"
-  },
-  {
-      "cf-input-placeholder": "Please select",
-      "cf-questions": "Do you wish to contact them yourself or should we contact them anonymously?",
-      "children": [
-          {
-              "cf-label": "I will contact them myself",
-              "name": "howToContactIndividuals",
-              "tag": "input",
-              "type": "radio",
-              "value": "I will contact them myself"
-          },
-          {
-              "cf-label": "Please contact them on my behalf",
-              "name": "howToContactIndividuals",
-              "tag": "input",
-              "type": "radio",
-              "value": "Please contact them on my behalf"
-          }
-      ],
-      "name": "howToContactIndividuals",
-      "tag": "fieldset",
-      "type": "Radiobuttons"
-  },
-  {
-      "cf-input-placeholder": "Input persons you have met",
-      "cf-questions": "Think of people you were in close vicinity (<1m) with for more than 15 minutes, with whom you stayed in the same room for more than one hour, or had physical contact with. Please their names and phone number.",
-      "children": [
-          {
-              "cf-conditional-howToContactIndividuals": "Please contact them on my behalf",
-              "cf-label": "Save list",
-              "name": "listOfIndividuals",
-              "tag": "input",
-              "type": "radio",
-              "value": "Save list"
-          }
-      ],
-      "name": "listOfIndividuals",
-      "tag": "fieldset",
-      "type": "Radiobuttons"
-  }
+        ],
+        "name": "speakYet",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-questions": "Do you believe to have the Corona virus (COVID-19)? You might have exposed it to other people in your surrounding. Mia helps you to identify these contacts and reach out to them with the right words. Your privacy comes first : all the information you share with this chatbot will never leave your device. Let's reduce the spread of the virus!",
+        "tag": "cf-robot-message"
+    },
+    {
+        "cf-input-placeholder": "I am not sure",
+        "cf-questions": "Do you think you have Corona (COVID-19)?",
+        "children": [
+            {
+                "cf-label": "Yes, I tested positive of COVID-19",
+                "name": "infected",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes, I tested positive of COVID-19"
+            },
+            {
+                "cf-label": "Yes, I self-diagnosed using online tools.",
+                "name": "infected",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes, I self-diagnosed using online tools."
+            },
+            {
+                "cf-label": "Yes, I was diagnosed after a physical visit to a healthcare professional.",
+                "name": "infected",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes, I was diagnosed after a physical visit to a healthcare professional."
+            },
+            {
+                "cf-label": "Yes, I was diagnosed on the telephone by a healthcare professional.",
+                "name": "infected",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes, I was diagnosed on the telephone by a healthcare professional."
+            },
+            {
+                "cf-label": "I am not sure",
+                "name": "infected",
+                "tag": "input",
+                "type": "radio",
+                "value": "I am not sure"
+            },
+            {
+                "cf-label": "No",
+                "name": "infected",
+                "tag": "input",
+                "type": "radio",
+                "value": "No"
+            }
+        ],
+        "name": "infected",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "I am not sure",
+        "cf-questions": "If you haven't contracted COVID-19 there is no need to warn others about a possible infection. If you are not sure about your current situation, we suggest you to get informed on the official checkup of the BAG.     https://check.foph-coronavirus.ch/screening",
+        "children": [
+            {
+                "cf-label": "Next",
+                "name": "noInfection",
+                "tag": "input",
+                "type": "radio",
+                "value": "Next"
+            }
+        ],
+        "name": "noInfection",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Next",
+        "cf-questions": "Ok, warn others.",
+        "children": [
+            {
+                "cf-label": "Next",
+                "name": "warn",
+                "tag": "input",
+                "type": "radio",
+                "value": "Next"
+            }
+        ],
+        "name": "warn",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-conditional-warn": "Next",
+        "cf-input-placeholder": "e.g. 01.01.2001",
+        "cf-questions": "On which date did the symptoms start?",
+        "name": "whenSymptoms",
+        "tag": "input",
+        "type": "date"
+    },
+    {
+        "cf-input-placeholder": "Next",
+        "cf-questions": "You might have been spreading the virus between <symptomsDate - 7 days> and <min(today, symptomsDate + 5)>. Let's start gathering the contacts of the people you talked to since then.",
+        "children": [
+            {
+                "cf-label": "Next",
+                "name": "symptomsPeriod",
+                "tag": "input",
+                "type": "radio",
+                "value": "Next"
+            }
+        ],
+        "name": "symptomsPeriod",
+        "tag": "input",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Please select",
+        "cf-questions": "Are you living with someone in the same household?",
+        "children": [
+            {
+                "cf-label": "Yes",
+                "name": "household",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes"
+            },
+            {
+                "cf-label": "No",
+                "name": "household",
+                "tag": "input",
+                "type": "radio",
+                "value": "No"
+            }
+        ],
+        "name": "household",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "first, last name",
+        "cf-questions": "Who are you living with",
+        "children": [
+            {
+                "cf-conditional-household": "Yes",
+                "cf-label": "Yes",
+                "name": "whoLiveWith",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes"
+            },
+            {
+                "cf-conditional-household": "Yes",
+                "cf-label": "No",
+                "name": "whoLiveWith",
+                "tag": "input",
+                "type": "radio",
+                "value": "No"
+            }
+        ],
+        "name": "whoLiveWith",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Next",
+        "cf-questions": "Let's work our way back. Think about this/last/the week, starting on Wednesday the 5th to Sunday the 8th.",
+        "children": [
+            {
+                "cf-label": "Next",
+                "name": "thinkWeek",
+                "tag": "input",
+                "type": "radio",
+                "value": "Next"
+            }
+        ],
+        "name": "thinkWeek",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "No",
+        "cf-questions": "Did you leave your apartment this/last/that weekend?",
+        "children": [
+            {
+                "cf-label": "Yes",
+                "name": "aptLeave",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes"
+            },
+            {
+                "cf-label": "No",
+                "name": "aptLeave",
+                "tag": "input",
+                "type": "radio",
+                "value": "No"
+            }
+        ],
+        "name": "aptLeave",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "No",
+        "cf-questions": "Did you go to work this/last/that week?",
+        "children": [
+            {
+                "cf-conditional-aptLeave": "Yes",
+                "cf-conditional-goWork": "Yes",
+                "cf-label": "Yes",
+                "name": "goWork",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes"
+            },
+            {
+                "cf-conditional-aptLeave": "Yes",
+                "cf-conditional-goWork": "Yes",
+                "cf-label": "No",
+                "name": "goWork",
+                "tag": "input",
+                "type": "radio",
+                "value": "No"
+            }
+        ],
+        "name": "goWork",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "contact",
+        "cf-questions": "Enter contact details of employer (close distance)",
+        "name": "employer",
+        "tag": "fieldset",
+        "type": "text"
+    },
+    {
+        "cf-input-placeholder": "Visiting family",
+        "cf-questions": "What kind of activities did you do?",
+        "children": [
+            {
+                "cf-label": "Visiting family",
+                "name": "activities",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "Visiting family"
+            },
+            {
+                "cf-label": "Visiting friends",
+                "name": "activities",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "Visiting friends"
+            },
+            {
+                "cf-label": "Sports",
+                "name": "activities",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "Sports"
+            },
+            {
+                "cf-label": "outdoor",
+                "name": "activities",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "outdoor"
+            },
+            {
+                "cf-label": "Going out",
+                "name": "activities",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "Going out"
+            },
+            {
+                "cf-label": "Shopping",
+                "name": "activities",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "Shopping"
+            },
+            {
+                "cf-label": "Working",
+                "name": "activities",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "Working"
+            },
+            {
+                "cf-label": "School",
+                "name": "activities",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "School"
+            },
+            {
+                "cf-label": "Others",
+                "name": "activities",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "Others"
+            }
+        ],
+        "name": "activities",
+        "tag": "fieldset",
+        "type": "Checkboxes"
+    },
+    {
+        "cf-conditional-anyoneElse": "Yes",
+        "cf-input-placeholder": "contact",
+        "cf-questions": "Who did you meet for [activity x]?",
+        "name": "whoMeet",
+        "tag": "input",
+        "type": "text"
+    },
+    {
+        "cf-input-placeholder": "level picker",
+        "cf-questions": "How have you been in contact with this person or these people?",
+        "name": "howContact",
+        "tag": "fieldset",
+        "type": "text"
+    },
+    {
+        "cf-input-placeholder": "No",
+        "cf-questions": "Did you meet anyone else for [activity x]?",
+        "children": [
+            {
+                "cf-label": "Yes",
+                "name": "anyoneElse",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes"
+            },
+            {
+                "cf-label": "Yes, on another activity",
+                "name": "anyoneElse",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes, on another activity"
+            },
+            {
+                "cf-label": "No",
+                "name": "anyoneElse",
+                "tag": "input",
+                "type": "radio",
+                "value": "No"
+            }
+        ],
+        "name": "anyoneElse",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Next",
+        "cf-questions": "Do you think you covered everyone for this/last/the week, starting on monday the 5th to wednesday the 7th? \\ If you're not sure, we have some tricks.",
+        "children": [
+            {
+                "cf-label": "Next",
+                "name": "coveredAll",
+                "tag": "input",
+                "type": "radio",
+                "value": "Next"
+            },
+            {
+                "cf-label": "No, I am really sure",
+                "name": "coveredAll",
+                "tag": "input",
+                "type": "radio",
+                "value": "No, I am really sure"
+            }
+        ],
+        "name": "coveredAll",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Yes",
+        "cf-questions": "Do you have a Calendar?",
+        "children": [
+            {
+                "cf-conditional-coveredAll": "Next",
+                "cf-label": "No, or already checked",
+                "name": "haveCalendar",
+                "tag": "input",
+                "type": "radio",
+                "value": "No, or already checked"
+            },
+            {
+                "cf-conditional-coveredAll": "Next",
+                "cf-label": "Yes",
+                "name": "haveCalendar",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes"
+            }
+        ],
+        "name": "haveCalendar",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Nothing",
+        "cf-questions": "Open up your calendar and have a look at your appointments. Even if you have them covered, they might help to recollect other details.",
+        "children": [
+            {
+                "cf-conditional-checkPics": "Yes",
+                "cf-conditional-haveCalendar": "Yes",
+                "cf-conditional-havePics": "Yes",
+                "cf-label": "Nothing",
+                "name": "checkCalendar",
+                "tag": "input",
+                "type": "radio",
+                "value": "Nothing"
+            }
+        ],
+        "name": "checkCalendar",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Yes",
+        "cf-questions": "Did you take some pictures on your phones?",
+        "children": [
+            {
+                "cf-label": "No, or already checked",
+                "name": "havePics",
+                "tag": "input",
+                "type": "radio",
+                "value": "No, or already checked"
+            },
+            {
+                "cf-label": "Yes",
+                "name": "havePics",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes"
+            }
+        ],
+        "name": "havePics",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Nothing",
+        "cf-questions": "Go through your camera roll. They might contain memories that help. You can even see exactly when, which photo was taken.",
+        "children": [
+            {
+                "cf-label": "Nothing",
+                "name": "checkPics",
+                "tag": "input",
+                "type": "radio",
+                "value": "Nothing"
+            }
+        ],
+        "name": "checkPics",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Yes",
+        "cf-questions": "Do you have a messaging app to stay in touch socially (like Whatsapp or Messenger)?",
+        "children": [
+            {
+                "cf-label": "No, or already checked",
+                "name": "haveMessages",
+                "tag": "input",
+                "type": "radio",
+                "value": "No, or already checked"
+            },
+            {
+                "cf-label": "Yes",
+                "name": "haveMessages",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes"
+            }
+        ],
+        "name": "haveMessages",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Nothing",
+        "cf-questions": "Browsing through the chat histories of your friends, can spark up your memory. Or what about asking them if they can help?",
+        "children": [
+            {
+                "cf-label": "Nothing",
+                "name": "checkMessages",
+                "tag": "input",
+                "type": "radio",
+                "value": "Nothing"
+            }
+        ],
+        "name": "checkMessages",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Ok",
+        "cf-questions": "Well done, you listed all the people you were in touch with. Now, we arranged them in groups according to how you should best reach out to them. It's better not to skip any steps or stop in the middle. The faster you warn them, the better.",
+        "children": [
+            {
+                "cf-label": "Ok",
+                "name": "contactWithIndividuals",
+                "tag": "input",
+                "type": "radio",
+                "value": "Ok"
+            }
+        ],
+        "name": "contactWithIndividuals",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Sent",
+        "cf-questions": "The people you live with - Robert Corona - Martina Covid We suggest that you have a conversation with them as soon as possible (ideally by phone). If you actually have COVID-19, there is a high chance they have too. You should strongly recommend them to go into quarantine. ",
+        "children": [
+            {
+                "cf-label": "Sent",
+                "name": "howToContactIndividuals",
+                "tag": "input",
+                "type": "radio",
+                "value": "Sent"
+            }
+        ],
+        "name": "howToContactIndividuals",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Sent",
+        "cf-questions": "Your employer - Benjamin Franklin at Goldman Sachs Template message to be sent via SMS : Dear Benjamin, I regret to inform you that I am feeling ill and learned after a quick online diagnosis that there is a good chance I have COVID-19.  If that is the case, I was probably infecting others between the 4th of July until yesterday. Mia has recommended that I stay in home office. But, to really slow down the spread of the virus, it is important to warn exposed colleagues to go into quarantine as soon as possible.  Obviously, it is up to you to take the right decision here. You can have a look at my calendar to see in which building I was. Also I remember meeting the following people in that time : Michael J Scott, Pam, and Dwight K. Shrute. Best regards, Robert",
+        "children": [
+            {
+                "cf-label": "Sent",
+                "name": "SMSOffice",
+                "tag": "input",
+                "type": "radio",
+                "value": "Sent"
+            }
+        ],
+        "name": "SMSOffice",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Sent",
+        "cf-questions": "- Janice Joplin - John Lennon - Britney Spears Reach out to them with the following SMS : Dear Benjamin, I regret to inform you that I am feeling ill and learned after a quick online diagnosis that there is a good chance I have COVID-19.  If that is the case, I was probably infecting others between the 4th of July until yesterday. Now, we met personally during that time and were in close vicinity (less than 1 metre distance between us) for more than 15 minutes Mia has recommended, to slow down the spread of the virus, that you stay in quarantine during that time. Obviously, it is up to you to take the right decision here. Best regards, Robert",
+        "children": [
+            {
+                "cf-label": "Sent",
+                "name": "SMSFriends",
+                "tag": "input",
+                "type": "radio",
+                "value": "Sent"
+            }
+        ],
+        "name": "SMSFriends",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-questions": "Thanks we went through all the list! I hope you get well soon.",
+        "tag": "cf-robot-message"
+    }
 ]
