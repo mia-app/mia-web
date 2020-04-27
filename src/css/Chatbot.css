@@ -53,18 +53,6 @@ cf-chat-response.robot:first-of-type:after {
   background-repeat: no-repeat;
 }
 
-cf-input-button {
-  display: none !important;
-}
-
-cf-input {
-  margin-bottom: 0px !important;
-}
-
-cf-input-control-elements {
-  margin-bottom: 0px !important;
-}
-
 .cf-icon-progress {
   background-size: 16px;
 }
@@ -104,8 +92,13 @@ cf-input-control-elements {
   border-color: var(--primary) !important;
 }
 .cf-button:hover,
-.cf-checkbox-button:hover {
+.cf-checkbox-button:hover,
+.cf-button:focus,
+.cf-button:focus span,
+cf-button.cf-button.cf-checkbox-button[checked="checked"],
+cf-button.cf-button.cf-checkbox-button[selected="selected"] {
   background: var(--primary) !important;
+  color: white !important;
 }
 
 .cf-button:hover span,
@@ -117,35 +110,17 @@ cf-checkbox {
   display: none;
 }
 
-cf-button.cf-button.cf-checkbox-button[checked="checked"],
-cf-button.cf-button.cf-checkbox-button[selected="selected"] {
-  background: var(--primary) !important;
-}
-
 .cf-button.cf-checkbox-button cf-checkbox,
 .cf-button.cf-checkbox-button cf-checkbox,
 cf-radio {
   display: none !important;
 }
 
-cf-radio-button {
-  margin-bottom: 0px !important;
-}
-
 cf-list {
-  text-align: right;
   max-width: 100%;
 }
 
-cf-list-button {
-  display: none !important;
-}
-
-.inputWrapper {
-  display: none;
-}
-
-@media (max-height: 500px), (max-width: 600px) {
+@media (max-height: 500px), (max-width: 720px) {
   #conversational-form {
     border-radius: 0px;
     font-size: 16px;

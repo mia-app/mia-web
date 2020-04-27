@@ -39,7 +39,7 @@
   max-height: 200px;
 }
 
-@media (max-height: 500px), (max-width: 600px) {
+@media (max-height: 500px), (max-width: 720px) {
   .home__ticktexts {
     display: none;
   }

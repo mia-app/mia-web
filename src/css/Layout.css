@@ -58,15 +58,19 @@ header nav a:first-child {
 }
 
 main {
-  padding: 0px 40px 16px;
   height: calc(100vh - 88px);
   min-height: calc(100vh - 88px);
   overflow-x: hidden;
   margin: 0 auto;
   max-width: var(--max-content-width);
 }
-@media (min-width: 1000px) {
+
+@media (min-width: 720px) {
   header {
     padding: 16px 60px;
+  }
+
+  main {
+    padding: 20px 30px 30px 30px;
   }
 }
