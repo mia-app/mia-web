@@ -1,9 +1,9 @@
 .body {
-  max-width: var(--max-content-width);
   width: 100vw;
   overflow-x: hidden;
   margin: 0 auto;
   min-height: 100vh;
+  background-color: var(--beige);
 }
 
 header {
@@ -11,49 +11,99 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px;
+  padding: 20px;
   border-bottom: 1px solid var(--grey5);
   position: relative;
   z-index: 100;
-  background-color: white;
+  background-color: var(--white);
+  font-size: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo:hover {
+  text-decoration: none;
+  color: var(--grey1);
+}
+
+.logo:hover > div {
+  background-color: var(--error);
+}
+
+.logo > div {
+  padding: 4px 4px 3px 5px;
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 10px;
+  line-height: 1;
+  margin-left: 5px;
+  margin-bottom: 17px;
+  border-radius: 3px;
 }
 
 header h1 {
   font-size: 40px;
+  margin: 0px;
 }
 
-header nav a:first-child {
-  margin-right: 40px;
+header nav {
+  margin-top: 12px;
+}
+
+header nav a {
+  margin: 0px 20px;
 }
 
 main {
-  padding: 40px 16px;
+  padding: 40px 40px;
   height: calc(100vh - 88px);
   min-height: calc(100vh - 88px);
+  overflow-x: hidden;
+  margin: 0 auto;
+  max-width: var(--max-content-width);
 }
 
 .tickText {
   display: flex;
-  margin-bottom: 16px;
+  margin: 8px 0px;
 }
 
 .tickText svg {
-  margin: 8px 20px 0px 0px;
-  min-width: 24px;
+  margin: 4px 10px 0px 0px;
+  width: 12px;
+  color: var(--babyblue);
 }
 
 .tickText p {
-  font-size: 20px;
+  font-size: 16px;
   color: var(--grey2);
   margin-left: 16px;
   margin: 0;
 }
 
-@media (min-width: 1000px) {
-  header {
-    padding: 16px 60px;
-  }
+
+@media (max-height: 500px), (max-width: 600px) {
   main {
-    padding: 40px 60px;
+    padding: 0px;
+    height: calc(100vh - 64px);
+    min-height: calc(100vh - 64px);
+  }
+
+  header h1 {
+    font-size: 30px;
+  }
+
+  header nav a {
+    margin-left: 40px;
+    margin-right: 0px;
+  }
+  
+  header {
+    height: 64px;
+    font-size: 16px;
   }
 }
+

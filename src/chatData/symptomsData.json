@@ -1,5 +1,39 @@
 [
     {
+        "cf-questions": "Hi I'm Mia.\nHelp me flatten the curve.",
+        "tag": "cf-robot-message"
+    },
+    {
+        "cf-input-placeholder": "Ok! start the assessment",
+        "cf-questions": "My goal is to help people remembering their contacts when they get infected with COVID-19 to be able to warn them and therefore stop the spread of the virus.\n\nI'm currently a prototype, but with your help I might be able to help millions of people very soon!",
+        "children": [
+            {
+                "cf-label": "Try it out",
+                "name": "speakYet",
+                "tag": "input",
+                "type": "radio",
+                "value": "Ok! start the assessment"
+            },
+            {
+              "cf-label": "About the project",
+              "name": "speakYet",
+              "tag": "input",
+              "type": "radio",
+              "value": "About the project"
+          },
+          {
+              "cf-label": "Give me feedback",
+              "name": "speakYet",
+              "tag": "input",
+              "type": "radio",
+              "value": "Give me feedback"
+          }
+        ],
+        "name": "speakYet",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
         "cf-questions": "Do you believe to have the Corona virus (COVID-19)? You might have exposed it to other people in your surrounding. Mia helps you to identify these contacts and reach out to them with the right words. Your privacy comes first : all the information you share with this chatbot will never leave your device. Let's reduce the spread of the virus!",
         "tag": "cf-robot-message"
     },
