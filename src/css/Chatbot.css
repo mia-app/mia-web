@@ -132,11 +132,6 @@ cf-radio-button {
   margin-bottom: 0px !important;
 }
 
-.mia_small {
-  position: relative;
-  z-index: 1000;
-}
-
 cf-list {
   text-align: right;
   max-width: 100%;
@@ -166,6 +161,4 @@ cf-list-button {
     min-width: 0px;
     width: calc(100% - 50px);
   }
-
-
 }
