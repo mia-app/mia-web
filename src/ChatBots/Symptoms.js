@@ -1,7 +1,6 @@
 import React from "react";
 import { ConversationalForm } from "conversational-form";
 import "../css/Chatbot.css";
-import { Modal } from "../components/modal";
 
 export default class Symptoms extends React.Component {
   constructor(props) {
@@ -45,13 +44,6 @@ export default class Symptoms extends React.Component {
   render() {
     return (
       <div>
-        {/* <Modal
-          title="Coronavirus check-up"
-          body="Answer all the questions in the check-up. Then you will be given a recommendation of what to do."
-          link="Go to check.bag-coronavirus.ch"
-          href="https://check.bag-coronavirus.ch/screening"
-        /> */}
-
         <div ref={(ref) => (this.elem = ref)}></div>
       </div>
     );

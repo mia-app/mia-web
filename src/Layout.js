@@ -1,22 +1,31 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 import { Link } from "react-router-dom";
 
 import "./css/Layout.css";
 export const Layout = ({ children }) => {
+  const { pathname } = useLocation();
+
   return (
-    <div className="body">
-      <header>
-            <Link className="logo" to="/">
-              <h1 className="noLineHeight">Mia</h1>
-              <div>BETA</div>
-            </Link>
-            
+    <div className={`body ${pathname === "/" ? "beigeBackground" : ""}`}>
+      <div className="headerOuter">
+        <header>
+          <Link className="logo" to="/">
+            <h1 className="heading2 noLineHeight">Mia</h1>
+            <div>Beta</div>
+          </Link>
+
           <nav>
-            <Link to="/team">Team</Link>
-            <Link to="/about">About</Link>
+            <a href="mailto:hi.appmia@gmail.com" className="bodyText">
+              Contact
+            </a>
+            <Link to="/about" className="bodyText">
+              About
+            </Link>
           </nav>
-      </header>
+        </header>
+      </div>
       <main>{children}</main>
     </div>
   );

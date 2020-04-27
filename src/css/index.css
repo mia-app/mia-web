@@ -14,7 +14,6 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "PT Serif", serif;
   color: var(--grey1);
   transition: all 0.3s ease;
 }
@@ -41,18 +40,68 @@ a:hover {
 }
 
 :root {
-  --primary: #0044E7;
-  --beige: 	#FAF2DE;
-  --error: #eb5757;
+  /* COLORS */
+  --primary: #0044e7;
+  --primary50: #80a1f3;
+  --primary30: #b3c7f8;
+  --primary15: #d9e3fb;
+
   --grey1: #333;
-  --grey2: #4f4f4f;
-  --grey3: #828282;
-  --grey5: #e5e5e5;
-  --grey6: #f2f2f2;
+  --grey2: #999;
+  --grey3: #f1f1f1;
   --white: #ffffff;
-  --babyblue: #B3C7F8;
+
+  --accent: #e8aa17;
+  --accent15: #fcf2dc;
+
+  /* SPACINGS */
+
+  --spacings1: 8px;
+  --spacings2: 12px;
+  --spacings3: 16px;
+  --spacings4: 24px;
+  --spacings5: 32px;
+  --spacings6: 40px;
+  --spacings6: 56px;
 
   --max-content-width: 1440px;
+  --button-width: 244px;
+}
+
+.heading1 {
+  font-family: "PT Serif", serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 120%;
+}
+
+.heading2 {
+  font-family: "PT Serif", serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 120%;
+}
+
+.bodyText {
+  font-family: "PT Serif", serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.emphasized {
+  font-weight: bold;
+}
+
+.caption {
+  font-family: "PT Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 120%;
 }
 
 .button {
@@ -64,7 +113,7 @@ a:hover {
   border: 1px solid var(--primary);
   border-radius: 24px;
   padding: 16px;
-  width: 244px;
+  width: var(--button-width);
   font-weight: bold;
   text-align: center;
   transition: all ease-in-out 0.2s;
@@ -72,44 +121,8 @@ a:hover {
   color: white;
 }
 
-.modal {
-  position: relative;
-  background-color: var(--grey6);
-  border: 1px solid var(--grey6);
-  border-radius: 8px;
-  z-index: 5000;
-  padding: 12px;
-  margin: -26px -26px 0px;
-}
-
-.modal button {
-  position: absolute;
-  top: 12px;
-  right: 8px;
-  background: none;
-  border: none;
-}
-
-.modal h3 {
-  padding: 0;
-  margin: 0;
-  font-size: 14px;
-  font-weight: bold;
-  font-family: "PT Sans", sans-serif;
-}
-
-.modal p {
-  font-size: 14px;
-  font-family: "PT Sans", sans-serif;
-}
-
-.modal a {
-  font-size: 14px;
-  font-family: "PT Sans", sans-serif;
-}
-
-.modal.error {
-  border-color: var(--error);
+.button:hover {
+  color: white;
 }
 
 .link {
@@ -117,10 +130,21 @@ a:hover {
   font-weight: bold;
 }
 
-.error {
-  color: var(--error);
-}
-
 .noLineHeight {
   line-height: 1;
+}
+
+@media (min-width: 720px) {
+  .heading1 {
+    font-size: 56px;
+  }
+  .heading2 {
+    font-size: 40px;
+  }
+  .bodyText {
+    font-size: 20px;
+  }
+  .caption {
+    font-size: 16px;
+  }
 }

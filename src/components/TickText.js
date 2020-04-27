@@ -6,7 +6,7 @@ export const TickText = ({ children }) => {
   return (
     <div className="tickText">
       <Check />
-      <p>{children}</p>
+      <p className="bodyText">{children}</p>
     </div>
   );
 };

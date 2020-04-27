@@ -1,30 +1,19 @@
-import React, { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import { TickText } from "../components/TickText";
-import { ReactComponent as Sun } from "../assets/sun.svg";
-import { ReactComponent as SunBirds } from "../assets/sun_birds.svg";
-import { ReactComponent as Mia } from "../assets/mia.svg";
-import { ReactComponent as Woman } from "../assets/woman.svg";
 
+import { ReactComponent as Woman } from "../assets/woman.svg";
 
 import Symptoms from "../ChatBots/Symptoms";
 
 import "../css/Home.css";
-import { useOutsideClick } from "../hooks/useOutsideClick";
 
 export const Home = () => {
-
-  const ref = useRef(null);
-
-  useOutsideClick(ref, () => null);
-
   return (
     <div className="home__landing">
-
-      <Woman className="woman"/>
-      <div className="centerpiece">
+      <Woman className="home__woman" />
+      <div className="home__centerpiece">
         <motion.div
-          ref={ref}
           className="home__chatbot"
           initial={{ opacity: 0, y: -150 }}
           animate={{ opacity: 1, y: 0 }}
@@ -36,20 +25,24 @@ export const Home = () => {
           <Symptoms />
         </motion.div>
         <motion.div
-              className="ticktexts"
-              initial={{ opacity: 0, y: -30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: 0.5,
-                duration: 0.5,
-              }}
-            >
-              <TickText>
-                <b>Direct impact</b> by blocking the spread of the virus.
-              </TickText>
-              <TickText><b>Privacy</b>: your data never leaves your phone.</TickText>
-              <TickText><b>Citizen-centric</b>: take matters into your own hands.</TickText>
-            </motion.div>
+          className="home__ticktexts"
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.5,
+            duration: 0.5,
+          }}
+        >
+          <TickText>
+            <b>Direct impact:</b> From the first user onwards
+          </TickText>
+          <TickText>
+            <b>Privacy:</b> No data will be shared to any authority
+          </TickText>
+          <TickText>
+            <b>Citizen-centric:</b> Responsibility instead of surveillance
+          </TickText>
+        </motion.div>
       </div>
     </div>
   );
