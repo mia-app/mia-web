@@ -17,7 +17,7 @@ export const Layout = ({ children }) => {
           </Link>
 
           <nav>
-            <a href="mailto:hellomia@gmail.com" className="bodyText">
+            <a href="mailto:hi.appmia@gmail.com" className="bodyText">
               Contact
             </a>
             <Link to="/about" className="bodyText">

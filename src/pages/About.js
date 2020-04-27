@@ -206,7 +206,7 @@ export const About = () => {
           anyone who is interested to contribute.
         </p>
 
-        <a href="mailto:mia@gmail.com" className="button">
+        <a href="hi.appmia@gmail.com" className="button">
           Get in contact
         </a>
 
