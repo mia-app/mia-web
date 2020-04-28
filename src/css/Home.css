@@ -4,11 +4,13 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
 
 .home__woman {
   width: auto;
   height: 100%;
+  max-height: 800px;
 }
 
 .home__centerpiece {
@@ -16,18 +18,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 .home__chatbot {
   position: relative;
   top: 0;
   left: 0;
-  height: 70%;
+  height: 600px;
   z-index: 200;
   width: 60vw;
   min-width: 600px;
   max-width: 800px;
-  max-height: 700px;
 }
 
 .home__ticktexts {
@@ -39,7 +41,7 @@
   max-height: 200px;
 }
 
-@media (max-height: 500px), (max-width: 720px) {
+@media (max-width: 720px) {
   .home__ticktexts {
     display: none;
   }
@@ -50,11 +52,5 @@
     border-radius: 0px;
     max-width: 100%;
     max-height: 100%;
-  }
-}
-
-@media (max-width: 790px) {
-  .home__woman {
-    display: none;
   }
 }

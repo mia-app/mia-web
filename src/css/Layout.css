@@ -61,7 +61,7 @@ main {
   height: calc(100vh - 88px);
   min-height: calc(100vh - 88px);
   overflow-x: hidden;
-  margin: 0 auto;
+  margin: 0 auto;  
   max-width: var(--max-content-width);
 }
 

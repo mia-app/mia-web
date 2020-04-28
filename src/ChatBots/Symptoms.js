@@ -14,9 +14,20 @@ export default class Symptoms extends React.Component {
     this.cf = ConversationalForm.startTheConversation({
       options: {
         submitCallback: this.submitCallback,
-        preventAutoFocus: false,
+        preventAutoFocus: true,
         flowStepCallback: this.flowStepCallback,
-        hideUserInputOnNoneTextInput: true
+        showProgressBar: true,
+        userInterfaceOptions: {
+            controlElementsInAnimationDelay: 0,
+            robot: {
+                robotResponseTime: 0,
+                chainedResponseTime: 500
+            },
+            user:{
+                showThinking: false,
+                showThumb: false
+            }
+        }
       },
       tags: this.formFields,
     });

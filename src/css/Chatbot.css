@@ -44,41 +44,30 @@ cf-chat-response.robot:first-of-type > text > p {
   line-height: 1.2;
 }
 
-cf-chat-response.robot:first-of-type:after {
-  content: "";
-  background-image: url(/images/icons/mia-avatar.svg);
-  width: 48px;
-  height: 48px;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
 .cf-icon-progress {
   background-size: 16px;
+}
+
+.cf-progressBar .bar {
+  background-color: var(--primary50) ! important;
 }
 
 .cf-input-button.cf-input-button {
   background: var(--primary);
 }
 
-.robot {
-  padding-left: 0;
-}
-.robot thumb {
-  display: none;
-}
 .robot p {
-  background: none;
-  font-weight: bold;
-  padding: 0;
+  background-color: var(--grey3);
 }
 
-.user {
-  padding-right: 0 !important;
+.robot thumb {
+  background-image: url(/images/icons/mia-avatar.svg) !important;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .user thumb {
-  display: none;
+  background-image: none !important;
 }
 
 .user p {
@@ -91,6 +80,7 @@ cf-chat-response.robot:first-of-type:after {
 .cf-checkbox-button {
   border-color: var(--primary) !important;
 }
+
 .cf-button:hover,
 .cf-checkbox-button:hover,
 .cf-button:focus,

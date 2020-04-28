@@ -90,7 +90,7 @@
     },
     {
         "cf-input-placeholder": "I am not sure",
-        "cf-questions": "If you haven't contracted COVID-19 there is no need to warn others about a possible infection. If you are not sure about your current situation, we suggest you to get informed on the official checkup of the BAG.     https://check.foph-coronavirus.ch/screening",
+        "cf-questions": "If you haven't contracted COVID-19 there is no need to warn others about a possible infection. If you are not sure about your current situation, we suggest you to get informed on the official checkup of the BAG : <a target=\"blank\" href=\"https://check.foph-coronavirus.ch/screening\">here</a>",
         "children": [
             {
                 "cf-label": "Next",

@@ -203,7 +203,7 @@ export const About = () => {
       <section className="about__contact">
         <p className="bodyText">
           We are seeking support from healthcare professionals, funds, and
-          anyone who is interested to contribute.
+          people who are interested to contribute.
         </p>
 
         <a href="hi.appmia@gmail.com" className="button">
@@ -211,9 +211,9 @@ export const About = () => {
         </a>
 
         <p className="bodyText">
-          Are you an expert already? Have a look at our compact{" "}
-          <a className="link" href="https://google.com">
-            Google slides for experts.
+          Or have a look at our {" "}
+          <a target="_blank" className="link" href="https://docs.google.com/presentation/d/1JNnIsVjIGH0-PKFd27wDfjX52RC4WWIsVKUUrVOs-PA/edit?usp=sharing">
+            pitch.
           </a>
         </p>
       </section>
