@@ -1,0 +1,70 @@
+[
+    {
+        "cf-input-placeholder": "Ok",
+        "cf-questions": "Well done, you listed all the people you were in touch with. Now, we arranged them in groups according to how you should best reach out to them. It's better not to skip any steps or stop in the middle. The faster you warn them, the better.",
+        "children": [
+            {
+                "cf-label": "Ok",
+                "name": "contactWithIndividuals",
+                "tag": "input",
+                "type": "radio",
+                "value": "Ok"
+            }
+        ],
+        "name": "contactWithIndividuals",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Sent",
+        "cf-questions": "The people you live with - Robert Corona - Martina Covid We suggest that you have a conversation with them as soon as possible (ideally by phone). If you actually have COVID-19, there is a high chance they have too. You should strongly recommend them to go into quarantine. ",
+        "children": [
+            {
+                "cf-label": "Sent",
+                "name": "howToContactIndividuals",
+                "tag": "input",
+                "type": "radio",
+                "value": "Sent"
+            }
+        ],
+        "name": "howToContactIndividuals",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Sent",
+        "cf-questions": "Your employer - Benjamin Franklin at Goldman Sachs Template message to be sent via SMS : Dear Benjamin, I regret to inform you that I am feeling ill and learned after a quick online diagnosis that there is a good chance I have COVID-19.  If that is the case, I was probably infecting others between the 4th of July until yesterday. Mia has recommended that I stay in home office. But, to really slow down the spread of the virus, it is important to warn exposed colleagues to go into quarantine as soon as possible.  Obviously, it is up to you to take the right decision here. You can have a look at my calendar to see in which building I was. Also I remember meeting the following people in that time : Michael J Scott, Pam, and Dwight K. Shrute. Best regards, Robert",
+        "children": [
+            {
+                "cf-label": "Sent",
+                "name": "SMSOffice",
+                "tag": "input",
+                "type": "radio",
+                "value": "Sent"
+            }
+        ],
+        "name": "SMSOffice",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Sent",
+        "cf-questions": "- Janice Joplin - John Lennon - Britney Spears Reach out to them with the following SMS : Dear Benjamin, I regret to inform you that I am feeling ill and learned after a quick online diagnosis that there is a good chance I have COVID-19.  If that is the case, I was probably infecting others between the 4th of July until yesterday. Now, we met personally during that time and were in close vicinity (less than 1 metre distance between us) for more than 15 minutes Mia has recommended, to slow down the spread of the virus, that you stay in quarantine during that time. Obviously, it is up to you to take the right decision here. Best regards, Robert",
+        "children": [
+            {
+                "cf-label": "Sent",
+                "name": "SMSFriends",
+                "tag": "input",
+                "type": "radio",
+                "value": "Sent"
+            }
+        ],
+        "name": "SMSFriends",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-questions": "Thanks we went through all the list! I hope you get well soon.",
+        "tag": "cf-robot-message"
+    }
+]

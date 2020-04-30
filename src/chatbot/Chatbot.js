@@ -1,12 +1,13 @@
-import React from "react";
-import { ConversationalForm } from "conversational-form";
+import React from "./node_modules/react";
+import { ConversationalForm } from "./node_modules/conversational-form";
 import "../css/Chatbot.css";
+import { flowStepCallback } from "./dynamic.js";
+const chatBotStart = require("../chatData/chunks/triage.json");
 
-export default class Symptoms extends React.Component {
+export default class Chatbot extends React.Component {
   constructor(props) {
     super(props);
-    var data = require("../chatData/symptomsData.json");
-    this.formFields = data;
+    this.formFields = chatBotStart;
     this.submitCallback = this.submitCallback.bind(this);
   }
 
@@ -15,7 +16,7 @@ export default class Symptoms extends React.Component {
       options: {
         submitCallback: this.submitCallback,
         preventAutoFocus: true,
-        flowStepCallback: this.flowStepCallback,
+        flowStepCallback: flowStepCallback,
         showProgressBar: true,
         userInterfaceOptions: {
             controlElementsInAnimationDelay: 0,
@@ -35,10 +36,6 @@ export default class Symptoms extends React.Component {
     this.elem.appendChild(this.cf.el);
 
     console.log(this.cf);
-  }
-
-  flowStepCallback(dto, success, error) {
-    success();
   }
 
   submitCallback() {

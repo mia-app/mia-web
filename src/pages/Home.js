@@ -4,7 +4,7 @@ import { TickText } from "../components/TickText";
 
 import { ReactComponent as Woman } from "../assets/woman.svg";
 
-import Symptoms from "../ChatBots/Symptoms";
+import Chatbot from "../chatbot/Chatbot";
 
 import "../css/Home.css";
 
@@ -22,7 +22,7 @@ export const Home = () => {
             duration: 0.5,
           }}
         >
-          <Symptoms />
+          <Chatbot />
         </motion.div>
         <motion.div
           className="home__ticktexts"

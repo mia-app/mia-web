@@ -1,0 +1,124 @@
+[
+    {
+        "cf-input-placeholder": "Yes",
+        "cf-questions": "Do you have a Calendar?",
+        "children": [
+            {
+                "cf-conditional-coveredAll": "Next",
+                "cf-label": "No, or already checked",
+                "name": "haveCalendar",
+                "tag": "input",
+                "type": "radio",
+                "value": "No, or already checked"
+            },
+            {
+                "cf-conditional-coveredAll": "Next",
+                "cf-label": "Yes",
+                "name": "haveCalendar",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes"
+            }
+        ],
+        "name": "haveCalendar",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Nothing",
+        "cf-questions": "Open up your calendar and have a look at your appointments. Even if you have them covered, they might help to recollect other details.",
+        "children": [
+            {
+                "cf-conditional-checkPics": "Yes",
+                "cf-conditional-haveCalendar": "Yes",
+                "cf-conditional-havePics": "Yes",
+                "cf-label": "Nothing",
+                "name": "checkCalendar",
+                "tag": "input",
+                "type": "radio",
+                "value": "Nothing"
+            }
+        ],
+        "name": "checkCalendar",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Yes",
+        "cf-questions": "Did you take some pictures on your phones?",
+        "children": [
+            {
+                "cf-label": "No, or already checked",
+                "name": "havePics",
+                "tag": "input",
+                "type": "radio",
+                "value": "No, or already checked"
+            },
+            {
+                "cf-label": "Yes",
+                "name": "havePics",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes"
+            }
+        ],
+        "name": "havePics",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Nothing",
+        "cf-questions": "Go through your camera roll. They might contain memories that help. You can even see exactly when, which photo was taken.",
+        "children": [
+            {
+                "cf-label": "Nothing",
+                "name": "checkPics",
+                "tag": "input",
+                "type": "radio",
+                "value": "Nothing"
+            }
+        ],
+        "name": "checkPics",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Yes",
+        "cf-questions": "Do you have a messaging app to stay in touch socially (like Whatsapp or Messenger)?",
+        "children": [
+            {
+                "cf-label": "No, or already checked",
+                "name": "haveMessages",
+                "tag": "input",
+                "type": "radio",
+                "value": "No, or already checked"
+            },
+            {
+                "cf-label": "Yes",
+                "name": "haveMessages",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes"
+            }
+        ],
+        "name": "haveMessages",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Nothing",
+        "cf-questions": "Browsing through the chat histories of your friends, can spark up your memory. Or what about asking them if they can help?",
+        "children": [
+            {
+                "cf-label": "Nothing",
+                "name": "checkMessages",
+                "tag": "input",
+                "type": "radio",
+                "value": "Nothing"
+            }
+        ],
+        "name": "checkMessages",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    }
+]

@@ -22,6 +22,7 @@ export default class Prevention extends React.Component {
       tags: this.formFields,
     });
     this.elem.appendChild(this.cf.el);
+    
   }
 
   submitCallback() {

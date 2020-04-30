@@ -1,0 +1,89 @@
+[
+    {
+        "cf-questions": "Hi I'm Mia. Help me flatten the curve",   
+        "tag": "cf-robot-message"
+    },
+    {
+        "cf-input-placeholder": "I am not sure",
+        "cf-questions": "Do you think you have Corona (COVID-19)?",
+        "children": [
+            {
+                "cf-label": "Yes, I tested positive of COVID-19",
+                "name": "infected",
+                "tag": "input",
+                "type": "radio",
+                "value": "infected_1"
+            },
+            {
+                "cf-label": "Yes, I self-diagnosed using online tools.",
+                "name": "infected",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes, I self-diagnosed using online tools."
+            },
+            {
+                "cf-label": "Yes, I was diagnosed after a physical visit to a healthcare professional.",
+                "name": "infected",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes, I was diagnosed after a physical visit to a healthcare professional."
+            },
+            {
+                "cf-label": "Yes, I was diagnosed on the telephone by a healthcare professional.",
+                "name": "infected",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes, I was diagnosed on the telephone by a healthcare professional."
+            },
+            {
+                "cf-label": "I am not sure",
+                "name": "infected",
+                "tag": "input",
+                "type": "radio",
+                "value": "I am not sure"
+            },
+            {
+                "cf-label": "No",
+                "name": "infected",
+                "tag": "input",
+                "type": "radio",
+                "value": "No"
+            }
+        ],
+        "name": "infected",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "I am not sure",
+        "cf-questions": "If you haven't contracted COVID-19 there is no need to warn others about a possible infection. If you are not sure about your current situation, we suggest you to get informed on the official checkup of the BAG.     https://check.foph-coronavirus.ch/screening",
+        "children": [
+            {
+                "cf-label": "Next",
+                "name": "noInfection",
+                "tag": "input",
+                "type": "radio",
+                "value": "Next"
+            }
+        ],
+        "name": "noInfection",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Next",
+        "cf-questions": "Ok, warn others.",
+        "children": [
+            {
+                "cf-label": "Next",
+                "name": "warn",
+                "tag": "input",
+                "type": "radio",
+                "value": "Next"
+            }
+        ],
+        "name": "warn",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    }
+]

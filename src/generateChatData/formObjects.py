@@ -13,7 +13,7 @@ class answer:
     def addName(self, name):
         self.name = name
 
-class question:
+class question: 
 
     def __init__(self, name, question, placeholder, qType, answers = None, fieldset = True):
         self.name = name
