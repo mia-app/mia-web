@@ -1,5 +1,5 @@
-import React from "./node_modules/react";
-import { ConversationalForm } from "./node_modules/conversational-form";
+import React from "react";
+import { ConversationalForm } from "conversational-form";
 import "../css/Chatbot.css";
 import { flowStepCallback } from "./dynamic.js";
 const chatBotStart = require("../chatData/chunks/triage.json");

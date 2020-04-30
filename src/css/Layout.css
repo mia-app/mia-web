@@ -65,12 +65,15 @@ main {
   max-width: var(--max-content-width);
 }
 
-@media (min-width: 720px) {
+@media (max-width: 720px) {
   header {
-    padding: 16px 60px;
+    padding: 16px 16px;
+    height: 64px;
   }
 
   main {
-    padding: 20px 30px 30px 30px;
+    padding: 0px 20px;
+    height: calc(100vh - 64px);
+    min-height: calc(100vh - 64px);
   }
 }

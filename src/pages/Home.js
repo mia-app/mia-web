@@ -4,7 +4,7 @@ import { TickText } from "../components/TickText";
 
 import { ReactComponent as Woman } from "../assets/woman.svg";
 
-import Chatbot from "../chatbot/Chatbot";
+import Chatbot from "../chatbots/Chatbot";
 
 import "../css/Home.css";
 

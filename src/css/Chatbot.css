@@ -86,7 +86,8 @@ cf-chat-response.robot:first-of-type > text > p {
 .cf-button:focus,
 .cf-button:focus span,
 cf-button.cf-button.cf-checkbox-button[checked="checked"],
-cf-button.cf-button.cf-checkbox-button[selected="selected"] {
+cf-button.cf-button.cf-checkbox-button[selected="selected"],
+cf-radio-button.cf-button.cf-checkbox-button[checked="checked"] {
   background: var(--primary) !important;
   color: white !important;
 }
