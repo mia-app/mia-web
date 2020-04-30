@@ -30,3 +30,5 @@ const startQuestion = (dto, success, error) => {
       break;
     default:
       error();
+  }
+}
