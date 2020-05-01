@@ -3,7 +3,7 @@
   "short_name": "Mia",
   "theme_color": "#0044e7",
   "background_color": "#80a1f3",
-  "display": "fullscreen",
+  "display": "browser",
   "orientation": "portrait",
   "Scope": "/",
   "start_url": "/",
