@@ -2,12 +2,15 @@ import React from "react";
 import { ConversationalForm } from "conversational-form";
 import "../css/Chatbot.css";
 import { flowStepCallback } from "./dynamic.js";
-const chatBotStart = require("../chatData/chunks/triage.json");
+import ChatbotData from "../chatData/questionBuilder";
+const triage = require("../chatData/chunks/triage.json");
 
 export default class Chatbot extends React.Component {
   constructor(props) {
     super(props);
-    this.formFields = chatBotStart;
+    this.formFields = ChatbotData.start;
+    console.log(triage);
+    console.log(ChatbotData.start);
     this.submitCallback = this.submitCallback.bind(this);
   }
 

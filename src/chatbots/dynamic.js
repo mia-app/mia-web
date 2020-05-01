@@ -16,7 +16,6 @@ export const flowStepCallback = (dto, success, error) => {
 
 const startQuestion = (dto, success, error) => {
   // No answer was submitted, let's move on
-  console.log(dto.tag.value.length);
   if (dto.tag.value.length === 0) {
     return success();
   }

@@ -1,4 +1,4 @@
-class answer {
+class Answer {
     constructor(value, qType, name) {
         this.cf_label = value;
         this.value = value;
@@ -12,9 +12,18 @@ class answer {
     addName(name){
         this.name = name;
     }
-  }
+    printObj() {
+        return {
+            cf_label: this.cf_label,
+            value: this.value,
+            type: this.type,
+            tag: this.tag,
+            name: this.name
+        }
+    }
+}
 
-class question {
+export class Question {
     constructor(name, question, placeholder, qType, answers = null, fieldset = true){
         this.name = name;
         this.cf_questions = question;
@@ -30,13 +39,24 @@ class question {
             var a
             for(a of answers) {
                 var r
-                if(qType == "Checkboxes") {
-                    r = new answer(a, "checkbox", name)
+                if(qType === "Checkboxes") {
+                    r = new Answer(a, "checkbox", name)
                 } else {
-                    r = new answer(a, "radio", name)
+                    r = new Answer(a, "radio", name)
                 }
                 this.children.push(r)
             }
+        }
+    }
+
+    printObj() {
+        return {
+            cf_input_placeholder: this.cf_input_placeholder,
+            cf_questions: this.cf_questions,
+            children: this.children.map(c => c.printObj()),
+            name: this.name,
+            type: this.type,
+            tag: this.tag
         }
     }
 
@@ -46,7 +66,7 @@ class question {
     }
 
     conditionOn(question, cond) {
-        if(this.tag == "fieldset") {
+        if(this.tag === "fieldset") {
             var c
             for (c of this.children) {
                 c.condition(question, cond)
@@ -57,25 +77,21 @@ class question {
     }
 
     condition(question, cond) {
-        this["cf_conditional_" + question] = answer
+        this["cf_conditional_" + question] = cond;
     }
 
 }
 
-class robotMessage {
+export class RobotMessage {
     constructor(message){
         this.questions = message;
         this.tag = "cf-robot-message"
     }
-    condition(question, cond) {
-        this["cf_conditional_" + question] = answer
+
+    printObj() {
+        return {
+            cf_questions: this.questions,
+            tag: this.tag
+        }
     }
 }
-
-// myanswer = new answer("Ford", "bla", "name");
-// myanswer.addName("2ndName");
-// myanswer.condition("cond", "ans")
-// myquestion = new question("first", "q", "ph", "text", ["answerA", "answerB"]);
-
-// console.log(myanswer);
-// console.log(myquestion);

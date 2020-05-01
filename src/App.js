@@ -17,7 +17,6 @@ export const App = () => {
       <Layout>
         <Switch>
           <Route path="/about" component={About} />
-
           <Route path="/" exact component={Home} />
         </Switch>
       </Layout>
