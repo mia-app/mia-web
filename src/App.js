@@ -9,8 +9,10 @@ import "./css/App.css";
 import "./css/Components.css";
 
 import { About } from "./pages/About";
+import { useSetDocumentHeight } from "./hooks/useSetDocumentHeight";
 
 export const App = () => {
+  useSetDocumentHeight();
   return (
     <Router>
       <Layout>

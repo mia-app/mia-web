@@ -4,6 +4,7 @@
 html {
   box-sizing: border-box;
 }
+
 *,
 *:before,
 *:after {
@@ -62,10 +63,14 @@ a:hover {
   --spacings4: 24px;
   --spacings5: 32px;
   --spacings6: 40px;
-  --spacings6: 56px;
+  --spacings7: 56px;
 
   --max-content-width: 1440px;
   --button-width: 244px;
+
+  --header-height: 88px;
+  --full-height: 100vh;
+  --full-height-minus-header: calc(var(--full-height) - var(--header-height));
 }
 
 .heading1 {

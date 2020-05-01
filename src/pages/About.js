@@ -211,8 +211,13 @@ export const About = () => {
         </a>
 
         <p className="bodyText">
-          Or have a look at our {" "}
-          <a target="_blank" className="link" href="https://docs.google.com/presentation/d/1JNnIsVjIGH0-PKFd27wDfjX52RC4WWIsVKUUrVOs-PA/edit?usp=sharing">
+          Or have a look at our{" "}
+          <a
+            target="_blank"
+            className="link"
+            href="https://docs.google.com/presentation/d/1JNnIsVjIGH0-PKFd27wDfjX52RC4WWIsVKUUrVOs-PA/edit?usp=sharing"
+            rel="noopener noreferrer"
+          >
             pitch.
           </a>
         </p>
