@@ -4,7 +4,7 @@ export const flowStepCallback = (dto, success, error) => {
     const questionName = dto.tag.name;
 
     switch(questionName) {
-      case "infected":
+      case "start":
         startQuestion(dto, success, error);
         break;
       default:
@@ -24,11 +24,11 @@ const startQuestion = (dto, success, error) => {
   const questionName = dto.tag.name;
   
   switch(answerNames) {
-    case `${questionName}_1`:
+    case `start_1`:
       // redirect to about page
-      history.push("/about");
+      window.location.href = "https://appmia.ch/#/about";
       break;
-    case "infected_2":
+    case "start_2":
       // redirect to survey
       success();
       window.location.href = "http://www.w3schools.com";

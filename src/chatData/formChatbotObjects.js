@@ -14,11 +14,11 @@ class Answer {
     }
     printObj() {
         return {
-            cf_label: this.cf_label,
-            value: this.value,
-            type: this.type,
-            tag: this.tag,
-            name: this.name
+            "cf_label": this.cf_label,
+            "value": this.value,
+            "type": this.type,
+            "tag": this.tag,
+            "name": this.name
         }
     }
 }
@@ -51,12 +51,12 @@ export class Question {
 
     printObj() {
         return {
-            cf_input_placeholder: this.cf_input_placeholder,
-            cf_questions: this.cf_questions,
-            children: this.children.map(c => c.printObj()),
-            name: this.name,
-            type: this.type,
-            tag: this.tag
+            "cf-input-placeholder": this.cf_input_placeholder,
+            "cf-questions": this.cf_questions,
+            "children": this.children.map(c => c.printObj()),
+            "name": this.name,
+            "type": this.type,
+            "tag": this.tag
         }
     }
 
@@ -90,8 +90,8 @@ export class RobotMessage {
 
     printObj() {
         return {
-            cf_questions: this.questions,
-            tag: this.tag
+            "cf-questions": this.questions,
+            "tag": this.tag
         }
     }
 }
