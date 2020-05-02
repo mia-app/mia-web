@@ -9,10 +9,6 @@ export default class Chatbot extends React.Component {
   constructor(props) {
     super(props);
     this.formFields = ChatbotData.start;
-    // this.formFields = triage;
-
-    console.log(triage);
-    console.log(ChatbotData.start);
     this.submitCallback = this.submitCallback.bind(this);
   }
 

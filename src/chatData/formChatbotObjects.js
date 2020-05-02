@@ -88,6 +88,14 @@ export class RobotMessage {
         this.tag = "cf-robot-message"
     }
 
+    conditionOn(question, cond) {
+        this.condition(question, cond);
+    }
+    
+    condition(question, cond) {
+        this["cf_conditional_" + question] = cond;
+    }
+
     printObj() {
         return {
             "cf-questions": this.questions,
