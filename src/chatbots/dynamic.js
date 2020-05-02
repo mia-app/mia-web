@@ -1,4 +1,4 @@
-import history from "../utils/history";
+import Questions from "../chatData/questionBuilder";
 
 export const flowStepCallback = (dto, success, error) => {
     const questionName = dto.tag.name;
@@ -10,31 +10,23 @@ export const flowStepCallback = (dto, success, error) => {
       case "isInfected":
         success();
         break;
+      case "startTracing":
+        if (dto.tag.value.pop() === "startTracing-1") {
+          window.ConversationalForm.addTags(Questions.periodOfInfectivity, true);
+        }
+        success();
+        break;
       default:
         success();
         // Mh something went wrong;
-        error();
+        // error();
     }
   }
 
 const startQuestion = (dto, success, error) => {
-  // No answer was submitted, let's move on
-  if (dto.tag.value.length === 0) {
-    return success();
-  }
-
-  const answerNames = dto.tag.value.pop();
-  
-  switch(answerNames) {
-    case "startChatbot-1":
-      success();
-      break;
-    case "startChatbot-2":
-      // redirect to about page
-      success();
-      window.location.href = "https://appmia.ch/#/about";
-      break;
-    default:
-      error();
+  if (dto.tag.value.pop() === "startChatbot-1") {
+    success();
+  } else {
+    window.location.href = "https://appmia.ch/#/about";
   }
 }

@@ -16,6 +16,7 @@ export default class Chatbot extends React.Component {
   componentDidMount() {
     this.cf = ConversationalForm.startTheConversation({
       options: {
+        submitCallback: this.submitCallback,
         preventAutoFocus: true,
         flowStepCallback: flowStepCallback,
         showProgressBar: true,
@@ -39,6 +40,9 @@ export default class Chatbot extends React.Component {
     console.log(this.cf);
   }
 
+  submitCallback() {
+    
+  }
   render() {
     return (
       <div>

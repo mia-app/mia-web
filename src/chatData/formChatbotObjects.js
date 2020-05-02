@@ -66,8 +66,9 @@ export class Question {
 export class RobotMessage {
     constructor(message){
         this["cf-questions"] = message;
-        this.tag = "cf-robot-message"
+        this.tag = "cf-robot-message";
     }
+
     conditionOn(question, cond) {
         this["cf-conditional-" + question] = cond
     }

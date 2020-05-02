@@ -25,7 +25,6 @@ If you feel unsure that you might have it, I would recommend you to get informed
 official check-up of the BAG.\n\nhttps://check.foph-coronavirus.ch/screening \n\nThanks \
 for taking the time!`
 );
-
 checkInfection.conditionOn("isInfected", "isInfected-2");
 checkInfection.conditionOn("isInfected", "isInfected-3");
 
@@ -36,18 +35,18 @@ in contact with know. Should we start that?`,
     ``,
     `Radiobuttons`,
     [`Yes, let's start`, `Maybe later`]);
-
 startTracing.conditionOn("isInfected", "isInfected-1");
 
 const remindMe = new RobotMessage(`Sure. I can remind you via text message or email to do that. The sooner the better!`);
 remindMe.conditionOn("startTracing", "startTracing-2");
 
 const moreDetails = new RobotMessage("Let’s start with some questions to get more details.");
+
 const symptomsStartDate = new Question(
     "symptomsStartDate",
     "When did the symptoms start?",
-    ``,
-    `text`
+    `e.g. 01.06.2020`,
+    `text`, [], false
 );
 
 export default {
@@ -58,9 +57,10 @@ export default {
         isInfected,
         checkInfection,
         startTracing,
-        remindMe,
-        // periodOfInfectivity
-        moreDetails,
+        remindMe
+    ],
+    periodOfInfectivity: [
+        // moreDetails,
         symptomsStartDate
     ]
 }
