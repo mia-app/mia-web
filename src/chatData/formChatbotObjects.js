@@ -1,24 +1,24 @@
-class answer {
+class Answer {
     constructor(value, qType, name, nr) {
-        this.cf_label = value;
-        this.value = value;
+        this["cf-label"] = value;
+        this.value = name + "-" + nr;
         this.type = qType;
         this.tag = "input";
-        this.name = name + "_" + nr;
+        this.name = name;
     }
     condition(question, answer) { // not working
-        this["cf_conditional_" + question] = answer
+        this["cf-conditional-" + question] = answer
     }
     addName(name){
         this.name = name;
     }
   }
 
-class question {
+export class Question {
     constructor(name, question, placeholder, qType, answers = null, fieldset = true){
         this.name = name;
-        this.cf_questions = question;
-        this.cf_input_placeholder = placeholder;
+        this["cf-questions"] = question;
+        this["cf-input-placeholder"] = placeholder;
         this.type = qType;
         if(fieldset) {
             this.tag = "fieldset"
@@ -32,9 +32,9 @@ class question {
             for(a of answers) {
                 var r
                 if(qType == "Checkboxes") {
-                    r = new answer(a, "checkbox", name, nr)
+                    r = new Answer(a, "checkbox", name, nr)
                 } else {
-                    r = new answer(a, "radio", name, nr)
+                    r = new Answer(a, "radio", name, nr)
                 }
                 this.children.push(r)
                 nr = nr + 1
@@ -59,17 +59,16 @@ class question {
     }
 
     condition(question, cond) {
-        this["cf_conditional_" + question] = cond
+        this["cf-conditional-" + question] = cond
     }
-
 }
 
-class robotMessage {
+export class RobotMessage {
     constructor(message){
-        this.questions = message;
+        this["cf-questions"] = message;
         this.tag = "cf-robot-message"
     }
     conditionOn(question, cond) {
-        this["cf_conditional_" + question] = answer
+        this["cf-conditional-" + question] = cond
     }
 }

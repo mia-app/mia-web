@@ -4,14 +4,17 @@ export const flowStepCallback = (dto, success, error) => {
     const questionName = dto.tag.name;
 
     switch(questionName) {
-      case "start":
+      case "startChatbot":
         startQuestion(dto, success, error);
         break;
+      case "isInfected":
+        success();
+        break;
       default:
+        success();
         // Mh something went wrong;
         error();
     }
-    console.log(dto);
   }
 
 const startQuestion = (dto, success, error) => {
@@ -21,17 +24,15 @@ const startQuestion = (dto, success, error) => {
   }
 
   const answerNames = dto.tag.value.pop();
-  const questionName = dto.tag.name;
   
   switch(answerNames) {
-    case `start_1`:
-      // redirect to about page
-      window.location.href = "https://appmia.ch/#/about";
-      break;
-    case "start_2":
-      // redirect to survey
+    case "startChatbot-1":
       success();
-      window.location.href = "http://www.w3schools.com";
+      break;
+    case "startChatbot-2":
+      // redirect to about page
+      success();
+      window.location.href = "https://appmia.ch/#/about";
       break;
     default:
       error();

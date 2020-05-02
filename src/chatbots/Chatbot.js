@@ -9,13 +9,13 @@ export default class Chatbot extends React.Component {
   constructor(props) {
     super(props);
     this.formFields = ChatbotData.start;
+    console.log(this.formFields)
     this.submitCallback = this.submitCallback.bind(this);
   }
 
   componentDidMount() {
     this.cf = ConversationalForm.startTheConversation({
       options: {
-        submitCallback: this.submitCallback,
         preventAutoFocus: true,
         flowStepCallback: flowStepCallback,
         showProgressBar: true,
@@ -39,17 +39,6 @@ export default class Chatbot extends React.Component {
     console.log(this.cf);
   }
 
-  submitCallback() {
-    var formDataSerialized = this.cf.getFormData(true);
-    console.log("Formdata, obj:", formDataSerialized);
-    this.cf.addRobotChatResponse("wash your hands and stay home");
-
-    window.setTimeout(
-      () => this.cf.addRobotChatResponse("Redirecting Home"),
-      3000
-    );
-    window.setTimeout(() => this.props.setChatbot(""));
-  }
   render() {
     return (
       <div>
