@@ -1,10 +1,10 @@
-class Answer {
-    constructor(value, qType, name) {
+class answer {
+    constructor(value, qType, name, nr) {
         this.cf_label = value;
         this.value = value;
         this.type = qType;
         this.tag = "input";
-        this.name = name;
+        this.name = name + "_" + nr;
     }
     condition(question, answer) { // not working
         this["cf_conditional_" + question] = answer
@@ -12,18 +12,9 @@ class Answer {
     addName(name){
         this.name = name;
     }
-    printObj() {
-        return {
-            "cf_label": this.cf_label,
-            "value": this.value,
-            "type": this.type,
-            "tag": this.tag,
-            "name": this.name
-        }
-    }
-}
+  }
 
-export class Question {
+class question {
     constructor(name, question, placeholder, qType, answers = null, fieldset = true){
         this.name = name;
         this.cf_questions = question;
@@ -37,26 +28,17 @@ export class Question {
         if(answers !== null) {
             this.children = [];
             var a
+            var nr = 1
             for(a of answers) {
                 var r
-                if(qType === "Checkboxes") {
-                    r = new Answer(a, "checkbox", name)
+                if(qType == "Checkboxes") {
+                    r = new answer(a, "checkbox", name, nr)
                 } else {
-                    r = new Answer(a, "radio", name)
+                    r = new answer(a, "radio", name, nr)
                 }
                 this.children.push(r)
+                nr = nr + 1
             }
-        }
-    }
-
-    printObj() {
-        return {
-            "cf-input-placeholder": this.cf_input_placeholder,
-            "cf-questions": this.cf_questions,
-            "children": this.children.map(c => c.printObj()),
-            "name": this.name,
-            "type": this.type,
-            "tag": this.tag
         }
     }
 
@@ -66,7 +48,7 @@ export class Question {
     }
 
     conditionOn(question, cond) {
-        if(this.tag === "fieldset") {
+        if(this.tag == "fieldset") {
             var c
             for (c of this.children) {
                 c.condition(question, cond)
@@ -77,29 +59,17 @@ export class Question {
     }
 
     condition(question, cond) {
-        this["cf_conditional_" + question] = cond;
+        this["cf_conditional_" + question] = cond
     }
 
 }
 
-export class RobotMessage {
+class robotMessage {
     constructor(message){
         this.questions = message;
         this.tag = "cf-robot-message"
     }
-
     conditionOn(question, cond) {
-        this.condition(question, cond);
-    }
-    
-    condition(question, cond) {
-        this["cf_conditional_" + question] = cond;
-    }
-
-    printObj() {
-        return {
-            "cf-questions": this.questions,
-            "tag": this.tag
-        }
+        this["cf_conditional_" + question] = answer
     }
 }
