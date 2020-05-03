@@ -1,5 +1,8 @@
 import { Question, RobotMessage } from "./formChatbotObjects";
 
+
+/// START
+
 const introduction = new RobotMessage("Hi, I’m Mia.\nHelp me flatten the curve!");
 const startChatbot = new Question(
         "startChatbot", 
@@ -39,6 +42,8 @@ startTracing.conditionOn("isInfected", "isInfected-1");
 const remindMe = new RobotMessage(`Sure. I can remind you via text message or email to do that. The sooner the better!`);
 remindMe.conditionOn("startTracing", "startTracing-2");
 
+/// PERIOD OF INFECTIVITY
+
 const moreDetails = new RobotMessage("Let’s start with some questions to get more details.");
 
 const symptomsStartDate = new Question(
@@ -50,7 +55,22 @@ const symptomsStartDate = new Question(
 
 const contactGathering = new RobotMessage("Let's start gathering the contacts of the people you talked to since then.")
 
+/// EXPOSURE STATIC
 
+const livingWithSomeone = new Question(
+    `livingWithSomeone`,
+    `Are you living with someone in the same household?`,
+    ``,
+    `Radiobuttons`,
+    [`Yes`, `No`]);
+
+const livingWithWhom = new Question(
+    `livingWithWhom`,
+    `Who are you living with? Can you enter their first and last name?`,
+    `fist name, last name`,
+    `text`,
+    [], false);
+livingWithWhom.conditionOn("livingWithSomeone", "Yes")
 
 //const spreadPeriod = new RobotMessage("Alright. This means that you might have been" +
  //                                   "spreading the virus between <symptomsDate - 7 days> and <min(today, symptomsDate + 5)>.");
@@ -67,8 +87,8 @@ export default {
     ],
     periodOfInfectivity: [
         moreDetails,
-        symptomsStartDate
-        // contactGathering
+        symptomsStartDate,
+        contactGathering
         // spreadPeriod
     ]
 }
