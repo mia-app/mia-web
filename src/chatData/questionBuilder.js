@@ -1,6 +1,5 @@
 import { Question, RobotMessage } from "./formChatbotObjects";
 
-
 /// START
 
 const introduction = new RobotMessage("Hi, I’m Mia.\nHelp me flatten the curve!");
@@ -53,7 +52,10 @@ const symptomsStartDate = new Question(
     `text`, [], false
 );
 
-const contactGathering = new RobotMessage("Let's start gathering the contacts of the people you talked to since then.")
+const spreadPeriod = new RobotMessage(`Alright. This means that you might have been spreading \
+the virus between {dStartPrint} and {dEndPrint}.`);
+const contactGathering = new RobotMessage("Let's start gathering the contacts of the people you \
+met in that time frame.")
 
 /// EXPOSURE STATIC
 
@@ -89,6 +91,6 @@ export default {
         moreDetails,
         symptomsStartDate,
         contactGathering
-        // spreadPeriod
-    ]
+    ],
+    spreadPeriod
 }
