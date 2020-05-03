@@ -30,8 +30,7 @@ checkInfection.conditionOn("isInfected", "isInfected-3");
 
 const startTracing = new Question(
     `startTracing`,
-    `Alright. You should let the people you have been \ 
-in contact with know. Should we start that?`,
+    `Alright. You should let the people you have been in contact with know. Should we start that?`,
     ``,
     `Radiobuttons`,
     [`Yes, let's start`, `Maybe later`]);
@@ -49,6 +48,13 @@ const symptomsStartDate = new Question(
     `text`, [], false
 );
 
+const contactGathering = new RobotMessage("Let's start gathering the contacts of the people you talked to since then.")
+
+
+
+//const spreadPeriod = new RobotMessage("Alright. This means that you might have been" +
+ //                                   "spreading the virus between <symptomsDate - 7 days> and <min(today, symptomsDate + 5)>.");
+
 export default {
     start: [
         // start
@@ -60,7 +66,9 @@ export default {
         remindMe
     ],
     periodOfInfectivity: [
-        // moreDetails,
+        moreDetails,
         symptomsStartDate
+        // contactGathering
+        // spreadPeriod
     ]
 }

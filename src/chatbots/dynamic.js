@@ -1,4 +1,5 @@
 import Questions from "../chatData/questionBuilder";
+import { Question, RobotMessage } from "../chatData/formChatbotObjects";
 
 export const flowStepCallback = (dto, success, error) => {
     const questionName = dto.tag.name;
@@ -15,6 +16,25 @@ export const flowStepCallback = (dto, success, error) => {
           window.ConversationalForm.addTags(Questions.periodOfInfectivity, true);
         }
         success();
+        break;
+      case "symptomsStartDate":
+        // use moment 2.18.1 (https://tinyurl.com/y7kuuw54)
+        var moment = require('moment');
+        var d = dto.tag.value
+        if(moment(d, 'DD.MM.YYYY',true).isValid()){
+          var dStart = moment(d).subtract(7,'d')
+          var dEnd = moment(d).add(5,'d')
+          // var dStartPrint = dStart.format('dddd [the] Do [of] MMMM YYYY')
+          // var dEndPrint = dEnd.format('dddd [the] Do [of] MMMM YYYY')
+          // var m = `Alright. This means that you might have been spreading the virus between ${dStartPrint} and ${dEndPrint}.`
+          const spreadPeriod = new RobotMessage("Alright");
+          window.ConversationalForm.addTags(spreadPeriod, true);
+          return success();
+
+        } else {
+          return error("please try again (make sure the date format is DD.MM.YYYY)");
+        }
+        //console.log()
         break;
       default:
         success();
