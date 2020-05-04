@@ -89,8 +89,13 @@ export default {
     ],
     periodOfInfectivity: [
         moreDetails,
-        symptomsStartDate,
-        contactGathering
+        symptomsStartDate
+    ],
+    exposureStatic: [
+        contactGathering,
+        livingWithSomeone,
+        livingWithWhom
     ],
     spreadPeriod
+
 }

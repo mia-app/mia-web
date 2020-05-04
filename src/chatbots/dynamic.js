@@ -1,4 +1,5 @@
 import Questions from "../chatData/questionBuilder";
+import { weekdaysShort } from "moment";
 var moment = require('moment');
 
 export const flowStepCallback = (dto, success, error) => {
@@ -35,7 +36,40 @@ export const flowStepCallback = (dto, success, error) => {
               .replace('{dEndPrint}', dEndPrint)
             });
           console.log(spreadPeriod)
-          window.ConversationalForm.addTags([spreadPeriod], true);
+          window.ConversationalForm.addTags([spreadPeriod, ...Questions.exposureStatic], true);
+          window.symptomsDate = d
+          window.startInfectivity = dStart
+          window.stopInfectivity = dEnd
+          
+          // looping over weeks and weekends (https://tinyurl.com/yace7khg)
+          var enumerateDaysBetweenDates = function(startDate, endDate) {
+            var dates = [];
+        
+            var currDate = moment(startDate).startOf('day');
+            var lastDate = moment(endDate).startOf('day');
+        
+            while(currDate.add(1, 'days').diff(lastDate) < 0) {
+                console.log(currDate.toDate());
+                dates.push(currDate.clone());
+            }
+        
+            return dates;
+          };
+          
+          var checkWeekend = function(days){
+            var isWeekend = new Array(days.length).fill(0);
+            for (const [index, D] of days.entries()) {
+              isWeekend[index] = D.format('dddd') === 'Sunday' || D.format('dddd') === 'Saturday';
+            }
+            return isWeekend;
+          }
+          
+          const infPeriod = enumerateDaysBetweenDates(dStart, dEnd)
+          const whichWeekend = checkWeekend(infPeriod)
+
+          window.infPeriod = infPeriod
+          window.whichWeekend = whichWeekend
+
           success();
         } else {
           error("Enter the date with the format, DD.MM.YYYY");
