@@ -69,13 +69,57 @@ const livingWithSomeone = new Question(
 const livingWithWhom = new Question(
     `livingWithWhom`,
     `Who are you living with? Can you enter their first and last name?`,
-    `fist name, last name`,
+    `First + last name`,
     `text`,
     [], false);
-livingWithWhom.conditionOn("livingWithSomeone", "Yes")
 
-//const spreadPeriod = new RobotMessage("Alright. This means that you might have been" +
- //                                   "spreading the virus between <symptomsDate - 7 days> and <min(today, symptomsDate + 5)>.");
+const didYouGoToWork = new Question(
+    `didYouGoToWork`,
+    `Did you go to work during the past weeks?`,
+    ``,
+    `Radiobuttons`,
+    [`Yes`, `No`]);
+
+const giveCompanyName = new Question(
+    `giveCompanyName`,
+    `Alright, you did. Can you give the name of the company?`,
+    ``,
+    `text`,
+    [], false);
+giveCompanyName.conditionOn("didYouGoToWork", "didYouGoToWork-1")
+
+const giveManagerName = new Question(
+    `giveManagerName`,
+    `How about the name of your manager?`,
+    `First + last name`,
+    `text`,
+    [], false);
+giveManagerName.conditionOn("didYouGoToWork", "didYouGoToWork-1")
+
+const didYouLeaveYourApartment = new Question(
+    `didYouLeaveYourApartment`,
+    `Did you leave your apartment during the past weekends?`,
+    ``,
+    `Radiobuttons`,
+    [`Yes`, `No`]);
+
+const okWhatDidYouDo = new Question(
+    `okWhatDidYouDo`,
+    `Ok, what did you do?`,
+    ``,
+    `Radiobuttons`,
+    [`Visiting family or friends`, `Outdoor activities`, 
+     `Shopping`, `Working or school`, `Going out`, `Something else`, `Something else`]);
+okWhatDidYouDo.conditionOn("didYouLeaveYourApartment", "didYouLeaveYourApartment-1")
+
+const whatDidYouDo = new Question(
+    `whatDidYouDo`,
+    `What did you do?`,
+    ``,
+    `text`,
+    [], false);
+whatDidYouDo.conditionOn("okWhatDidYouDo", "okWhatDidYouDo-7")
+whatDidYouDo.conditionOn("didYouLeaveYourApartment", "didYouLeaveYourApartment-2")
 
 export default {
     start: [
@@ -91,11 +135,18 @@ export default {
         moreDetails,
         symptomsStartDate
     ],
+    spreadPeriod,
     exposureStatic: [
         contactGathering,
-        livingWithSomeone,
-        livingWithWhom
+        livingWithSomeone
     ],
-    spreadPeriod
-
+    livingWithWhom,
+    week: [
+        didYouGoToWork,
+        giveCompanyName,
+        giveManagerName,
+        didYouLeaveYourApartment,
+        okWhatDidYouDo,
+        whatDidYouDo
+    ]
 }

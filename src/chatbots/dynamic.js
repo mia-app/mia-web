@@ -1,5 +1,4 @@
 import Questions from "../chatData/questionBuilder";
-import { weekdaysShort } from "moment";
 var moment = require('moment');
 
 export const flowStepCallback = (dto, success, error) => {
@@ -7,7 +6,11 @@ export const flowStepCallback = (dto, success, error) => {
 
     switch(questionName) {
       case "startChatbot":
-        startQuestion(dto, success, error);
+        if (dto.tag.value.pop() === "startChatbot-1") {
+          success();
+        } else {
+          window.location.href = "https://appmia.ch/#/about";
+        }
         break;
       case "isInfected":
         success();
@@ -35,45 +38,33 @@ export const flowStepCallback = (dto, success, error) => {
               .replace('{dStartPrint}', dStartPrint)
               .replace('{dEndPrint}', dEndPrint)
             });
-          console.log(spreadPeriod)
-          window.ConversationalForm.addTags([spreadPeriod, ...Questions.exposureStatic], true);
+
+            window.ConversationalForm.addTags([spreadPeriod, ...Questions.exposureStatic], true);
+
+          // Store some global variables that we will need later
           window.symptomsDate = d
           window.startInfectivity = dStart
           window.stopInfectivity = dEnd
-          
-          // looping over weeks and weekends (https://tinyurl.com/yace7khg)
-          var enumerateDaysBetweenDates = function(startDate, endDate) {
-            var dates = [];
-        
-            var currDate = moment(startDate).startOf('day');
-            var lastDate = moment(endDate).startOf('day');
-        
-            while(currDate.add(1, 'days').diff(lastDate) < 0) {
-                console.log(currDate.toDate());
-                dates.push(currDate.clone());
-            }
-        
-            return dates;
-          };
-          
-          var checkWeekend = function(days){
-            var isWeekend = new Array(days.length).fill(0);
-            for (const [index, D] of days.entries()) {
-              isWeekend[index] = D.format('dddd') === 'Sunday' || D.format('dddd') === 'Saturday';
-            }
-            return isWeekend;
-          }
-          
-          const infPeriod = enumerateDaysBetweenDates(dStart, dEnd)
-          const whichWeekend = checkWeekend(infPeriod)
-
-          window.infPeriod = infPeriod
-          window.whichWeekend = whichWeekend
+          window.infPeriod = enumerateDaysBetweenDates(dStart, dEnd)
 
           success();
         } else {
           error("Enter the date with the format, DD.MM.YYYY");
         }
+        break;
+      case "livingWithSomeone":
+        var weekTags = [];
+        if (dto.tag.value.pop() === "livingWithSomeone-1") { // Yes
+          console.log('pop')
+          weekTags.push(Questions.livingWithWhom);
+        } 
+        weekTags = [ ...weekTags, ...Questions.week ];
+        window.ConversationalForm.addTags(weekTags, true);
+        success()
+        break;
+      case "livingWithWhom":
+        window.flatMate = dto.tag.value
+        success()
         break;
       default:
         success();
@@ -82,10 +73,17 @@ export const flowStepCallback = (dto, success, error) => {
     }
   }
 
-const startQuestion = (dto, success, error) => {
-  if (dto.tag.value.pop() === "startChatbot-1") {
-    success();
-  } else {
-    window.location.href = "https://appmia.ch/#/about";
+// looping over weeks and weekends (https://tinyurl.com/yace7khg)
+const enumerateDaysBetweenDates = function(startDate, endDate) {
+  var dates = [];
+
+  var currDate = moment(startDate).startOf('day');
+  var lastDate = moment.min(moment(), moment(endDate).startOf('day'));
+
+  while(currDate.add(1, 'days').diff(lastDate) < 0) {
+      console.log(currDate.toDate());
+      dates.push(currDate.clone());
   }
-}
+
+  return dates;
+};
