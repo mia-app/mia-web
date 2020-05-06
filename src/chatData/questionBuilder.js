@@ -106,20 +106,34 @@ const didYouLeaveYourApartment = new Question(
 const okWhatDidYouDo = new Question(
     `okWhatDidYouDo`,
     `Ok, what did you do?`,
-    ``,
-    `Radiobuttons`,
-    [`Visiting family or friends`, `Outdoor activities`, 
-     `Shopping`, `Working or school`, `Going out`, `Something else`, `Something else`]);
+    `Select and press the arrow`,
+    `Checkboxes`,
+    [`Visiting family/friends`, `Outdoor activities`,
+     `Shopping`, `Work/school`, `Went out`, `Something else`]);
 okWhatDidYouDo.conditionOn("didYouLeaveYourApartment", "didYouLeaveYourApartment-1")
 
 const whatDidYouDo = new Question(
     `whatDidYouDo`,
-    `What did you do?`,
+    `What exactly?`,
     ``,
     `text`,
     [], false);
-whatDidYouDo.conditionOn("okWhatDidYouDo", "okWhatDidYouDo-7")
-whatDidYouDo.conditionOn("didYouLeaveYourApartment", "didYouLeaveYourApartment-2")
+
+const enterContactsActivity = new Question(
+    `enterContactsActivity`,
+    `Can you give me the full name of the people you met for {activity}? Enter all names separately and then confirm by clicking "done".`,
+    ``,
+    `text`,
+    [], false);
+
+const enterLevelOfContact = new Question(
+    `enterContactsActivity`,
+    `How have you been in contact with this person/these people?`,
+    ``,
+    `Radiobuttons`,
+    [`We met in an open space with more than 1 meter distance`,
+    `We were in close vicinity (less than 1 meter)`,
+    `We stayed in the same room for a while`]);    
 
 export default {
     start: [
@@ -146,7 +160,11 @@ export default {
         giveCompanyName,
         giveManagerName,
         didYouLeaveYourApartment,
-        okWhatDidYouDo,
-        whatDidYouDo
+        okWhatDidYouDo
+    ],
+    whatDidYouDo,
+    activityTrace: [
+        enterContactsActivity,
+        enterLevelOfContact
     ]
 }

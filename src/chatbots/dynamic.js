@@ -66,12 +66,48 @@ export const flowStepCallback = (dto, success, error) => {
         window.flatMate = dto.tag.value
         success()
         break;
+      case "giveCompanyName":
+        window.companyName = dto.tag.value;
+        success()
+        break;
+      case "giveManagerName":
+        window.companyManager = dto.tag.value;
+        success()
+        break;
+      case "okWhatDidYouDo":
+        // Something else 
+        if (dto.tag.value[0] === dto.tag.elements[dto.tag.elements.length - 1].defaultValue) {
+          window.ConversationalForm.addTags([ Questions.whatDidYouDo ], true);
+        } else {
+          window.activities = window.activities || [];
+          dto.tag.value.forEach(v => {
+            const activity = dto.tag.elements.find(e => e.defaultValue === v).label;
+            window.activities.push(activity);
+            Questions.activityTrace.map(r => r.cf_questions = r.cf_questions.replace(`{activity}`, activity))
+            window.ConversationalForm.addTags(Questions.activityTrace, true);
+          })
+        }
+        success()
+        break;
+      case "whatDidYouDo":
+        window.activities = window.activities || [];
+        window.activities.push(dto.text)
+        Questions.activityTrace.map(r => r.cf_questions = r.cf_questions.replace(`{activity}`, dto.text))
+        window.ConversationalForm.addTags(Questions.activityTrace , true);
+        
+        success()
+        break;
       default:
         success();
         // Mh something went wrong;
         // error();
     }
   }
+
+const week = () => {
+
+}
+
 
 // looping over weeks and weekends (https://tinyurl.com/yace7khg)
 const enumerateDaysBetweenDates = function(startDate, endDate) {

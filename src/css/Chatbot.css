@@ -93,7 +93,8 @@ cf-radio-button.cf-button.cf-checkbox-button[checked="checked"] {
 }
 
 .cf-button:hover span,
-.cf-checkbox-button:hover span {
+.cf-checkbox-button:hover span,
+cf-button.cf-button.cf-checkbox-button[checked="checked"] span {
   color: white !important;
 }
 
