@@ -109,12 +109,12 @@ const okWhatDidYouDo = new Question(
     `Select and press the arrow`,
     `Checkboxes`,
     [`Visiting family/friends`, `Outdoor activities`,
-     `Shopping`, `Work/school`, `Went out`, `Something else`]);
+     `Shopping`, `Work/school`, `Going out`, `Something else`]);
 okWhatDidYouDo.conditionOn("didYouLeaveYourApartment", "didYouLeaveYourApartment-1")
 
 const whatDidYouDo = new Question(
     `whatDidYouDo`,
-    `What exactly?`,
+    `What did you do?`,
     ``,
     `text`,
     [], false);
@@ -133,7 +133,80 @@ const enterLevelOfContact = new Question(
     `Radiobuttons`,
     [`We met in an open space with more than 1 meter distance`,
     `We were in close vicinity (less than 1 meter)`,
-    `We stayed in the same room for a while`]);    
+    `We stayed in the same room for a while`]);
+
+const allGood = new Question(
+    `allGood`,
+    `Do you think you covered everyone for the last weeks?\n\nIf you're not sure, I have some techniques to help you remember.`,
+    ``,
+    `Radiobuttons`,
+    [
+        `All good`, 
+        `Yes, help me remember`
+    ]);
+
+const haveCalendar = new Question(
+    `haveCalendar`,
+    `Do you have a calendar?`,
+    ``,
+    `Radiobuttons`,
+    [
+        `Yes`, 
+        `No`
+    ]);
+
+const openCalendar = new Question(
+    `openCalendar`,
+    `Open up your calendar and have a look at your appointments. Even if you have them covered, they might help to recollect other details.\n\nDid you discover anything new?`,
+    ``,
+    `Radiobuttons`,
+    [
+        `Yes`, 
+        `Nothing`
+    ]);
+openCalendar.conditionOn("haveCalendar", "haveCalendar-1")
+
+const havePictures = new Question(
+    `havePictures`,
+    `Did you take some pictures on your phones?`,
+    ``,
+    `Radiobuttons`,
+    [
+        `Yes`, 
+        `No`
+    ]);
+
+const openPictures = new Question(
+    `openPictures`,
+    `Ok, then go through pictures. They might contain memories that help. You can even see when the photo was taken.\n\nCan you remember anything more?`,
+    ``,
+    `Radiobuttons`,
+    [
+        `Yes`, 
+        `Nothing`
+    ]);
+openPictures.conditionOn("havePictures", "havePictures-1")
+
+const haveChat = new Question(
+    `haveChat`,
+    `Alright, last trick! Do you use messaging apps like Whatsapp or Messenger? `,
+    ``,
+    `Radiobuttons`,
+    [
+        `Yes`, 
+        `No`
+    ]);
+
+const openChat = new Question(
+    `openChat`,
+    `Browsing through your chat history might trigger your memory. Or you can ask your friends to help.\n\nAny new memories?`,
+    ``,
+    `Radiobuttons`,
+    [
+        `Yes`, 
+        `Nothing`
+    ]);
+openPictures.conditionOn("haveChat", "haveChat-1")
 
 export default {
     start: [
@@ -166,5 +239,14 @@ export default {
     activityTrace: [
         enterContactsActivity,
         enterLevelOfContact
+    ],
+    allGood,
+    recollectionHacks: [
+        haveCalendar,
+        openCalendar,
+        havePictures,
+        openPictures,
+        haveChat,
+        openChat
     ]
 }

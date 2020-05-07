@@ -74,39 +74,73 @@ export const flowStepCallback = (dto, success, error) => {
         window.companyManager = dto.tag.value;
         success()
         break;
+      case "didYouLeaveYourApartment":
+        if (dto.tag.value.pop() === "didYouLeaveYourApartment-2") {
+          window.ConversationalForm.addTags([ Questions.whatDidYouDo ], true);
+        }
+        success()
+        break;
       case "okWhatDidYouDo":
         // Something else 
         if (dto.tag.value[0] === dto.tag.elements[dto.tag.elements.length - 1].defaultValue) {
           window.ConversationalForm.addTags([ Questions.whatDidYouDo ], true);
         } else {
           window.activities = window.activities || [];
+          const tags = [];
           dto.tag.value.forEach(v => {
             const activity = dto.tag.elements.find(e => e.defaultValue === v).label;
             window.activities.push(activity);
-            Questions.activityTrace.map(r => r.cf_questions = r.cf_questions.replace(`{activity}`, activity))
-            window.ConversationalForm.addTags(Questions.activityTrace, true);
+            var enterContactsActivity = Object.assign({}, Questions.activityTrace[0]);
+            enterContactsActivity = Object.assign({}, enterContactsActivity, { "cf-questions": enterContactsActivity["cf-questions"].replace(`{activity}`, activity.toLowerCase()) });
+            tags.push(enterContactsActivity);
+            tags.push(Questions.activityTrace[1]);
+
           })
+          window.ConversationalForm.addTags([ ...tags, Questions.allGood], true);
         }
         success()
         break;
       case "whatDidYouDo":
         window.activities = window.activities || [];
         window.activities.push(dto.text)
-        Questions.activityTrace.map(r => r.cf_questions = r.cf_questions.replace(`{activity}`, dto.text))
-        window.ConversationalForm.addTags(Questions.activityTrace , true);
-        
+        var enterContactsActivity = Object.assign({}, Questions.activityTrace[0]);
+        enterContactsActivity = Object.assign({}, enterContactsActivity, { "cf-questions": enterContactsActivity["cf-questions"].replace(`{activity}`, dto.text.toLowerCase()) });
+        window.ConversationalForm.addTags([ enterContactsActivity, Questions.activityTrace[1], Questions.allGood ] , true);
+        success()
+        break;
+      case "enterContactsActivity":
+        var i = window.activities.indexOf(a => typeof a === "string");
+        window.activities[i] = {actvitiyNames: window.activities[i], contactNames: dto.text}
+        success()
+        break
+      case "enterLevelOfContact":
+        var i = window.activities.indexOf(a => a.levelOfContact === undefined);
+        window.activities[i].levelOfContact = dto.text;
+        success()
+        break
+      case "allGood":
+        if (dto.tag.value.pop() === "allGood-1") {
+          // start reach out
+          // window.ConversationalForm.addTags(Questions.periodOfInfectivity, true);
+        } else {
+          // start memory lane
+          window.ConversationalForm.addTags(Questions.recollectionHacks, true);
+        }
+        success()
+        break;
+      case "openCalendar":
+      case "openPictures":
+      case "openChat":
+        window.ConversationalForm.addTags(Questions.whatDidYouDo, true);
         success()
         break;
       default:
+        // window.ConversationalForm.remapTagsAndStartFrom
         success();
         // Mh something went wrong;
         // error();
     }
   }
-
-const week = () => {
-
-}
 
 
 // looping over weeks and weekends (https://tinyurl.com/yace7khg)
