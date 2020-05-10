@@ -78,6 +78,7 @@ export const flowStepCallback = (dto, success, error) => {
         if (dto.tag.value.pop() === "didYouLeaveYourApartment-2") {
           window.ConversationalForm.addTags([ Questions.whatDidYouDo ], true);
         }
+        console.log(Questions.whatDidYouDo)
         success()
         break;
       case "okWhatDidYouDo":
@@ -120,6 +121,29 @@ export const flowStepCallback = (dto, success, error) => {
         break
       case "allGood":
         if (dto.tag.value.pop() === "allGood-1") {
+          const tags = [];
+          if (window.flatMate) {
+            // add People you live with
+          }
+          if (window.companyName || window.companyManager) {
+            // company reach out
+          }
+          var activityNames = "";
+          window.activities.map(a => {
+            if (a.contactNames) {
+              activityNames = activityNames + a;
+            }
+          });
+          if (activityNames) {
+            // contact reach out
+          }
+          if (tags.length > 0) {
+            // add intro in the beginning
+            // add outro
+          } else {
+            // add exit
+          }
+
           // start reach out
           // window.ConversationalForm.addTags(Questions.periodOfInfectivity, true);
         } else {

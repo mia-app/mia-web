@@ -109,7 +109,8 @@ const okWhatDidYouDo = new Question(
     `Select and press the arrow`,
     `Checkboxes`,
     [`Visiting family/friends`, `Outdoor activities`,
-     `Shopping`, `Work/school`, `Going out`, `Something else`]);
+     `Shopping`, `Work/school`, `Going out`, `Something else`], 
+     false);
 okWhatDidYouDo.conditionOn("didYouLeaveYourApartment", "didYouLeaveYourApartment-1")
 
 const whatDidYouDo = new Question(
@@ -208,6 +209,10 @@ const openChat = new Question(
     ]);
 openPictures.conditionOn("haveChat", "haveChat-1")
 
+const reachOutIntro = new RobotMessage("Great, thanks for listing everyone you've been in touch with! I've arranged them into groups based on how you should best reach out to them. It's best to inform them as fast as possible.")
+const reachOutExit = new RobotMessage("Ok, you listed no contacts, so there is noone to get int")
+const reachOutOutro = new RobotMessage("Great, thank you for contributing to stopping the spread of coronavirus! We traced all your contacts and informed them. /n/nGet well soon!")
+
 export default {
     start: [
         // start
@@ -248,5 +253,8 @@ export default {
         openPictures,
         haveChat,
         openChat
+    ],
+    reachOut: [
+
     ]
 }
