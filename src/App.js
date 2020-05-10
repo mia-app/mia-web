@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { Layout } from "./Layout";
 import { About } from "./pages/About";
@@ -10,8 +10,10 @@ import history from "./utils/history";
 import "./css/App.css";
 import "./css/Components.css";
 
+import { useSetDocumentHeight } from "./hooks/useSetDocumentHeight";
 
 export const App = () => {
+  useSetDocumentHeight();
   return (
     <Router history={history}>
       <Layout>

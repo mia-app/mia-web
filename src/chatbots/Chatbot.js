@@ -21,16 +21,16 @@ export default class Chatbot extends React.Component {
         flowStepCallback: flowStepCallback,
         showProgressBar: true,
         userInterfaceOptions: {
-            controlElementsInAnimationDelay: 0,
-            robot: {
-                robotResponseTime: 0,
-                chainedResponseTime: 500
-            },
-            user:{
-                showThinking: false,
-                showThumb: false
-            }
-        }
+          controlElementsInAnimationDelay: 0,
+          robot: {
+            robotResponseTime: 0,
+            chainedResponseTime: 500,
+          },
+          user: {
+            showThinking: false,
+            showThumb: false,
+          },
+        },
       },
       tags: this.formFields,
     });
@@ -44,10 +44,6 @@ export default class Chatbot extends React.Component {
     
   }
   render() {
-    return (
-      <div>
-        <div ref={(ref) => (this.elem = ref)}></div>
-      </div>
-    );
+    return <div ref={(ref) => (this.elem = ref)} />;
   }
 }

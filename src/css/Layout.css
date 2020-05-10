@@ -16,7 +16,7 @@
 }
 
 header {
-  height: 88px;
+  height: var(--header-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -58,10 +58,10 @@ header nav a:first-child {
 }
 
 main {
-  height: calc(100vh - 88px);
-  min-height: calc(100vh - 88px);
+  height: var(--full-height-minus-header);
+  min-height: var(--full-height-minus-header);
   overflow-x: hidden;
-  margin: 0 auto;  
+  margin: 0 auto;
   max-width: var(--max-content-width);
   padding: 20px 20px 0px 20px;
 }

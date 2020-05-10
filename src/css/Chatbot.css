@@ -5,9 +5,6 @@
   font-weight: normal;
   font-size: 20px;
   line-height: 1.4;
-}
-
-#conversational-form {
   border-radius: 12px;
   box-shadow: 0px 2px 4px rgba(51, 51, 51, 0.32);
 }
@@ -49,7 +46,7 @@ cf-chat-response.robot:first-of-type > text > p {
 }
 
 .cf-progressBar .bar {
-  background-color: var(--primary50) ! important;
+  background-color: var(--primary50) !important;
 }
 
 .cf-input-button.cf-input-button {
