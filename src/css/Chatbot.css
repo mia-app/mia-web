@@ -83,13 +83,20 @@ cf-chat-response.robot:first-of-type > text > p {
 .cf-button:focus,
 .cf-button:focus span,
 cf-button.cf-button.cf-checkbox-button[checked="checked"],
-cf-button.cf-button.cf-checkbox-button[selected="selected"] {
+cf-button.cf-button.cf-checkbox-button[selected="selected"],
+cf-radio-button.cf-button.cf-checkbox-button[checked="checked"],
+cf-radio-button.cf-button[checked=checked] {
   background: var(--primary) !important;
   color: white !important;
 }
 
+.cf-button[checked=checked]:not(:focus):not(:hover):not(.highlight), .cf-button[selected=selected]:not(:focus):not(:hover):not(.highlight) {
+  background: white !important;
+}
+
 .cf-button:hover span,
-.cf-checkbox-button:hover span {
+.cf-checkbox-button:hover span,
+cf-button.cf-button.cf-checkbox-button[checked="checked"] span {
   color: white !important;
 }
 

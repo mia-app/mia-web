@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.2.1",
     "conversational-form": "^1.0.2",
     "framer-motion": "^1.10.3",
+    "moment": "^2.18.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-intersection-observer": "^8.26.1",

@@ -1,0 +1,29 @@
+[
+    {
+        "cf-questions": "Hi I'm Mia. Help me flatten the curve",   
+        "tag": "cf-robot-message"
+    },
+    {
+        "cf-input-placeholder": "I am not sure",
+        "cf-questions": "Do you think you have Corona (COVID-19)?",
+        "children": [
+            {
+                "cf-label": "Yes, I tested positive of COVID-19",
+                "name": "infected",
+                "tag": "input",
+                "type": "radio",
+                "value": "infected_1"
+            },
+            {
+                "cf-label": "Yes, I self-diagnosed using online tools.",
+                "name": "infected",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes, I self-diagnosed using online tools."
+            }
+        ],
+        "name": "infected",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    }
+]

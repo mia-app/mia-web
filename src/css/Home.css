@@ -41,6 +41,15 @@
   max-height: 200px;
 }
 
+.home__landing:before{
+  display: block;
+  content: url("../assets/woman.svg");
+  height: 580px;
+  width: 0px;
+  position: relative;
+  left: -300px;
+}
+
 @media (max-width: 720px) {
   .home__ticktexts {
     display: none;

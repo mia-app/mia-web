@@ -1,0 +1,26 @@
+[
+    {
+        "cf-conditional-warn": "Next",
+        "cf-input-placeholder": "e.g. 01.01.2001",
+        "cf-questions": "On which date did the symptoms start?",
+        "name": "whenSymptoms",
+        "tag": "input",
+        "type": "date"
+    },
+    {
+        "cf-input-placeholder": "Next",
+        "cf-questions": "You might have been spreading the virus between <symptomsDate - 7days> and <min(today, symptomsDate + 5)>. Let's start gathering the contacts of the people you talked to since then.",
+        "children": [
+            {
+                "cf-label": "Next",
+                "name": "symptomsPeriod",
+                "tag": "input",
+                "type": "radio",
+                "value": "Next"
+            }
+        ],
+        "name": "symptomsPeriod",
+        "tag": "input",
+        "type": "Radiobuttons"
+    }
+]

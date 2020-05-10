@@ -1,0 +1,215 @@
+[
+    {
+        "cf-input-placeholder": "Next",
+        "cf-questions": "Let's work our way back. Think about <this/last/the> week, starting on <weekFirstLastDay>.",
+        "children": [
+            {
+                "cf-label": "Next",
+                "name": "thinkWeek",
+                "tag": "input",
+                "type": "radio",
+                "value": "Next"
+            }
+        ],
+        "name": "thinkWeek",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "No",
+        "cf-questions": "Did you leave your apartment <this/last/that> weekend?",
+        "children": [
+            {
+                "cf-label": "Yes",
+                "name": "aptLeave",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes"
+            },
+            {
+                "cf-label": "No",
+                "name": "aptLeave",
+                "tag": "input",
+                "type": "radio",
+                "value": "No"
+            }
+        ],
+        "name": "aptLeave",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "No",
+        "cf-questions": "Did you go to work <this/last/that> week?",
+        "children": [
+            {
+                "cf-conditional-aptLeave": "Yes",
+                "cf-conditional-goWork": "Yes",
+                "cf-label": "Yes",
+                "name": "goWork",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes"
+            },
+            {
+                "cf-conditional-aptLeave": "Yes",
+                "cf-conditional-goWork": "Yes",
+                "cf-label": "No",
+                "name": "goWork",
+                "tag": "input",
+                "type": "radio",
+                "value": "No"
+            }
+        ],
+        "name": "goWork",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "First Name Last Name, Company",
+        "cf-questions": "Enter contact details of employer (close distance)",
+        "name": "employer",
+        "tag": "fieldset",
+        "type": "text"
+    },
+    {
+        "cf-input-placeholder": "Visiting family",
+        "cf-questions": "What kind of activities did you do?",
+        "children": [
+            {
+                "cf-label": "Visiting family",
+                "name": "activities",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "Visiting family"
+            },
+            {
+                "cf-label": "Visiting friends",
+                "name": "activities",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "Visiting friends"
+            },
+            {
+                "cf-label": "Sports",
+                "name": "activities",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "Sports"
+            },
+            {
+                "cf-label": "outdoor",
+                "name": "activities",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "outdoor"
+            },
+            {
+                "cf-label": "Going out",
+                "name": "activities",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "Going out"
+            },
+            {
+                "cf-label": "Shopping",
+                "name": "activities",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "Shopping"
+            },
+            {
+                "cf-label": "Working",
+                "name": "activities",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "Working"
+            },
+            {
+                "cf-label": "School",
+                "name": "activities",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "School"
+            },
+            {
+                "cf-label": "Others",
+                "name": "activities",
+                "tag": "input",
+                "type": "checkbox",
+                "value": "Others"
+            }
+        ],
+        "name": "activities",
+        "tag": "fieldset",
+        "type": "Checkboxes"
+    },
+    {
+        "cf-conditional-anyoneElse": "Yes",
+        "cf-input-placeholder": "First Name Last Name",
+        "cf-questions": "Who did you meet for <activity>?",
+        "name": "whoMeet",
+        "tag": "input",
+        "type": "text"
+    },
+    {
+        "cf-input-placeholder": "level picker",
+        "cf-questions": "How have you been in contact with this person or these people?",
+        "name": "howContact",
+        "tag": "fieldset",
+        "type": "text"
+    },
+    {
+        "cf-input-placeholder": "No",
+        "cf-questions": "Did you meet anyone else for <activity>?",
+        "children": [
+            {
+                "cf-label": "Yes",
+                "name": "anyoneElse",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes"
+            },
+            {
+                "cf-label": "Yes, on another activity",
+                "name": "anyoneElse",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes, on another activity"
+            },
+            {
+                "cf-label": "No",
+                "name": "anyoneElse",
+                "tag": "input",
+                "type": "radio",
+                "value": "No"
+            }
+        ],
+        "name": "anyoneElse",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "Next",
+        "cf-questions": "Do you think you covered everyone for <this/last/the> week, starting on <weekFirstLastDay>? \\ If you're not sure, we have some tricks.",
+        "children": [
+            {
+                "cf-label": "Next",
+                "name": "coveredAll",
+                "tag": "input",
+                "type": "radio",
+                "value": "Next"
+            },
+            {
+                "cf-label": "No, I am really sure",
+                "name": "coveredAll",
+                "tag": "input",
+                "type": "radio",
+                "value": "No, I am really sure"
+            }
+        ],
+        "name": "coveredAll",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    }
+]

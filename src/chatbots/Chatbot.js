@@ -1,12 +1,15 @@
 import React from "react";
 import { ConversationalForm } from "conversational-form";
 import "../css/Chatbot.css";
+import { flowStepCallback } from "./dynamic.js";
+import ChatbotData from "../chatData/questionBuilder";
+const triage = require("../chatData/chunks/triage.json");
 
-export default class Symptoms extends React.Component {
+export default class Chatbot extends React.Component {
   constructor(props) {
     super(props);
-    var data = require("../chatData/symptomsData.json");
-    this.formFields = data;
+    this.formFields = ChatbotData.start;
+    console.log(this.formFields)
     this.submitCallback = this.submitCallback.bind(this);
   }
 
@@ -15,7 +18,7 @@ export default class Symptoms extends React.Component {
       options: {
         submitCallback: this.submitCallback,
         preventAutoFocus: true,
-        flowStepCallback: this.flowStepCallback,
+        flowStepCallback: flowStepCallback,
         showProgressBar: true,
         userInterfaceOptions: {
           controlElementsInAnimationDelay: 0,
@@ -37,20 +40,8 @@ export default class Symptoms extends React.Component {
     console.log(this.cf);
   }
 
-  flowStepCallback(dto, success, error) {
-    success();
-  }
-
   submitCallback() {
-    var formDataSerialized = this.cf.getFormData(true);
-    console.log("Formdata, obj:", formDataSerialized);
-    this.cf.addRobotChatResponse("wash your hands and stay home");
-
-    window.setTimeout(
-      () => this.cf.addRobotChatResponse("Redirecting Home"),
-      3000
-    );
-    window.setTimeout(() => this.props.setChatbot(""));
+    
   }
   render() {
     return <div ref={(ref) => (this.elem = ref)} />;

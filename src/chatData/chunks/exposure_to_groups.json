@@ -1,0 +1,50 @@
+[
+    {
+        "cf-input-placeholder": "Please select",
+        "cf-questions": "Are you living with someone in the same household?",
+        "children": [
+            {
+                "cf-label": "Yes",
+                "name": "household",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes"
+            },
+            {
+                "cf-label": "No",
+                "name": "household",
+                "tag": "input",
+                "type": "radio",
+                "value": "No"
+            }
+        ],
+        "name": "household",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    },
+    {
+        "cf-input-placeholder": "first, last name",
+        "cf-questions": "Who are you living with",
+        "children": [
+            {
+                "cf-conditional-household": "Yes",
+                "cf-label": "Yes",
+                "name": "whoLiveWith",
+                "tag": "input",
+                "type": "radio",
+                "value": "Yes"
+            },
+            {
+                "cf-conditional-household": "Yes",
+                "cf-label": "No",
+                "name": "whoLiveWith",
+                "tag": "input",
+                "type": "radio",
+                "value": "No"
+            }
+        ],
+        "name": "whoLiveWith",
+        "tag": "fieldset",
+        "type": "Radiobuttons"
+    }
+]
