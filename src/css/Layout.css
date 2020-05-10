@@ -63,6 +63,7 @@ main {
   overflow-x: hidden;
   margin: 0 auto;  
   max-width: var(--max-content-width);
+  padding: 20px 20px 0px 20px;
 }
 
 @media (max-width: 720px) {

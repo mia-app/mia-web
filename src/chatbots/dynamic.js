@@ -1,5 +1,4 @@
 import Questions from "../chatData/questionBuilder";
-import { Question } from "../chatData/formChatbotObjects";
 var moment = require('moment');
 
 export const flowStepCallback = (dto, success, error) => {
@@ -17,7 +16,7 @@ export const flowStepCallback = (dto, success, error) => {
         success();
         break;
       case "startTracing":
-        if (dto.tag.value.pop() === "startTracing-1") {
+        if (dto.tag.value[0] === "startTracing-1") {
           window.ConversationalForm.addTags(Questions.periodOfInfectivity, true);
         }
         success();
@@ -87,14 +86,13 @@ export const flowStepCallback = (dto, success, error) => {
         } else {
           window.activities = window.activities || [];
           var tags = [];
-          dto.tag.value.forEach(v => {
+          dto.tag.value.forEach((v, i) => {
             const activity = dto.tag.elements.find(e => e.defaultValue === v).label;
             window.activities.push(activity);
             var enterContactsActivity = Object.assign({}, Questions.activityTrace[0]);
-            enterContactsActivity = Object.assign({}, enterContactsActivity, { "cf-questions": enterContactsActivity["cf-questions"].replace(`{activity}`, activity.toLowerCase()) });
+            enterContactsActivity = Object.assign({}, enterContactsActivity, { name: "enterContactsActivity" + i, "cf-questions": enterContactsActivity["cf-questions"].replace(`{activity}`, activity.toLowerCase()) });
             tags.push(enterContactsActivity);
-            tags.push(Questions.activityTrace[1]);
-
+            tags.push(Questions.getNthLevelOfContact(i));
           })
           window.ConversationalForm.addTags([ ...tags, Questions.allGood], true);
         }
@@ -104,20 +102,51 @@ export const flowStepCallback = (dto, success, error) => {
         window.activities = window.activities || [];
         window.activities.push(dto.text)
         var enterContactsActivity = Object.assign({}, Questions.activityTrace[0]);
-        enterContactsActivity = Object.assign({}, enterContactsActivity, { "cf-questions": enterContactsActivity["cf-questions"].replace(`{activity}`, dto.text.toLowerCase()) });
+        enterContactsActivity = Object.assign(
+            {}, 
+            enterContactsActivity, 
+            { 
+              "cf-questions": enterContactsActivity["cf-questions"].replace(`{activity}`, dto.text.toLowerCase()),
+            }
+          );
         window.ConversationalForm.addTags([ enterContactsActivity, Questions.activityTrace[1], Questions.allGood ] , true);
         success()
         break;
-      case "enterContactsActivity":
+      case "enterContactsActivity0":
+      case "enterContactsActivity1":
+      case "enterContactsActivity2":
+      case "enterContactsActivity3":
+      case "enterContactsActivity4":
+      case "enterContactsActivity5":
+      case "enterContactsActivity6":  
+      case "enterContactsActivity": 
         var i = window.activities.findIndex(a => typeof a === "string");
         window.activities[i] = {activityNames: window.activities[i], contactNames: dto.text}
         success()
         break
+      case "enterLevelOfContact0":
+      case "enterLevelOfContact1":
+      case "enterLevelOfContact2":
+      case "enterLevelOfContact3":
+      case "enterLevelOfContact4":
+      case "enterLevelOfContact5":
+      case "enterLevelOfContact6":  
       case "enterLevelOfContact":
         var i = window.activities.findIndex(a => a.levelOfContact === undefined);
         window.activities[i].levelOfContact = dto.text;
         success()
         break
+      case "openCalendar":
+      case "openPictures":
+      case "openChat":
+        const t = dto.tag.value[0];
+        if (t !== "openChat-2") {
+          if (t == "openPictures-1" || t == "openCalendar-1" || t == "openChat-1") {
+            window.ConversationalForm.addTags([ Questions.whatDidYouDo ], true);
+          }
+          success();
+          break;
+        }
       case "allGood":
         if (dto.tag.value.pop() === "allGood-1") {
           var tags = [];
@@ -152,7 +181,6 @@ export const flowStepCallback = (dto, success, error) => {
                       }, "")
                     )
             }));
-            tags.push(Questions.reachOut.reachOutVicinity2);
             // contact reach out
           }
           if (tags.length > 0) {
@@ -172,12 +200,6 @@ export const flowStepCallback = (dto, success, error) => {
           // start memory lane
           window.ConversationalForm.addTags(Questions.recollectionHacks, true);
         }
-        success()
-        break;
-      case "openCalendar":
-      case "openPictures":
-      case "openChat":
-        window.ConversationalForm.addTags(Questions.whatDidYouDo, true);
         success()
         break;
       default:

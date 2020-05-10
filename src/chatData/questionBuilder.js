@@ -126,14 +126,16 @@ const enterContactsActivity = new Question(
     `text`,
     [], false);
 
-const enterLevelOfContact = new Question(
-    `enterLevelOfContact`,
-    `How have you been in contact with this person/these people?`,
-    ``,
-    `Radiobuttons`,
-    [`We met in an open space with more than 1 meter distance`,
-    `We were in close vicinity (less than 1 meter)`,
-    `We stayed in the same room for a while`]);
+const getNthLevelOfContact = (n) => {
+    return new Question(
+        `enterLevelOfContact${n}`,
+        `How have you been in contact with this person/these people?`,
+        ``,
+        `Radiobuttons`,
+        [`We met in an open space with more than 1 meter distance`,
+        `We were in close vicinity (less than 1 meter)`,
+        `We stayed in the same room for a while`]);
+}
 
 const allGood = new Question(
     `allGood`,
@@ -206,11 +208,18 @@ const openChat = new Question(
         `Yes`, 
         `Nothing`
     ]);
-openPictures.conditionOn("haveChat", "haveChat-1")
+openChat.conditionOn("haveChat", "haveChat-1")
 
 const reachOutIntro = new RobotMessage("Great, thanks for listing everyone you've been in touch with! I've arranged them into groups based on how you should best reach out to them. It's best to inform them as fast as possible.")
 const reachOutExit = new RobotMessage("Ok, you listed no contacts, so there is noone to get in touch with. Thanks and get well soon!")
-const reachOutOutro = new RobotMessage("Great, thank you for contributing to stopping the spread of coronavirus! We traced all your contacts and informed them. /n/nGet well soon!")
+const reachOutOutro = new Question(
+    `reachOutOutro`,
+    `Great, thank you for contributing to stopping the spread of coronavirus! We traced all your contacts and informed them. \n\nGet well soon!`,
+    ``,
+    `Radiobuttons`,
+    [
+        `Ok`
+    ], false);
 
 const reachOutFlatmate = new Question(
     `reachOutFlatmates`,
@@ -248,25 +257,16 @@ const reachOutVicinity1 = new RobotMessage("You were in close vicinity with\n{vi
 
 const reachOutVicinity2 = new Question(
     `reachOutVicinity2`,
-    `
-    Hi,\n\n
-    
-    Sadly I am feeling ill and I learned that there is a good chance I have COVID-19.\n\n
-    
-    If that's the case, it's very likely that I infected others between July 4th and yesterday. We met personally during that time and were close to each other (less than 1 metre distance) for more than 15 minutes. \n\n
-    
-    The contact tracing chatbot Mia has recommended to stay in quarantine for the 14(?) days to reduce the spread of the virus. \n\n
-    
-    I just wanted to inform you but obviously, it's up to you to decide. \n\n
-    
-    Cheers,\n\n
-    {myName}`,
+    `Hi,\n\nSadly I am feeling ill and I learned that there is a good chance I have COVID-19.\n\nIf \
+that's the case, it's very likely that I infected others between July 4th and yesterday. We met \
+personally during that time and were close to each other (less than 1 metre distance) for more than 15 minutes.\n\nThe \
+contact tracing chatbot Mia has recommended to stay in quarantine for the 14(?) days to reduce the spread of the virus.\n\nI \
+just wanted to inform you but obviously, it's up to you to decide.\n\nCheers,\n\n{myName}`,
     ``,
     `Radiobuttons`,
     [
         `Ok`
-    ],
-    false);
+    ]);
 
 const reachOutSameRoom1 = new RobotMessage("You were in close vicinity with {sameRoom} I suggest to inform those people right now via text message. You can copy/paste the following template:")
 
@@ -344,8 +344,9 @@ export default {
     whatDidYouDo,
     activityTrace: [
         enterContactsActivity,
-        enterLevelOfContact
+        getNthLevelOfContact(0)
     ],
+    getNthLevelOfContact,
     allGood,
     recollectionHacks: [
         haveCalendar,

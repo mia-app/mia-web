@@ -7,11 +7,11 @@ import { ReactComponent as Woman } from "../assets/woman.svg";
 import Chatbot from "../chatbots/Chatbot";
 
 import "../css/Home.css";
+// <Woman className="home__woman" />
 
 export const Home = () => {
   return (
     <div className="home__landing">
-      <Woman className="home__woman" />
       <div className="home__centerpiece">
         <motion.div
           className="home__chatbot"
