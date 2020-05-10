@@ -233,20 +233,11 @@ const reachOutEmployer1 = new RobotMessage("Your employer\n\n{employer}\n\nI sug
 
 const reachOutEmployer2 = new Question(
     `reachOutEmployer2`,
-    `Dear {employer},\n\n
-    
-    I regret to inform you that I am feeling ill and learned after a diagnosis that there is a good chance I have COVID-19.\n\n
-    
-    If that is the case, I was probably infecting others between the 4th of July until yesterday.\n\n
-    
-    Mia (www.appmia.ch) has recommended that I stay in home office. But, to really slow down the spread of the virus, it is important to warn exposed colleagues to go into quarantine as soon as possible.\n\n
-    
-    Obviously, it is up to you to take the right decision here.\n\n
-    
-    You can have a look at my calendar to see in which building I was. Also I remember meeting the following people in that time : Michael J Scott, Pam, and Dwight K. Shrute.\n\n
-    
-    Best regards,\n\n
-    {myName}`,
+    `Dear {employer},\n\nI regret to inform you that I am feeling ill and learned after a diagnosis that there is a good chance I have COVID-19.\n\n\
+If that is the case, I was probably infecting others between the 4th of July until yesterday.\n\nMia (www.appmia.ch) \
+has recommended that I stay in home office. But, to really slow down the spread of the virus, it is important to warn \
+exposed colleagues to go into quarantine as soon as possible.\n\n Obviously, it is up to you to take the right decision \
+here.\n\nYou can have a look at my calendar to see in which building I was.\n\nBest regards,\n\n{myName}`,
     ``,
     `Radiobuttons`,
     [
