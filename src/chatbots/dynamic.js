@@ -1,4 +1,5 @@
 import Questions from "../chatData/questionBuilder";
+import { Question } from "../chatData/formChatbotObjects";
 var moment = require('moment');
 
 export const flowStepCallback = (dto, success, error) => {
@@ -55,7 +56,6 @@ export const flowStepCallback = (dto, success, error) => {
       case "livingWithSomeone":
         var weekTags = [];
         if (dto.tag.value.pop() === "livingWithSomeone-1") { // Yes
-          console.log('pop')
           weekTags.push(Questions.livingWithWhom);
         } 
         weekTags = [ ...weekTags, ...Questions.week ];
@@ -75,10 +75,9 @@ export const flowStepCallback = (dto, success, error) => {
         success()
         break;
       case "didYouLeaveYourApartment":
-        if (dto.tag.value.pop() === "didYouLeaveYourApartment-2") {
+        if (dto.tag.value[0] === "didYouLeaveYourApartment-2") {
           window.ConversationalForm.addTags([ Questions.whatDidYouDo ], true);
         }
-        console.log(Questions.whatDidYouDo)
         success()
         break;
       case "okWhatDidYouDo":
@@ -87,7 +86,7 @@ export const flowStepCallback = (dto, success, error) => {
           window.ConversationalForm.addTags([ Questions.whatDidYouDo ], true);
         } else {
           window.activities = window.activities || [];
-          const tags = [];
+          var tags = [];
           dto.tag.value.forEach(v => {
             const activity = dto.tag.elements.find(e => e.defaultValue === v).label;
             window.activities.push(activity);
@@ -110,12 +109,12 @@ export const flowStepCallback = (dto, success, error) => {
         success()
         break;
       case "enterContactsActivity":
-        var i = window.activities.indexOf(a => typeof a === "string");
+        var i = window.activities.findIndex(a => typeof a === "string");
         window.activities[i] = {actvitiyNames: window.activities[i], contactNames: dto.text}
         success()
         break
       case "enterLevelOfContact":
-        var i = window.activities.indexOf(a => a.levelOfContact === undefined);
+        var i = window.activities.findIndex(a => a.levelOfContact === undefined);
         window.activities[i].levelOfContact = dto.text;
         success()
         break
@@ -123,29 +122,49 @@ export const flowStepCallback = (dto, success, error) => {
         if (dto.tag.value.pop() === "allGood-1") {
           const tags = [];
           if (window.flatMate) {
-            // add People you live with
+            tags.push(Object.assign({}, Questions.reachOut.reachOutFlatmate, {
+              "cf-questions": Questions.reachOut.reachOutFlatmate["cf-questions"].replace(`{contacts}`, "\n\n-" + window.flatMate + "\n\n")
+            }));
           }
           if (window.companyName || window.companyManager) {
-            // company reach out
+            tags.push(Object.assign({}, Questions.reachOut.reachOutEmployer1, {
+              "cf-questions": Questions.reachOut.reachOutEmployer1["cf-questions"].replace(`{employer}`, window.companyManager + " at " + window.companyName )
+            }));
+            tags.push(Object.assign({}, Questions.reachOut.reachOutEmployer2, {
+              "cf-questions": Questions.reachOut.reachOutEmployer2["cf-questions"].replace(`{employer}`, window.companyManager)
+            }));
           }
           var activityNames = "";
           window.activities.map(a => {
             if (a.contactNames) {
-              activityNames = activityNames + a;
+              activityNames = activityNames + "//" + a;
             }
           });
           if (activityNames) {
+            tags.push(Object.assign({}, Questions.reachOut.reachOutVicinity1, {
+              "cf-questions": Questions.reachOut.reachOutVicinity1["cf-questions"]
+                    .replace(
+                      `{vicinity}`, 
+                      activityNames.split("//").reduce((a,c) => {                      
+                        a = a + `\n<label><input type="checkbox" name="occupation" id="occupation-3" value="curious-mind">${c}</label> </input>`
+                      }, "")
+                    )
+            }));
+            tags.push(Questions.reachOut.reachOutVicinity2);
             // contact reach out
           }
           if (tags.length > 0) {
+            tags.push(Questions.reachOut.reachOutVicinity2);
             // add intro in the beginning
-            // add outro
+            tags = [ 
+              Questions.reachOut.reachOutIntro,
+              ...tags,
+              Questions.reachOut.reachOutOutro
+            ];
           } else {
-            // add exit
+            tags.push(Questions.reachOut.reachOutExit)
           }
-
-          // start reach out
-          // window.ConversationalForm.addTags(Questions.periodOfInfectivity, true);
+          window.ConversationalForm.addTags(tags, true);
         } else {
           // start memory lane
           window.ConversationalForm.addTags(Questions.recollectionHacks, true);

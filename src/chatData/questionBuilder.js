@@ -98,20 +98,18 @@ giveManagerName.conditionOn("didYouGoToWork", "didYouGoToWork-1")
 
 const didYouLeaveYourApartment = new Question(
     `didYouLeaveYourApartment`,
-    `Did you leave your apartment during the past weekends?`,
+    `Did you leave your household during the past weekends?`,
     ``,
     `Radiobuttons`,
-    [`Yes`, `No`],
-    false);
+    [`Yes`, `No`]);
 
 const okWhatDidYouDo = new Question(
     `okWhatDidYouDo`,
     `Ok, what did you do?`,
     `Select and press the arrow`,
-    `Radiobuttons`, //Checkboxes
-    [`Visiting family/friends`, `Outdoor activities`,
-     `Shopping`, `Work/school`, `Going out`, `Something else`], 
-     false);
+    `Checkboxes`,
+    [`Visiting family and friends`, `Outdoor activities`,
+     `Shopping`, `Work or school`, `Going out`, `Something else`]);
 okWhatDidYouDo.conditionOn("didYouLeaveYourApartment", "didYouLeaveYourApartment-1")
 
 const whatDidYouDo = new Question(
@@ -123,13 +121,13 @@ const whatDidYouDo = new Question(
 
 const enterContactsActivity = new Question(
     `enterContactsActivity`,
-    `Can you give me the full name of the people you met for {activity}? Enter all names separately and then confirm by clicking "done".`,
+    `Can you give me the full name of the people you met for «{activity}»? Enter all names separately and then confirm by clicking "done".`,
     ``,
     `text`,
     [], false);
 
 const enterLevelOfContact = new Question(
-    `enterContactsActivity`,
+    `enterLevelOfContact`,
     `How have you been in contact with this person/these people?`,
     ``,
     `Radiobuttons`,
@@ -211,8 +209,109 @@ const openChat = new Question(
 openPictures.conditionOn("haveChat", "haveChat-1")
 
 const reachOutIntro = new RobotMessage("Great, thanks for listing everyone you've been in touch with! I've arranged them into groups based on how you should best reach out to them. It's best to inform them as fast as possible.")
-const reachOutExit = new RobotMessage("Ok, you listed no contacts, so there is noone to get int")
+const reachOutExit = new RobotMessage("Ok, you listed no contacts, so there is noone to get in touch with. Thanks and get well soon!")
 const reachOutOutro = new RobotMessage("Great, thank you for contributing to stopping the spread of coronavirus! We traced all your contacts and informed them. /n/nGet well soon!")
+
+const reachOutFlatmate = new Question(
+    `reachOutFlatmates`,
+    `The people you live with {contacts}I suggest that you have a conversation with them as soon as possible (ideally by phone). If you actually have COVID-19, there is a high chance they have too. You should strongly recommend them to go into quarantine. `,
+    ``,
+    `Radiobuttons`,
+    [
+        `Ok`
+    ]);
+const reachOutEmployer1 = new RobotMessage("Your employer\n\n{employer}\n\nI suggest to inform your employer via messaging system or e-mail. You can copy/paste the following template:")
+
+const reachOutEmployer2 = new Question(
+    `reachOutEmployer2`,
+    `Dear {employer},\n\n
+    
+    I regret to inform you that I am feeling ill and learned after a diagnosis that there is a good chance I have COVID-19.\n\n
+    
+    If that is the case, I was probably infecting others between the 4th of July until yesterday.\n\n
+    
+    Mia (www.appmia.ch) has recommended that I stay in home office. But, to really slow down the spread of the virus, it is important to warn exposed colleagues to go into quarantine as soon as possible.\n\n
+    
+    Obviously, it is up to you to take the right decision here.\n\n
+    
+    You can have a look at my calendar to see in which building I was. Also I remember meeting the following people in that time : Michael J Scott, Pam, and Dwight K. Shrute.\n\n
+    
+    Best regards,\n\n
+    {myName}`,
+    ``,
+    `Radiobuttons`,
+    [
+        `Ok`
+    ]);
+
+const reachOutVicinity1 = new RobotMessage("You were in close vicinity with \n\n{vicinity}\n\n I suggest to inform those people right now via text message. You can copy/paste the following template:")
+
+const reachOutVicinity2 = new Question(
+    `reachOutVicinity2`,
+    `
+    Hi,\n\n
+    
+    Sadly I am feeling ill and I learned that there is a good chance I have COVID-19.\n\n
+    
+    If that's the case, it's very likely that I infected others between July 4th and yesterday. We met personally during that time and were close to each other (less than 1 metre distance) for more than 15 minutes. \n\n
+    
+    The contact tracing chatbot Mia has recommended to stay in quarantine for the 14(?) days to reduce the spread of the virus. \n\n
+    
+    I just wanted to inform you but obviously, it's up to you to decide. \n\n
+    
+    Cheers,\n\n
+    {myName}`,
+    ``,
+    `Radiobuttons`,
+    [
+        `Ok`
+    ]);
+
+const reachOutSameRoom1 = new RobotMessage("You were in close vicinity with {sameRoom} I suggest to inform those people right now via text message. You can copy/paste the following template:")
+
+const reachOutSameRoom2 = new Question(
+    `reachOutSameRoom2`,
+    `
+    Hi {sameRoom},\n\n
+    
+    Sadly I am feeling ill and I learned that there is a good chance I have COVID-19. \n\n
+    
+    If that's the case, it's very likely that I infected others between July 4th and yesterday. We met personally during that time and were close to each other (less than 1 metre distance) for more than 15 minutes. \n\n
+    
+    The contact tracing chatbot Mia has recommended to stay in quarantine for the 14(?) days to reduce the spread of the virus. \n\n
+    
+    I just wanted to inform you but obviously, it's up to you to decide. \n\n
+    
+    Cheers,\n\n
+    {myName}`,
+    ``,
+    `Radiobuttons`,
+    [
+        `Ok`
+    ]);
+
+const reachOutOpenSpace1 = new RobotMessage("You were in close vicinity with {openSpace} I suggest to inform those people right now via text message. You can copy/paste the following template:")
+
+const reachOutOpenSpace2 = new Question(
+    `reachOutOpenSpace2`,
+    `
+    Hi {openSpace},\n\n
+    
+    Sadly I am feeling ill and I learned that there is a good chance I have COVID-19. \n\n
+    
+    If that's the case, it's very likely that I infected others between July 4th and yesterday. We met personally during that time and were close to each other (less than 1 metre distance) for more than 15 minutes.\n\n 
+    
+    The contact tracing chatbot Mia has recommended to stay in quarantine for the 14(?) days to reduce the spread of the virus. \n\n
+    
+    I just wanted to inform you but obviously, it's up to you to decide. \n\n
+    
+    Cheers,\n\n
+    {myName}`,
+    ``,
+    `Radiobuttons`,
+    [
+        `Ok`
+    ]);
 
 export default {
     start: [
@@ -255,7 +354,18 @@ export default {
         haveChat,
         openChat
     ],
-    reachOut: [
-
-    ]
+    reachOut: {
+        reachOutIntro,
+        reachOutExit,
+        reachOutOutro,
+        reachOutFlatmate,
+        reachOutEmployer1,
+        reachOutEmployer2,
+        reachOutVicinity1,
+        reachOutVicinity2,
+        reachOutSameRoom1,
+        reachOutSameRoom2,
+        reachOutOpenSpace1,
+        reachOutOpenSpace2
+    }
 }
