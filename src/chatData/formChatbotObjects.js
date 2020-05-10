@@ -7,7 +7,12 @@ class Answer {
         this.name = name;
     }
     condition(question, answer) { // not working
-        this["cf-conditional-" + question] = answer
+        if(typeof this["cf-conditional-" + question] != "undefined"){
+            this["cf-conditional-" + question] = this["cf-conditional-" + question] + "||" + answer
+        } else {
+            this["cf-conditional-" + question] = answer
+        }
+        // this["cf-conditional-" + question] = answer
     }
     addName(name){
         this.name = name;
@@ -59,7 +64,11 @@ export class Question {
     }
 
     condition(question, cond) {
-        this["cf-conditional-" + question] = cond
+        if(typeof this["cf-conditional-" + question] != "undefined"){
+            this["cf-conditional-" + question] = this["cf-conditional-" + question] + "||" + cond
+        } else {
+            this["cf-conditional-" + question] = cond
+        }
     }
 }
 
@@ -70,6 +79,10 @@ export class RobotMessage {
     }
 
     conditionOn(question, cond) {
-        this["cf-conditional-" + question] = cond
+        if(typeof this["cf-conditional-" + question] != "undefined"){
+            this["cf-conditional-" + question] = this["cf-conditional-" + question] + "||" + cond
+        } else {
+            this["cf-conditional-" + question] = cond
+        }
     }
 }

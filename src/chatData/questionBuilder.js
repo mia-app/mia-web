@@ -121,7 +121,7 @@ const whatDidYouDo = new Question(
 
 const enterContactsActivity = new Question(
     `enterContactsActivity`,
-    `Can you give me the full name of the people you met for «{activity}»? Enter all names separately and then confirm by clicking "done".`,
+    `Can you give me the full name of the people you met for «{activity}»? Enter all names separately and then confirm by clicking "submit".`,
     ``,
     `text`,
     [], false);
@@ -265,7 +265,8 @@ const reachOutVicinity2 = new Question(
     `Radiobuttons`,
     [
         `Ok`
-    ]);
+    ],
+    false);
 
 const reachOutSameRoom1 = new RobotMessage("You were in close vicinity with {sameRoom} I suggest to inform those people right now via text message. You can copy/paste the following template:")
 

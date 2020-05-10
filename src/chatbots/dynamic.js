@@ -120,7 +120,7 @@ export const flowStepCallback = (dto, success, error) => {
         break
       case "allGood":
         if (dto.tag.value.pop() === "allGood-1") {
-          const tags = [];
+          var tags = [];
           if (window.flatMate) {
             tags.push(Object.assign({}, Questions.reachOut.reachOutFlatmate, {
               "cf-questions": Questions.reachOut.reachOutFlatmate["cf-questions"].replace(`{contacts}`, "\n\n-" + window.flatMate + "\n\n")
@@ -155,7 +155,7 @@ export const flowStepCallback = (dto, success, error) => {
           }
           if (tags.length > 0) {
             tags.push(Questions.reachOut.reachOutVicinity2);
-            // add intro in the beginning
+            //add intro in the beginning
             tags = [ 
               Questions.reachOut.reachOutIntro,
               ...tags,
@@ -164,6 +164,7 @@ export const flowStepCallback = (dto, success, error) => {
           } else {
             tags.push(Questions.reachOut.reachOutExit)
           }
+          console.log(tags)
           window.ConversationalForm.addTags(tags, true);
         } else {
           // start memory lane
