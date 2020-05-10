@@ -6,7 +6,7 @@ const introduction = new RobotMessage("Hi, I’m Mia.\nHelp me flatten the curve
 const startChatbot = new Question(
         "startChatbot", 
         "My goal is to help you remembering the people you've been in contact with if you get infected \
-with COVID-19. Together we can warn them and therefore stop the spread of the virus.\n\n \
+with COVID-19. Together we can warn them and therefore stop the spread of the virus.\n\n\
 Let's figure out if you might have infected anyone. Ready?", 
         "", 
         "Radiobuttons", 
@@ -244,7 +244,7 @@ const reachOutEmployer2 = new Question(
         `Ok`
     ]);
 
-const reachOutVicinity1 = new RobotMessage("You were in close vicinity with \n\n{vicinity}\n\n I suggest to inform those people right now via text message. You can copy/paste the following template:")
+const reachOutVicinity1 = new RobotMessage("You were in close vicinity with\n{vicinity}\n\nI suggest to inform those people right now via text message. You can copy/paste the following template:")
 
 const reachOutVicinity2 = new Question(
     `reachOutVicinity2`,

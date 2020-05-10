@@ -110,7 +110,7 @@ export const flowStepCallback = (dto, success, error) => {
         break;
       case "enterContactsActivity":
         var i = window.activities.findIndex(a => typeof a === "string");
-        window.activities[i] = {actvitiyNames: window.activities[i], contactNames: dto.text}
+        window.activities[i] = {activityNames: window.activities[i], contactNames: dto.text}
         success()
         break
       case "enterLevelOfContact":
@@ -137,16 +137,18 @@ export const flowStepCallback = (dto, success, error) => {
           var activityNames = "";
           window.activities.map(a => {
             if (a.contactNames) {
-              activityNames = activityNames + "//" + a;
+              activityNames = activityNames + "//" + a.contactNames;
             }
           });
+          activityNames = activityNames.substring(2, activityNames.length);
           if (activityNames) {
             tags.push(Object.assign({}, Questions.reachOut.reachOutVicinity1, {
               "cf-questions": Questions.reachOut.reachOutVicinity1["cf-questions"]
                     .replace(
                       `{vicinity}`, 
-                      activityNames.split("//").reduce((a,c) => {                      
+                      activityNames.split("//").reduce((a,c) => {
                         a = a + `\n<label><input type="checkbox" name="occupation" id="occupation-3" value="curious-mind">${c}</label> </input>`
+                        return a
                       }, "")
                     )
             }));
