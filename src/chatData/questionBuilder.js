@@ -101,13 +101,14 @@ const didYouLeaveYourApartment = new Question(
     `Did you leave your apartment during the past weekends?`,
     ``,
     `Radiobuttons`,
-    [`Yes`, `No`]);
+    [`Yes`, `No`],
+    false);
 
 const okWhatDidYouDo = new Question(
     `okWhatDidYouDo`,
     `Ok, what did you do?`,
     `Select and press the arrow`,
-    `Checkboxes`,
+    `Radiobuttons`, //Checkboxes
     [`Visiting family/friends`, `Outdoor activities`,
      `Shopping`, `Work/school`, `Going out`, `Something else`], 
      false);
