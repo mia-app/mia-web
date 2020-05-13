@@ -10,7 +10,7 @@ with COVID-19. Together we can warn them and therefore stop the spread of the vi
 Let's figure out if you might have infected anyone. Ready?", 
         "", 
         "Radiobuttons", 
-        ["Yes, let's find out"] // , "Tell me more about the project"
+        ["Yes, let's find out", "Tell me more about the project"]
     );
 
 const isInfected = new Question( 
@@ -121,7 +121,7 @@ const whatDidYouDo = new Question(
 
 const enterContactsActivity = new Question(
     `enterContactsActivity`,
-    `Can you give me the full name of the people you met for «{activity}»? Enter all names separately and then confirm by clicking "submit".`,
+    `Can you give me the full name of the people you met for «{activity}»? Enter all names seperated by a comma and then confirm by clicking the arrow.`,
     ``,
     `text`,
     [], false);
