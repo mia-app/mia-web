@@ -10,7 +10,7 @@ with COVID-19. Together we can warn them and therefore stop the spread of the vi
 Let's figure out if you might have infected anyone. Ready?", 
         "", 
         "Radiobuttons", 
-        ["Yes, let's find out", "Tell me more about the project"]
+        ["Yes, let's find out"] // , "Tell me more about the project"
     );
 
 const isInfected = new Question( 
