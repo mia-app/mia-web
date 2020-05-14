@@ -32,7 +32,7 @@ checkInfection.conditionOn("isInfected", "isInfected-3");
 
 const startTracing = new Question(
     `startTracing`,
-    `Alright. You should let the people you have been in contact with know. Should we start that?`,
+    `Alright. The people you have been in contact with should be informed. Should we start that?`,
     ``,
     `Radiobuttons`,
     [`Yes, let's start`, `Maybe later`]);
@@ -234,7 +234,7 @@ const reachOutEmployer1 = new RobotMessage("Your employer\n\n{employer}\n\nI sug
 const reachOutEmployer2 = new Question(
     `reachOutEmployer2`,
     `Dear {employer},\n\nI regret to inform you that I am feeling ill and learned after a diagnosis that there is a good chance I have COVID-19.\n\n\
-If that is the case, I was probably infecting others between the 4th of July until yesterday.\n\nMia (www.appmia.ch) \
+If that is the case, I was probably infecting others between {dates}.\n\nMia (www.appmia.ch) \
 has recommended that I stay in home office. But, to really slow down the spread of the virus, it is important to warn \
 exposed colleagues to go into quarantine as soon as possible.\n\n Obviously, it is up to you to take the right decision \
 here.\n\nYou can have a look at my calendar to see in which building I was.\n\nBest regards,\n\n{myName}`,
@@ -249,9 +249,9 @@ const reachOutVicinity1 = new RobotMessage("You were in close vicinity with\n{vi
 const reachOutVicinity2 = new Question(
     `reachOutVicinity2`,
     `Hi,\n\nSadly I am feeling ill and I learned that there is a good chance I have COVID-19.\n\nIf \
-that's the case, it's very likely that I infected others between July 4th and yesterday. We met \
+that's the case, it's very likely that I infected others between {dates}. We met \
 personally during that time and were close to each other (less than 1 metre distance) for more than 15 minutes.\n\nThe \
-contact tracing chatbot Mia has recommended to stay in quarantine for the 14(?) days to reduce the spread of the virus.\n\nI \
+contact tracing chatbot Mia has recommended me to stay in quarantine for the next 14 days to reduce the spread of the virus.\n\nI \
 just wanted to inform you but obviously, it's up to you to decide.\n\nCheers,\n\n{myName}`,
     ``,
     `Radiobuttons`,
@@ -268,9 +268,9 @@ const reachOutSameRoom2 = new Question(
     
     Sadly I am feeling ill and I learned that there is a good chance I have COVID-19. \n\n
     
-    If that's the case, it's very likely that I infected others between July 4th and yesterday. We met personally during that time and were close to each other (less than 1 metre distance) for more than 15 minutes. \n\n
+    If that's the case, it's very likely that I infected others between {dates}. We met personally during that time and were close to each other (less than 1 metre distance) for more than 15 minutes. \n\n
     
-    The contact tracing chatbot Mia has recommended to stay in quarantine for the 14(?) days to reduce the spread of the virus. \n\n
+    The contact tracing chatbot Mia has recommended me to stay in quarantine for the next 14 days to reduce the spread of the virus. \n\n
     
     I just wanted to inform you but obviously, it's up to you to decide. \n\n
     
@@ -291,11 +291,11 @@ const reachOutOpenSpace2 = new Question(
     
     Sadly I am feeling ill and I learned that there is a good chance I have COVID-19. \n\n
     
-    If that's the case, it's very likely that I infected others between July 4th and yesterday. We met personally during that time and were close to each other (less than 1 metre distance) for more than 15 minutes.\n\n 
+    If that's the case, it's very likely that I infected others between {dates}. We met personally during that time and were close to each other (less than 1 metre distance) for more than 15 minutes.\n\n 
     
-    The contact tracing chatbot Mia has recommended to stay in quarantine for the 14(?) days to reduce the spread of the virus. \n\n
+    The contact tracing chatbot Mia has recommended me to stay in quarantine for the next 14 days to reduce the spread of the virus. \n\n
     
-    I just wanted to inform you but obviously, it's up to you to decide. \n\n
+    I just wanted to inform you but of course the decision is yours. \n\n
     
     Cheers,\n\n
     {myName}`,

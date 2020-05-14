@@ -24,7 +24,7 @@ export const flowStepCallback = (dto, success, error) => {
       case "symptomsStartDate":
         // using moment 2.18.1 (https://tinyurl.com/y7kuuw54)
         var d = dto.tag.value
-        if(moment(d, 'DD.MM.YYYY', true).isValid()){
+        if(moment(d, 'DD.MM.YYYY', true).isValid() & moment(d, 'DD.MM.YYYY', true).isBefore(moment().add(1, 'd'))){
           var dStart = moment(d, 'DD.MM.YYYY').subtract(7,'d')
           var dEnd = moment(d, 'DD.MM.YYYY').add(5,'d')
           var dStartPrint = dStart.format('dddd [the] Do [of] MMMM YYYY')
@@ -45,11 +45,12 @@ export const flowStepCallback = (dto, success, error) => {
           window.symptomsDate = d
           window.startInfectivity = dStart
           window.stopInfectivity = dEnd
+          window.startStopInf = dStart.format('dddd [the] Do [of] MMMM') + " and " + dEnd.format('dddd [the] Do [of] MMMM YYYY')
           window.infPeriod = enumerateDaysBetweenDates(dStart, dEnd)
 
           success();
         } else {
-          error("Enter the date with the format, DD.MM.YYYY");
+          error("Enter a date no later than today with the format DD.MM.YYYY");
         }
         break;
       case "livingWithSomeone":
@@ -152,15 +153,18 @@ export const flowStepCallback = (dto, success, error) => {
           var tags = [];
           if (window.flatMate) {
             tags.push(Object.assign({}, Questions.reachOut.reachOutFlatmate, {
-              "cf-questions": Questions.reachOut.reachOutFlatmate["cf-questions"].replace(`{contacts}`, "\n\n-" + window.flatMate + "\n\n")
+              "cf-questions": Questions.reachOut.reachOutFlatmate["cf-questions"]
+                .replace(`{contacts}`, "\n\n-" + window.flatMate + "\n\n")
             }));
           }
           if (window.companyName || window.companyManager) {
             tags.push(Object.assign({}, Questions.reachOut.reachOutEmployer1, {
-              "cf-questions": Questions.reachOut.reachOutEmployer1["cf-questions"].replace(`{employer}`, window.companyManager + " at " + window.companyName )
+              "cf-questions": Questions.reachOut.reachOutEmployer1["cf-questions"]
+                .replace(`{employer}`, window.companyManager + " at " + window.companyName )
             }));
             tags.push(Object.assign({}, Questions.reachOut.reachOutEmployer2, {
-              "cf-questions": Questions.reachOut.reachOutEmployer2["cf-questions"].replace(`{employer}`, window.companyManager)
+              "cf-questions": Questions.reachOut.reachOutEmployer2["cf-questions"]
+                .replace(`{employer}`, window.companyManager).replace(`{dates}`, window.startStopInf)
             }));
           }
           var activityNames = "";
@@ -180,6 +184,7 @@ export const flowStepCallback = (dto, success, error) => {
                         return a
                       }, "")
                     )
+                    .replace(`{dates}`, window.startStopInf)
             }));
             // contact reach out
           }
