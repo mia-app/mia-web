@@ -152,7 +152,3 @@ cf-list {
     width: calc(100% - 50px);
   }
 }
-
-scrollable::-webkit-scrollbar {
-  display: block;
-}
