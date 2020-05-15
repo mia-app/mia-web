@@ -37,7 +37,7 @@ export const Home = () => {
             <b>Direct impact:</b> From the first user onwards
           </TickText>
           <TickText>
-            <b>Privacy:</b> No data will be shared to any authority
+            <b>Privacy:</b> No data will saved or shared to any authority
           </TickText>
           <TickText>
             <b>Citizen-centric:</b> Responsibility instead of surveillance
